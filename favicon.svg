@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="The Manifold">
+    <rect width="32" height="32" fill="#000000"/>
+    <path d="M8 23 L16 7 L24 23 M8 23 H24" fill="none" stroke="#55ffff" stroke-width="2"/>
+    <rect x="6" y="21" width="4" height="4" fill="#ffff55"/>
+    <rect x="14" y="5" width="4" height="4" fill="#ff5555"/>
+    <rect x="22" y="21" width="4" height="4" fill="#55ff55"/>
+</svg>
