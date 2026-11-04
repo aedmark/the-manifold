@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Vedas">
+    <rect width="32" height="32" fill="#050505"/>
+    <!-- Concentric Vedic Triangles / Yantra Geometry in EGA Palette -->
+    <polygon points="16,4 28,26 4,26" fill="none" stroke="#d96b27" stroke-width="2"/>
+    <polygon points="16,28 4,10 28,10" fill="none" stroke="#ffff55" stroke-width="1.5" stroke-dasharray="2,2"/>
+    <circle cx="16" cy="16" r="3" fill="#55ff55"/>
+    <rect x="14" y="2" width="4" height="4" fill="#ff5555"/>
+    <rect x="2" y="24" width="4" height="4" fill="#55ffff"/>
+    <rect x="26" y="24" width="4" height="4" fill="#d96b27"/>
+</svg>

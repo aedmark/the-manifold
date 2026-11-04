@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedas: Epistemic Repository Memory for AI Agents</title>
+    <meta name="description" content="Vedas is an epistemic repository framework for AI agents. Grounded in Vedic epistemology, it separates truth into three speeds, enforces Pramāṇa proof tags, and guarantees zero drift across sessions.">
+    <meta name="theme-color" content="#070707">
+    <meta property="og:title" content="Vedas: Epistemic Repository Memory for AI Agents">
+    <meta property="og:description" content="The model is disposable. The truth is immutable. An epistemic framework for preserving repository invariants and proof across AI agent sessions.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the field manual</a>
+
+<div class="window-bar">
+    <span class="window-name">C:\VEDAS\README.TXT</span>
+    <span class="window-meta">EPISTEMIC PROTOCOL: READ ONLY</span>
+    <span class="window-controls" aria-hidden="true">[ &#9633; ]</span>
+</div>
+
+<header class="site-head">
+    <div class="wrap head-inner">
+        <a class="brand" href="#top" aria-label="Vedas home">
+            <span class="brand-mark" aria-hidden="true">V</span>
+            <span class="brand-name">Ve<span>das</span></span>
+            <span class="brand-ver">/ 01</span>
+        </a>
+        <nav class="head-nav" aria-label="Primary navigation">
+            <a href="#problem">Problem</a>
+            <a href="#epistemics">Epistemics</a>
+            <a href="#vedangas">Vedāṅgas</a>
+            <a href="#nyaya">Nyāya Proof</a>
+            <a href="#lexicon">Lexicon</a>
+            <a href="#cheatsheet">Cheat Sheet</a>
+            <a href="#checker">Checker</a>
+            <a href="#lineage">Lineage</a>
+        </nav>
+        <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold">Repository <span aria-hidden="true">&nearr;</span></a>
+    </div>
+</header>
+
+<main id="main" class="desk">
+    <div class="sheet">
+
+        <aside class="rail">
+            <div class="rail-head">
+                <p class="rail-label">FIELD MANUAL</p>
+                <p class="rail-title">EPISTEMIC<br>RIGOR</p>
+                <p class="rail-meta">14 DOCS / 8 INVARIANTS</p>
+            </div>
+            <nav class="rail-nav" aria-label="Contents">
+                <a href="#top"><span>00</span> Start</a>
+                <a href="#problem"><span>01</span> The failure</a>
+                <a href="#epistemics"><span>02</span> Epistemics</a>
+                <a href="#vedangas"><span>03</span> The Vedāṅgas</a>
+                <a href="#nyaya"><span>04</span> Nyāya proof</a>
+                <a href="#lexicon"><span>05</span> Lexicon & audio</a>
+                <a href="#cheatsheet"><span>06</span> Cheat sheet</a>
+                <a href="#checker"><span>07</span> Ghana-pāṭha</a>
+                <a href="#lineage"><span>08</span> Lineage</a>
+            </nav>
+            <div class="rail-tree" aria-label="Vedas repository layout">
+                <p class="tree-label">REPOSITORY</p>
+                <pre>vedas/
+├─ AGENTS.md
+├─ ROADMAP.md
+├─ docs/
+│  ├─ HANDOFF.md
+│  ├─ ARCHITECTURE.md
+│  ├─ DECISIONS.md
+│  ├─ INVARIANTS.md
+│  ├─ TESTING.md
+│  ├─ GLOSSARY.md
+│  └─ ...
+└─ tools/
+   └─ check_vedas.py</pre>
+            </div>
+            <p class="rail-status"><span aria-hidden="true"></span> ŚRUTI / INTACT</p>
+        </aside>
+
+        <div class="paper">
+
+            <!-- Section 00: Hero / The Wager -->
+            <section class="chapter hero" id="top" aria-labelledby="hero-title">
+                <div class="chapter-cap">
+                    <span>README.TXT</span>
+                    <span>00 / THE WAGER</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <p class="kicker">VEDAS / EPISTEMIC EXTENSION OF THE MANIFOLD</p>
+                    <h1 id="hero-title">The model is disposable.<br><span class="hl">The truth is immutable.</span></h1>
+
+                    <div class="hero-grid">
+                        <div class="hero-copy">
+                            <p class="lede">Large language models do not fail because they lack intelligence. They fail because context windows are ephemeral, leaving subsequent sessions to guess why past decisions were made. Vedas transforms your repository into an immutable epistemic memory system.</p>
+                            <p>By grounding project facts in three distinct speeds of truth and requiring rigorous Pramāṇa proof tags for every claim, Vedas guarantees zero drift across human and autonomous agent sessions.</p>
+                            <div class="actions">
+                                <a class="btn primary" href="#epistemics">Explore the protocol <span aria-hidden="true">&darr;</span></a>
+                                <a class="btn" href="#cheatsheet">Open cheat sheet <span aria-hidden="true">&rarr;</span></a>
+                            </div>
+                            <p class="meta"><span>MIT</span><span>ZERO DEPENDENCIES</span><span>OFFLINE FIRST</span><span>PLAIN TEXT</span></p>
+                        </div>
+
+                        <div class="hero-side">
+                            <div class="terminal" aria-label="Specimen session handoff and Ghana-patha checker output">
+                                <div class="terminal-bar"><span>VEDAS_SESSION_089.TXT</span><span>SPECIMEN</span></div>
+                                <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">cat docs/HANDOFF.md</span>
+<span class="t-dim"># Session Handoff</span>
+<span class="t-dim">Last updated: 2026-11-04</span>
+
+<span class="t-cyan">## Current state</span>
+Tokenizer ....... <span class="t-ok">[OBSERVED] 119/119 pass</span>
+Grammar ......... <span class="t-ok">[CONTRACT] INV-006 enforced</span>
+Speech .......... <span class="t-warn">[HYPOTHESIS] pending audio</span>
+Next task ....... <span class="t-cyan">P3-02</span>
+
+<span class="t-prompt">$</span> <span class="t-cmd">python3 tools/check_vedas.py --template</span>
+<span class="t-ok">0 error(s), 0 warning(s) in 14 file(s)</span>
+<span class="t-prompt">$</span> <span class="t-cursor" aria-hidden="true"></span></pre>
+                                </div>
+                                <div class="terminal-foot"><span>EPISTEMIC SUITE</span><span>14 DOCS / CLEAN</span></div>
+                            </div>
+                            <p class="specimen-note"><b>Specimen.</b> Every state claim carries an explicit epistemic badge. Unverified assertions are forbidden.</p>
+                        </div>
+                    </div>
+
+                    <dl class="spec-strip" aria-label="Vedas specifications summary">
+                        <div><dt>Axioms</dt><dd>8 Invariants</dd></div>
+                        <div><dt>Proof tags</dt><dd>5 Pramāṇas</dd></div>
+                        <div><dt>Architecture</dt><dd>6 Vedāṅgas</dd></div>
+                        <div><dt>Em dashes</dt><dd>0 Allowed</dd></div>
+                        <div><dt>Dependencies</dt><dd>0 Required</dd></div>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- Section 01: The Problem -->
+            <section class="chapter" id="problem" aria-labelledby="problem-title">
+                <div class="chapter-cap">
+                    <span>FAILURE_MODES.TXT</span>
+                    <span>01 / THE FAILURE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">01</span>
+                        <div>
+                            <p class="kicker">THE FAILURE</p>
+                            <h2 id="problem-title">Ephemeral contexts erase architectural truth.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 1.0</span>
+                    </div>
+                    <p class="lede">A fresh context window provides speed and focus. It is also where institutional knowledge vanishes. When an AI session ends, its rationale disappears unless the repository enforces strict epistemic persistence.</p>
+
+                    <div class="failure-grid">
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">01</span>
+                            <h3>The unrecorded invariant</h3>
+                            <p>Session two reintroduces a naive pattern because session one only discussed the restriction in chat. The code compiles, but the system architecture degrades.</p>
+                        </article>
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">02</span>
+                            <h3>The epistemic hallucination</h3>
+                            <p>A handoff claims a subsystem works because the author assumes it does. Nobody ran the test command. The next session builds atop unverified speculation.</p>
+                        </article>
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">03</span>
+                            <h3>The sycophantic opener rut</h3>
+                            <p>Without hard lexical and behavioral firewalls, models lapse into predictable, repetitive pleasantries and stock empathy clichés, diluting focus and token budgets.</p>
+                        </article>
+                    </div>
+
+                    <blockquote class="pull">
+                        <p>The problem is not that AI models hallucinate. It is that standard repositories permit unverified claims to pose as ground truth.</p>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Section 02: Epistemics -->
+            <section class="chapter" id="epistemics" aria-labelledby="epistemics-title">
+                <div class="chapter-cap">
+                    <span>EPISTEMICS.TXT</span>
+                    <span>02 / THREE SPEEDS OF TRUTH</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">02</span>
+                        <div>
+                            <p class="kicker">THE FOUNDATION</p>
+                            <h2 id="epistemics-title">Three speeds of truth: Śruti, Smṛti, and Vartamāna.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 2.0</span>
+                    </div>
+                    <p class="lede">In traditional software development, documentation is treated as a uniform pile of text. Vedas separates repository truth into three distinct temporal tiers, each governed by strict mutability rules.</p>
+
+                    <div class="speed-grid">
+                        <article class="speed-card sruti">
+                            <p class="card-label">IMMUTABLE / ETERNAL</p>
+                            <h3>Śruti: System Axioms</h3>
+                            <p>The bedrock laws of physics for the project. These invariants cannot be violated, relaxed, or edited without explicit maintainer consent.</p>
+                            <ul>
+                                <li><code>docs/INVARIANTS.md</code> houses core rules (INV-001 to INV-008).</li>
+                                <li>Every invariant is bidirectional and citeable.</li>
+                                <li>Mechanically guarded by automated lint tools.</li>
+                            </ul>
+                        </article>
+
+                        <article class="speed-card smrti">
+                            <p class="card-label">APPEND-ONLY / EPOCHAL</p>
+                            <h3>Smṛti: Architecture & History</h3>
+                            <p>Institutional memory and historical precedent. Past decisions are superseded rather than erased, showing why dead ends were rejected.</p>
+                            <ul>
+                                <li><code>docs/DECISIONS.md</code> stores architectural decisions.</li>
+                                <li><code>ROADMAP.md</code> assigns stable, permanent task identifiers.</li>
+                                <li><code>docs/CHANGELOG.md</code> captures user-facing evolution.</li>
+                            </ul>
+                        </article>
+
+                        <article class="speed-card vartamana">
+                            <p class="card-label">REWRITE / LIVING PRESENT</p>
+                            <h3>Vartamāna: Living State</h3>
+                            <p>The immediate present moment. Stale claims are deleted immediately. The file is capped at 80 lines and overwritten every session.</p>
+                            <ul>
+                                <li><code>docs/HANDOFF.md</code> records verified current status.</li>
+                                <li>Every bullet must carry a Pramāṇa proof badge.</li>
+                                <li>Old entries are condensed into Sūtras or purged.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 03: The Six Vedangas -->
+            <section class="chapter" id="vedangas" aria-labelledby="vedangas-title">
+                <div class="chapter-cap">
+                    <span>VEDANGAS.TXT</span>
+                    <span>03 / REPOSITORY TOPOLOGY</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">03</span>
+                        <div>
+                            <p class="kicker">REPOSITORY ANATOMY</p>
+                            <h2 id="vedangas-title">The Six Vedāṅgas: Ancient sciences of structure.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 3.0</span>
+                    </div>
+                    <p class="lede">Just as classical scholars maintained oral texts without textual decay for millennia through six specialized disciplines, Vedas organizes repository architecture across six auxiliary limbs.</p>
+
+                    <div class="vedanga-grid">
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">ŚIKṢĀ: PHONETICS & ORTHOGRAPHY</span>
+                            <h3>The Lexical Firewall (INV-006)</h3>
+                            <p>Enforces strict stylistic hygiene across all documentation and comments. Bans generic stock empathy, chat filler, and typographical quirks like em dashes to maintain crisp, machine-verifiable prose.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">CHANDAS: METRICAL BOUNDS</span>
+                            <h3>Token & Line Economy (INV-005)</h3>
+                            <p>Imposes strict structural bounds. Session handoffs are strictly capped at 80 lines, and core architectural propositions (Sūtras) must not exceed 25 words. Brevity preserves cognitive bandwidth.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">VYĀKARAṆA: FORMAL GRAMMAR</span>
+                            <h3>Contract & Schema Linters</h3>
+                            <p>Mechanically guarantees repository integrity through <code>tools/check_vedas.py</code>. Validates invariant reciprocity, verifies cross-references, and blocks malformed handoffs before commit.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">NIRUKTA: ETYMOLOGY & LEXICON</span>
+                            <h3>Canonical Glossary & Terminology</h3>
+                            <p>Maintains unambiguous domain vocabulary in <code>docs/GLOSSARY.md</code>. Defines canonical terms, their historical counterparts, and nearby traps to avoid semantic drift between sessions.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">JYOTIṢA: CHRONOMETRY & CALENDAR</span>
+                            <h3>Immutable Task IDs (INV-003)</h3>
+                            <p>Tracks roadmap execution with immutable identifiers (e.g. <code>P1-01</code>, <code>P2-04</code>). Tasks are never renumbered or repurposed. Abandoned tasks record what was learned.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">KALPA: RITUAL PROCEDURE</span>
+                            <h3>The 5-Stage Session Ritual</h3>
+                            <p>The standard operating procedure executed on every session entry and exit. Governs orientation, verification, surgical changes, validation, and handoff compilation.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 04: Nyaya Proof & Pramana System -->
+            <section class="chapter" id="nyaya" aria-labelledby="nyaya-title">
+                <div class="chapter-cap">
+                    <span>EPISTEMIC_PROOF.TXT</span>
+                    <span>04 / VERIFICATION PROTOCOL</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">04</span>
+                        <div>
+                            <p class="kicker">EPISTEMIC VERIFICATION</p>
+                            <h2 id="nyaya-title">Pramāṇa proof tags & the Nyāya sequence.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 4.0</span>
+                    </div>
+                    <p class="lede">In Vedas, vague assertions like "the exporter works" are prohibited. Every claim must carry a Pramāṇa badge indicating its exact source of epistemic authority.</p>
+
+                    <div class="cheat-card">
+                        <h3>The Five Pramāṇa Epistemic Badges</h3>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag observed">[OBSERVED]</span> Direct verification. Confirmed by executing a test or tool in the current session.</span>
+                            <button class="btn small copy-btn" data-copy="[OBSERVED]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag deduced">[DEDUCED]</span> Logical deduction. Inferred from static analysis, type proofs, or invariants.</span>
+                            <button class="btn small copy-btn" data-copy="[DEDUCED]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag contract">[CONTRACT]</span> Formal invariant or schema contract defined in Śruti or architecture docs.</span>
+                            <button class="btn small copy-btn" data-copy="[CONTRACT]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag hypothesis">[HYPOTHESIS]</span> Working theory or unverified speculation. Requires subsequent test verification.</span>
+                            <button class="btn small copy-btn" data-copy="[HYPOTHESIS]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag untested">[UNTESTED]</span> Existing capability not executed in this environment or session.</span>
+                            <button class="btn small copy-btn" data-copy="[UNTESTED]">COPY</button>
+                        </div>
+                    </div>
+
+                    <h3>Nyāya Pañca-Avayava: The 5-Step Proof Sequence</h3>
+                    <p>When resolving defects or adding features, agents follow the classical Nyāya five-part syllogism to guarantee reproducible changes:</p>
+
+                    <div class="nyaya-steps">
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">01</span>
+                            <span class="nyaya-term">Pratijñā (Proposition)</span>
+                            <span>State the required behavior or bug clearly. Example: "Opener ruts occur when the last three assistant responses share identical starting tokens."</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">02</span>
+                            <span class="nyaya-term">Hetu (Defect Reason)</span>
+                            <span>State the causal root mechanism producing the failure. Example: "Context generation lacks a negative penalty for preceding opening n-grams."</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">03</span>
+                            <span class="nyaya-term">Udāharaṇa (Negative Proof)</span>
+                            <span>Author a localized, offline test proving the defect exists. Observe the test fail cleanly before writing implementation code (INV-007).</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">04</span>
+                            <span class="nyaya-term">Upanaya (Implementation)</span>
+                            <span>Apply the minimal, surgical code modification required to satisfy the failing test condition.</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">05</span>
+                            <span class="nyaya-term">Nigamana (Verification)</span>
+                            <span>Re-run the entire test suite to verify that the failure is resolved and no regressions were introduced. Mark with [OBSERVED].</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 05: Pronunciation Guide & Ancient Lexicon -->
+            <section class="chapter" id="lexicon" aria-labelledby="lexicon-title">
+                <div class="chapter-cap">
+                    <span>LEXICON.TXT</span>
+                    <span>05 / PRONUNCIATION & GLOSSARY</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">05</span>
+                        <div>
+                            <p class="kicker">PHONETIC GUIDE</p>
+                            <h2 id="lexicon-title">Ancient terminology, phonetic English & audio synthesis.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 5.0</span>
+                    </div>
+                    <p class="lede">Vedas uses classical Sanskrit terminology to provide precise epistemic distinctions. Use the interactive pronunciation guide below to master each term. Click the audio buttons to hear native synthesized speech.</p>
+
+                    <div class="lexicon-controls">
+                        <div class="search-box">
+                            <input type="text" id="lexicon-search" placeholder="Search terms or meanings..." aria-label="Search terms">
+                        </div>
+                        <span class="window-meta">FILTER LIVE / CLICK AUDIO TO HEAR</span>
+                    </div>
+
+                    <div class="lex-table-wrap">
+                        <table class="lex-table" id="lexicon-table">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Phonetic Guide</th>
+                                    <th>Audio</th>
+                                    <th>Plain English Meaning</th>
+                                    <th>Software Equivalent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Śruti</strong></td>
+                                    <td><span class="phonetic">SHROO-tee</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SHROO-tee" aria-label="Listen to Sruti">&#9658; Listen</button></td>
+                                    <td>That which is heard; revealed immutable truth</td>
+                                    <td>Immutable invariants (INV-001 to INV-008)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Smṛti</strong></td>
+                                    <td><span class="phonetic">SMRIH-tee</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SMRIH-tee" aria-label="Listen to Smrti">&#9658; Listen</button></td>
+                                    <td>That which is remembered; historical recollection</td>
+                                    <td>Append-only ADRs and architecture memory</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vartamāna</strong></td>
+                                    <td><span class="phonetic">var-tuh-MAH-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="var-tuh-MAH-nuh" aria-label="Listen to Vartamana">&#9658; Listen</button></td>
+                                    <td>The immediate living present moment</td>
+                                    <td>Session handoff (docs/HANDOFF.md, 80-line cap)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pramāṇa</strong></td>
+                                    <td><span class="phonetic">pruh-MAH-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="pruh-MAH-nuh" aria-label="Listen to Pramana">&#9658; Listen</button></td>
+                                    <td>Valid means of knowledge or legitimate proof</td>
+                                    <td>Epistemic proof tags ([OBSERVED], [DEDUCED])</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pratyakṣa</strong></td>
+                                    <td><span class="phonetic">pruh-tyuhk-SHUH</span></td>
+                                    <td><button class="audio-btn" data-pronounce="pruh-tyuhk-SHUH" aria-label="Listen to Pratyaksa">&#9658; Listen</button></td>
+                                    <td>Direct perception and empirical observation</td>
+                                    <td>Direct test output and telemetry telemetry</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Anumāna</strong></td>
+                                    <td><span class="phonetic">uh-noo-MAH-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="uh-noo-MAH-nuh" aria-label="Listen to Anumana">&#9658; Listen</button></td>
+                                    <td>Inference based on causal deduction</td>
+                                    <td>Static analysis and logical deduction</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sūtra</strong></td>
+                                    <td><span class="phonetic">SOO-truh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SOO-truh" aria-label="Listen to Sutra">&#9658; Listen</button></td>
+                                    <td>Aphorism; high-density, minimal-syllable rule</td>
+                                    <td>Dense propositional invariant (&lt;25 words)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Śūnya</strong></td>
+                                    <td><span class="phonetic">SHOO-nyuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SHOO-nyuh" aria-label="Listen to Sunya">&#9658; Listen</button></td>
+                                    <td>Emptiness; unconditioned, clean baseline</td>
+                                    <td>Fresh context window ready for execution</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ghana-pāṭha</strong></td>
+                                    <td><span class="phonetic">GUH-nuh PAH-tuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="GUH-nuh PAH-tuh" aria-label="Listen to Ghana patha">&#9658; Listen</button></td>
+                                    <td>Dense bidirectional recitation algorithm</td>
+                                    <td>tools/check_vedas.py invariant reciprocity linter</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kalpa</strong></td>
+                                    <td><span class="phonetic">KUHL-puh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="KUHL-puh" aria-label="Listen to Kalpa">&#9658; Listen</button></td>
+                                    <td>Ritual procedure and systematic ceremony</td>
+                                    <td>Standard operating session loop</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vyākaraṇa</strong></td>
+                                    <td><span class="phonetic">vyah-kuh-RUH-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="vyah-kuh-RUH-nuh" aria-label="Listen to Vyakarana">&#9658; Listen</button></td>
+                                    <td>Grammatical analysis and formal structure</td>
+                                    <td>Contract validation, schemas, and linting</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nirukta</strong></td>
+                                    <td><span class="phonetic">nih-ROOK-tuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="nih-ROOK-tuh" aria-label="Listen to Nirukta">&#9658; Listen</button></td>
+                                    <td>Etymological explanation and canonical lexicon</td>
+                                    <td>Canonical project glossary (docs/GLOSSARY.md)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Chandas</strong></td>
+                                    <td><span class="phonetic">CHUHN-duhs</span></td>
+                                    <td><button class="audio-btn" data-pronounce="CHUHN-duhs" aria-label="Listen to Chandas">&#9658; Listen</button></td>
+                                    <td>Metrical rhythm, bounds, and syllable counts</td>
+                                    <td>Line count caps, token economy limits</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Jyotiṣa</strong></td>
+                                    <td><span class="phonetic">JYOH-tih-shuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="JYOH-tih-shuh" aria-label="Listen to Jyotisa">&#9658; Listen</button></td>
+                                    <td>Chronometry, astronomical time, and calendar</td>
+                                    <td>Roadmap scheduling and stable task identifiers</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Śikṣā</strong></td>
+                                    <td><span class="phonetic">SHEEK-shah</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SHEEK-shah" aria-label="Listen to Siksa">&#9658; Listen</button></td>
+                                    <td>Phonetics, correct pronunciation, and tone</td>
+                                    <td>Lexical firewall and formatting discipline</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nyāya</strong></td>
+                                    <td><span class="phonetic">NYAH-yuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="NYAH-yuh" aria-label="Listen to Nyaya">&#9658; Listen</button></td>
+                                    <td>School of logic, epistemology, and reasoning</td>
+                                    <td>Rigorous test-driven verification method</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 06: Epistemic Cheat Sheet -->
+            <section class="chapter" id="cheatsheet" aria-labelledby="cheatsheet-title">
+                <div class="chapter-cap">
+                    <span>CHEAT_SHEET.TXT</span>
+                    <span>06 / QUICK REFERENCE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">06</span>
+                        <div>
+                            <p class="kicker">QUICK REFERENCE</p>
+                            <h2 id="cheatsheet-title">The Epistemic Cheat Sheet.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 6.0</span>
+                    </div>
+                    <p class="lede">A fast, interactive desktop reference for daily use during agent sessions. Click the tabs below to copy exact patterns and commands.</p>
+
+                    <div class="tabs-nav" role="tablist">
+                        <button class="tab-btn active" data-tab="tab-session" role="tab">Session Ritual (Kalpa)</button>
+                        <button class="tab-btn" data-tab="tab-pramana" role="tab">Pramāṇa Tags</button>
+                        <button class="tab-btn" data-tab="tab-nyaya" role="tab">Nyāya Proof</button>
+                        <button class="tab-btn" data-tab="tab-sutra" role="tab">Sūtra Consolidator</button>
+                        <button class="tab-btn" data-tab="tab-invariants" role="tab">Invariants Matrix</button>
+                    </div>
+
+                    <!-- Tab 1: Session Ritual -->
+                    <div class="tab-panel active" id="tab-session" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>Session Entry Ritual (Start of Session)</h3>
+                            <div class="copy-row">
+                                <code>1. Read docs/HANDOFF.md</code>
+                                <button class="btn small copy-btn" data-copy="Read docs/HANDOFF.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>2. Read docs/INVARIANTS.md (Śruti core rules)</code>
+                                <button class="btn small copy-btn" data-copy="Read docs/INVARIANTS.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>3. Run python3 tools/check_vedas.py --template</code>
+                                <button class="btn small copy-btn" data-copy="python3 tools/check_vedas.py --template">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>4. Run fast regression tests (docs/TESTING.md)</code>
+                                <button class="btn small copy-btn" data-copy="Run fast tests">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>5. Inspect git status to verify clean working tree</code>
+                                <button class="btn small copy-btn" data-copy="git status">COPY</button>
+                            </div>
+                        </div>
+
+                        <div class="cheat-card">
+                            <h3>Session Exit Ritual (Handoff & Exit)</h3>
+                            <div class="copy-row">
+                                <code>1. Run offline verification tests</code>
+                                <button class="btn small copy-btn" data-copy="Run offline verification">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>2. Run python3 tools/check_vedas.py --template</code>
+                                <button class="btn small copy-btn" data-copy="python3 tools/check_vedas.py --template">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>3. Update docs/HANDOFF.md (&lt;80 lines, with Pramāṇa badges)</code>
+                                <button class="btn small copy-btn" data-copy="Update docs/HANDOFF.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>4. Check git diff for unrelated changes or em dashes</code>
+                                <button class="btn small copy-btn" data-copy="git diff">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>5. Commit and push clean state</code>
+                                <button class="btn small copy-btn" data-copy="git commit -m &quot;message&quot; &amp;&amp; git push">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Pramana Tags -->
+                    <div class="tab-panel" id="tab-pramana" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>How to Tag Claims in docs/HANDOFF.md</h3>
+                            <p>Every claim regarding test results, subsystem health, or environmental support must begin with one of these tags:</p>
+                            <div class="copy-row">
+                                <code>[OBSERVED] Test suite passes: 119/119 tests clean in 0.42s.</code>
+                                <button class="btn small copy-btn" data-copy="[OBSERVED] Test suite passes: 119/119 tests clean in 0.42s.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>[CONTRACT] Invariant INV-006 strictly rejects all em dashes.</code>
+                                <button class="btn small copy-btn" data-copy="[CONTRACT] Invariant INV-006 strictly rejects all em dashes.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>[DEDUCED] Parser handles UTF-8 correctly because tokenizer accepts bytes.</code>
+                                <button class="btn small copy-btn" data-copy="[DEDUCED] Parser handles UTF-8 correctly because tokenizer accepts bytes.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>[HYPOTHESIS] Flaky test on Safari caused by missing SpeechSynthesis mock.</code>
+                                <button class="btn small copy-btn" data-copy="[HYPOTHESIS] Flaky test on Safari caused by missing SpeechSynthesis mock.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>[UNTESTED] Audio playback on mobile WebKit not yet validated.</code>
+                                <button class="btn small copy-btn" data-copy="[UNTESTED] Audio playback on mobile WebKit not yet validated.">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Nyaya Proof -->
+                    <div class="tab-panel" id="tab-nyaya" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>The Nyāya Pañca-Avayava Checklist</h3>
+                            <p>Use this five-step sequence for every bug fix or feature implementation:</p>
+                            <div class="copy-row">
+                                <code>Pratijñā (Proposition): The bug to fix or feature to add</code>
+                                <button class="btn small copy-btn" data-copy="Pratijñā (Proposition): ">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>Hetu (Defect Reason): The causal mechanical reason for the issue</code>
+                                <button class="btn small copy-btn" data-copy="Hetu (Defect Reason): ">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>Udāharaṇa (Negative Proof): Write failing offline regression test first</code>
+                                <button class="btn small copy-btn" data-copy="Udāharaṇa (Negative Proof): ">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>Upanaya (Implementation): Apply surgical, minimal code fix</code>
+                                <button class="btn small copy-btn" data-copy="Upanaya (Implementation): ">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>Nigamana (Verification): Verify test passes cleanly [OBSERVED]</code>
+                                <button class="btn small copy-btn" data-copy="Nigamana (Verification): ">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Sutra Consolidator -->
+                    <div class="tab-panel" id="tab-sutra" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>Sūtra Authoring Rules</h3>
+                            <p>Sūtras compress complex architectural laws into dense, memorable propositions:</p>
+                            <ul>
+                                <li><strong>Brevity:</strong> Under 25 words per Sūtra.</li>
+                                <li><strong>Clarity:</strong> Zero ambiguous adjectives, zero fluff.</li>
+                                <li><strong>Completeness:</strong> Unconditionally true within its domain.</li>
+                                <li><strong>Consolidation:</strong> When a handoff exceeds 80 lines, background learnings are consolidated into immutable Sūtras inside <code>docs/INVARIANTS.md</code>.</li>
+                            </ul>
+                            <div class="copy-row">
+                                <code>Example: "INV-006: Siksa requires zero em dashes across all documentation and comments."</code>
+                                <button class="btn small copy-btn" data-copy="INV-006: Siksa requires zero em dashes across all documentation and comments.">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Invariants Matrix -->
+                    <div class="tab-panel" id="tab-invariants" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>Vedas Śruti Invariants Matrix (INV-001 to INV-008)</h3>
+                            <div class="copy-row">
+                                <code>INV-001: Every project fact has exactly one authoritative home.</code>
+                                <button class="btn small copy-btn" data-copy="INV-001">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-002: Decisions record the discarded path, not just the winner.</code>
+                                <button class="btn small copy-btn" data-copy="INV-002">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-003: Roadmap task IDs are permanent and immutable.</code>
+                                <button class="btn small copy-btn" data-copy="INV-003">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-004: All truth claims must carry an explicit Pramāṇa badge.</code>
+                                <button class="btn small copy-btn" data-copy="INV-004">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-005: HANDOFF.md must never exceed 80 lines.</code>
+                                <button class="btn small copy-btn" data-copy="INV-005">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-006: Lexical Firewall enforces zero em dashes in prose or code.</code>
+                                <button class="btn small copy-btn" data-copy="INV-006">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-007: Every bugfix requires a prior negative test proof.</code>
+                                <button class="btn small copy-btn" data-copy="INV-007">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-008: Subconscious consolidation compresses learnings into Sūtras.</code>
+                                <button class="btn small copy-btn" data-copy="INV-008">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 07: Ghana-patha Checker -->
+            <section class="chapter" id="checker" aria-labelledby="checker-title">
+                <div class="chapter-cap">
+                    <span>CHECKER.TXT</span>
+                    <span>07 / GHANA-PATHA VERIFICATION</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">07</span>
+                        <div>
+                            <p class="kicker">MECHANICAL ENFORCEMENT</p>
+                            <h2 id="checker-title">The Ghana-pāṭha verification engine.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 7.0</span>
+                    </div>
+                    <p class="lede">Documentation rules that rely solely on human or agent discipline inevitably decay. Vedas provides a zero-dependency Python script that validates repository health in milliseconds.</p>
+
+                    <div class="terminal" aria-label="Ghana-patha checker command and output specimen">
+                        <div class="terminal-bar"><span>GHANA_PATHA_LINTER.SH</span><span>SPECIMEN</span></div>
+                        <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">python3 tools/check_vedas.py --template</span>
+<span class="t-dim">Checking file existence ............................</span> <span class="t-ok">OK (14 files)</span>
+<span class="t-dim">Checking line caps (HANDOFF &lt;= 80 lines) ..........</span> <span class="t-ok">OK</span>
+<span class="t-dim">Checking Lexical Firewall (INV-006: zero em dashes) .</span> <span class="t-ok">OK (0 violations)</span>
+<span class="t-dim">Checking Ghana-patha invariant reciprocity .........</span> <span class="t-ok">OK (8/8 reciprocal)</span>
+<span class="t-dim">Checking roadmap task IDs and changelog sync .......</span> <span class="t-ok">OK</span>
+
+<span class="t-ok">0 error(s), 0 warning(s) in 14 file(s)</span>
+<span class="t-prompt">$</span> <span class="t-cursor" aria-hidden="true"></span></pre>
+                        </div>
+                        <div class="terminal-foot"><span>VERIFICATION TIME</span><span>0.042s / ZERO DEPENDENCIES</span></div>
+                    </div>
+
+                    <div class="failure-grid" style="margin-top: 1.5rem;">
+                        <article class="failure">
+                            <h3>Bidirectional citation check</h3>
+                            <p>Whenever an invariant is cited in <code>AGENTS.md</code> or <code>ARCHITECTURE.md</code>, the linter confirms that it is authoritatively defined in <code>INVARIANTS.md</code>.</p>
+                        </article>
+                        <article class="failure">
+                            <h3>Lexical firewall check</h3>
+                            <p>Scans markdown, code, and comments to prevent typographical decay and punctuation drift (enforcing INV-006 zero em dash policy).</p>
+                        </article>
+                        <article class="failure">
+                            <h3>Metrical boundary check</h3>
+                            <p>Enforces the 80-line cap on <code>HANDOFF.md</code>. If a handoff expands beyond bounds, the build fails, compelling immediate Sūtra consolidation.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 08: Lineage & Adoption -->
+            <section class="chapter" id="lineage" aria-labelledby="lineage-title">
+                <div class="chapter-cap">
+                    <span>LINEAGE.TXT</span>
+                    <span>08 / ORIGIN & ADOPTION</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">08</span>
+                        <div>
+                            <p class="kicker">LINEAGE & ADOPTION</p>
+                            <h2 id="lineage-title">Evolving from The Manifold.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 8.0</span>
+                    </div>
+                    <p class="lede">Vedas is a direct fork of The Manifold. While The Manifold established the principle of separating repository memory into speeds of truth, Vedas enriches that foundation with classical Vedic epistemology, formal Pramāṇa badges, and the 5-step Nyāya proof sequence.</p>
+
+                    <div class="cheat-card">
+                        <h3>Adopting Vedas in an Existing Repository</h3>
+                        <p>To initialize Vedas in your project, copy the template files into your repository root:</p>
+                        <div class="copy-row">
+                            <code>cp -r vedas/docs . &amp;&amp; cp vedas/tools/check_vedas.py tools/ &amp;&amp; cp vedas/AGENTS.md .</code>
+                            <button class="btn small copy-btn" data-copy="cp -r vedas/docs . &amp;&amp; cp vedas/tools/check_vedas.py tools/ &amp;&amp; cp vedas/AGENTS.md .">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <code>python3 tools/check_vedas.py</code>
+                            <button class="btn small copy-btn" data-copy="python3 tools/check_vedas.py">COPY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<script src="site.js"></script>
+</body>
+</html>
