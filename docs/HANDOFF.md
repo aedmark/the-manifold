@@ -17,6 +17,8 @@ Changes: [CHANGELOG.md](CHANGELOG.md). Older sessions: [archive/](archive/README
 _Last updated: {{YYYY-MM-DD}}, session {{N}}, on `{{branch and commit}}`: {{what changed and what remains uncommitted,
 unmerged, or externally blocked}}._
 
+**Session owner:** {{agent or tool}}, on `{{branch}}`, since {{YYYY-MM-DD}}. {{What is yours until the next handoff.}}
+
 **Where things stand, in one paragraph:** {{Which phases are done, what is left, and the biggest gap (often not
 code: "nothing has been tried on a real phone yet").}}
 

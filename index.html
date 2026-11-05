@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Manifold — Repository memory for agentic work</title>
+    <title>The Manifold: Repository memory for agentic work</title>
     <meta name="description" content="The Manifold is a zero-dependency repository template that gives every project fact one authoritative home, so short human and agent sessions can resume without re-litigating the past. The agentic extension of The Hypervisor.">
     <meta name="theme-color" content="#000000">
-    <meta property="og:title" content="The Manifold — Repository memory for agentic work">
+    <meta property="og:title" content="The Manifold: Repository memory for agentic work">
     <meta property="og:description" content="The model is disposable. The repository is not. A field manual for keeping project memory across short human and agent sessions.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
@@ -19,7 +19,7 @@
 
 <div class="window-bar">
     <span class="window-name">C:\MANIFOLD\README.TXT</span>
-    <span class="window-meta">REPOSITORY PROTOCOL — READ ONLY</span>
+    <span class="window-meta">REPOSITORY PROTOCOL: READ ONLY</span>
     <span class="window-controls" aria-hidden="true">[ □ ]</span>
 </div>
 
@@ -354,7 +354,7 @@ Firefox; a real phone.
                             </tr>
                             <tr id="doc-decisions">
                                 <td data-label="Path"><a href="https://github.com/aedmark/the-manifold/blob/main/docs/DECISIONS.md"><code>docs/DECISIONS.md</code></a> <span class="tag core">CORE</span></td>
-                                <td data-label="Owns">Accepted choices with alternatives and consequences, plus open <code>Q-NNN</code> questions. Old decisions are superseded, not deleted.</td>
+                                <td data-label="Owns">Accepted choices with alternatives and consequences, held <code>T-NNN</code> tensions, plus open <code>Q-NNN</code> questions. Old decisions are superseded, not deleted.</td>
                                 <td data-label="Update when">A consequential choice is accepted, reversed, or answered.</td>
                             </tr>
                             <tr id="doc-changelog">
@@ -392,7 +392,7 @@ Firefox; a real phone.
                     <div class="tool-card">
                         <p class="card-label">THE ENFORCEMENT</p>
                         <h3><code>tools/check_docs.py</code></h3>
-                        <p>One standard-library Python file. It checks placeholders, IDs, cross-references, links, duplicate sessions, and the size of the handoff. It is the only thing in the template that runs.</p>
+                        <p>One standard-library Python file. It checks placeholders, IDs, cross-references, links, duplicate sessions, invisible characters, and the size of the handoff. It is the only thing in the template that runs.</p>
                         <a class="text-link" href="#checker">See what it refuses <span aria-hidden="true">↓</span></a>
                     </div>
 
@@ -522,7 +522,9 @@ Firefox; a real phone.
                                 <li>A roadmap ID used twice, filed under the wrong phase, or with an unknown checkbox.</li>
                                 <li>A decision used twice, out of order, or superseded by a missing or earlier decision.</li>
                                 <li>An open question defined twice.</li>
-                                <li>A <code>P-</code>, <code>D-</code>, or <code>Q-</code> reference that resolves to nothing.</li>
+                                <li>A held tension used twice, out of order, or referenced but not defined.</li>
+                                <li>A <code>P-</code>, <code>D-</code>, <code>Q-</code>, or <code>T-</code> reference that resolves to nothing.</li>
+                                <li>An invisible or bidirectional control character in a document.</li>
                                 <li>Two session-log entries with the same number.</li>
                                 <li>A relative link, or a path in the <code>AGENTS.md</code> layout table, that points at nothing.</li>
                             </ul>
@@ -551,7 +553,7 @@ Firefox; a real phone.
                     </div>
 
                     <div class="terminal">
-                        <div class="terminal-bar"><span>ACTUAL_OUTPUT.TXT</span><span>THIS REPOSITORY / 2026-11-01</span></div>
+                        <div class="terminal-bar"><span>ACTUAL_OUTPUT.TXT</span><span>THIS REPOSITORY / 2026-11-05</span></div>
                         <div class="terminal-body">
 <pre><span class="t-prompt">$</span> <span class="t-cmd">python3 tools/check_docs.py --template</span>
 <span class="t-ok">0 error(s), 0 warning(s) in 13 file(s)</span></pre>

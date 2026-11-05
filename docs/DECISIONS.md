@@ -28,6 +28,38 @@ re-litigation.
 **Alternatives:** {{...}}
 **Consequences:** {{...}}
 
+## Held tensions
+
+A tension is two claims that are true and do not fit together yet. It is not an open question. An open question has
+an unknown answer; a held tension has two known answers and a price. Hold it only while the price of holding is
+lower than the price of choosing badly.
+
+Each tension names an owner, a review trigger, and the cost of holding both. A tension with no owner or no trigger is
+deleted at consolidation. A tension that survives review becomes a decision, with the losing claim recorded as an
+alternative.
+
+Format:
+
+```
+### T-NNN Title  (YYYY-MM-DD, status: held | resolved by D-MMM)
+**Owner:** ...
+**Claim A:** ...
+**Claim B:** ...
+**Why both hold:** ...
+**Cost of holding both:** ...
+**Review trigger:** ...
+```
+
+### T-001 {{The first held tension, e.g. "Zero dependencies against a parser"}}  ({{YYYY-MM-DD}}, status: held)
+**Owner:** {{...}}
+**Claim A:** {{...}}
+**Claim B:** {{...}}
+**Why both hold:** {{...}}
+**Cost of holding both:** {{...}}
+**Review trigger:** {{...}}
+
+---
+
 ## Open questions
 
 Questions requiring maintainer or stakeholder input. This is their one home: HANDOFF and the roadmap refer to them by ID. Numbers are

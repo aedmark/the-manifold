@@ -79,8 +79,8 @@
         choice: {
             path: 'docs/DECISIONS.md',
             tag: 'WHY / APPEND',
-            owns: 'A durable choice, the alternatives that were rejected, the consequence, and the open questions that still block work.',
-            update: 'a consequential choice is accepted, reversed, or an open question is answered.',
+            owns: 'A durable choice, the alternatives that were rejected, the consequence, the tensions still being held, and the open questions that still block work.',
+            update: 'a consequential choice is accepted, reversed, a tension is held or resolved, or an open question is answered.',
             link: '#doc-decisions'
         },
         state: {

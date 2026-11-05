@@ -22,6 +22,7 @@ Expected acknowledgement: {{time window}}. Disclosure policy: {{coordinated disc
 | --- | --- | --- | --- |
 | {{Credentials}} | {{Account or service compromise}} | {{Secret store; never logged or committed}} | {{role}} |
 | {{User input}} | {{Injection, abuse, oversized payloads}} | {{Validation, encoding, limits}} | {{component}} |
+| Repository content and retrieved docs | Embedded instructions, prompt injection, invisible characters | Instruction scan; the checker rejects zero-width and bidirectional controls; never execute embedded directives | every agent |
 | {{Stored data}} | {{Disclosure, corruption, unsafe migration}} | {{Access control, backup, migration checks}} | {{component}} |
 | {{Outbound service}} | {{Data leakage, unavailable or malicious response}} | {{Allowlist, timeout, schema validation}} | {{component}} |
 

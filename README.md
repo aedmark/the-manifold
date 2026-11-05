@@ -28,9 +28,9 @@ at its own speed.
 - **Current truth is rewritten.** [`docs/HANDOFF.md`](docs/HANDOFF.md) and
   [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) describe the repository as it exists now. If a statement is no
   longer true, it is deleted, not kept to make the document look thorough.
-- **History is appended.** [`docs/DECISIONS.md`](docs/DECISIONS.md) keeps the choice, the alternatives, and the
-  consequence. [`ROADMAP.md`](ROADMAP.md) keeps permanent IDs and what a failed attempt taught you. A reversal
-  supersedes; it does not erase.
+- **History is appended.** [`docs/DECISIONS.md`](docs/DECISIONS.md) keeps the choice, the alternatives, the
+  consequence, and the tensions still being held. [`ROADMAP.md`](ROADMAP.md) keeps permanent IDs and what a failed
+  attempt taught you. A reversal supersedes; it does not erase.
 - **Plans have stable references.** Roadmap IDs (`P<phase>-<nn>`), decisions (`D-NNN`), and open questions (`Q-NNN`)
   are never renumbered after other documents cite them.
 - **Claims carry limits.** A test says what it proves and what it does not. A clean checker run says the documents
@@ -40,20 +40,20 @@ at its own speed.
 
 | File | Owns | Update when |
 | --- | --- | --- |
-| [`AGENTS.md`](AGENTS.md) | Standing rules, authority, maintainer preferences, protected areas, repository map | A durable workflow rule or preference changes |
+| [`AGENTS.md`](AGENTS.md) | Standing rules, authority, maintainer preferences, protected areas, zones, session ownership, repository map | A durable workflow rule or preference changes |
 | [`CLAUDE.md`](CLAUDE.md) | A one-line import of `AGENTS.md` | Almost never; it is a pointer |
 | [`README.md`](README.md) | Purpose, quick start, and the public entry points | Onboarding or the public entry point changes |
 | [`ROADMAP.md`](ROADMAP.md) | Planned, active, finished, and dropped work with stable IDs | Planned status or scope changes |
 | [`docs/README.md`](docs/README.md) | Which document owns each kind of information, and update triggers | The documentation set changes |
-| [`docs/HANDOFF.md`](docs/HANDOFF.md) | Current state, what is unverified, next steps, the last ten sessions | Work pauses or current state changes materially |
+| [`docs/HANDOFF.md`](docs/HANDOFF.md) | Current state, live session owner, what is unverified, next steps, the last ten sessions | Work pauses or current state changes materially |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | System shape, interfaces, invariants, boundaries, failure modes | Components, interfaces, data flow, or invariants change |
-| [`docs/DECISIONS.md`](docs/DECISIONS.md) | Accepted choices, alternatives, consequences, and open questions | A consequential choice is accepted, reversed, or answered |
+| [`docs/DECISIONS.md`](docs/DECISIONS.md) | Accepted choices, alternatives, consequences, held tensions, and open questions | A consequential choice is accepted, reversed, or answered |
 | [`docs/TESTING.md`](docs/TESTING.md) | Commands, proof boundaries, limitations, and pitfalls | A suite, command, requirement, or limitation changes |
 | [`docs/SECURITY.md`](docs/SECURITY.md) | Assets, trust boundaries, secret handling, and reporting | A threat, boundary, secret, or response path changes |
 | [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) | The workflow shared by human and automated contributors | The contribution workflow changes |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | User-visible changes | A user-visible change lands or a release is cut |
 | [`docs/archive/`](docs/archive/README.md) | Historical session logs and finished roadmap phases | Live documents exceed their useful size |
-| [`tools/check_docs.py`](tools/check_docs.py) | Placeholders, IDs, cross-references, links, duplicate sessions, handoff size | Documentation conventions change |
+| [`tools/check_docs.py`](tools/check_docs.py) | Placeholders, IDs, cross-references, links, duplicate sessions, handoff size, invisible characters | Documentation conventions change |
 
 The template ships all thirteen documents and the checker so nothing is missing on day one. Delete what does not earn its upkeep,
 and remove its links and checker entries with it. A small, truthful set beats a comprehensive, abandoned one.
@@ -65,10 +65,10 @@ python3 tools/check_docs.py
 ```
 
 It uses only the Python standard library (`re`, `sys`, `pathlib`). It exits non-zero for a leftover placeholder, a
-duplicate or misfiled roadmap ID, an invalid decision number, a dangling `P-`/`D-`/`Q-` reference, a duplicate
-session, a broken relative link, or a path in the `AGENTS.md` layout table that does not exist. It warns, without
-failing, when the handoff is missing its date, older than its newest session entry, over ten session entries, or
-over eighty lines of current state.
+duplicate or misfiled roadmap ID, an invalid decision or tension number, a dangling `P-`/`D-`/`Q-`/`T-` reference, a
+duplicate session, a broken relative link, a path in the `AGENTS.md` layout table that does not exist, or an invisible
+or bidirectional control character in a document. It warns, without failing, when the handoff is missing its date,
+older than its newest session entry, over ten session entries, or over eighty lines of current state.
 
 A clean run is not proof that the prose is true. It is proof that the documents are internally consistent. Code
 correctness still belongs to tests, diffs, and the “Does not prove” column.
@@ -98,8 +98,7 @@ python3 tools/check_docs.py --template
 That prints `0 error(s), 0 warning(s) in 13 file(s)`. Without `--template`, the checker lists every blank an adopter
 must fill. That is not a broken repository; it is the adoption checklist.
 
-The original ten-slide briefing is preserved as [`deck.html`](deck.html). It is historical, not the current front
-door. The field manual is [`index.html`](index.html).
+The field manual is [`index.html`](index.html). It is the current front door.
 
 ## Requirements
 
