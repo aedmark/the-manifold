@@ -81,7 +81,9 @@ State what may be logged and what must be redacted. Security consequences and re
 
 ## Claims vs. code
 
-Places where a doc, a name or a comment says more than the code does, so nobody builds on the claim. Remove a row
-when the code catches up or the claim is corrected.
+Places where a doc, a name or a comment says more than the code does, so nobody builds on the claim. When a session
+encounters friction where the code contradicts a documented claim (or vice versa), record the mismatch here and ask the
+maintainer rather than papering over the discrepancy in code. Remove a row when the code catches up or the claim is
+corrected.
 
 - {{e.g. "`physics/` suggests a simulation; it is a set of thresholds feeding prompt text."}}

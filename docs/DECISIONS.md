@@ -6,13 +6,15 @@ its status changes ("superseded by D-MMM"). An "Update, same session" note at th
 still on the working branch.
 
 Record pre-existing choices too, the first time a session has to understand them ("status: accepted, recorded
-YYYY-MM-DD"): the reason something is the way it is gets lost faster than the code.
+YYYY-MM-DD"): the reason something is the way it is gets lost faster than the code. Every constraint in the codebase is
+an answer to an earlier question or failure mode; recording that originating question here stops a future session from
+removing a fence whose purpose it forgot.
 
 Format:
 
 ```
 ## D-NNN Title  (YYYY-MM-DD, status: proposed | accepted | rejected | superseded by D-MMM)
-**Context:** why this came up (the roadmap item, the bug, the measurement).
+**Context:** the originating question, failure mode, or measurement this choice answers (and the roadmap item or bug).
 **Decision:** what we chose (numbered points if there are several).
 **Alternatives:** what else was considered, and why not (one line each). Optional, but it is what stops the
 re-litigation.

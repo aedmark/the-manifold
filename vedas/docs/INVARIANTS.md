@@ -69,3 +69,17 @@ Identifiers: `INV-NNN`. Permanent and immutable.
 - **Axiom:** Long-term memory distillation must compress episodic reflections into minimal-syllable, high-density invariant propositions (under 25 words), purged of conversational filler and sycophantic boilerplate.
 - **Rationale:** Episodic memories balloon context tokens; distilling them during idle or sleep cycles preserves enduring truth at minimal token cost.
 - **Enforcement:** Sūtra density rules in [`docs/ARCHITECTURE.md`](ARCHITECTURE.md).
+
+---
+
+## INV-009: Zero Silent Assumptions (Saṃśaya-Ccheda)
+- **Axiom:** Unverified assumptions may never be silently compiled into implementation. When requirements, scope, or part-whole architecture admit multiple valid interpretations (*Saṃśaya*), the agent must halt and ask targeted clarifying questions (*Praśna*) or record an explicit open question (`Q-NNN` in [`docs/DECISIONS.md`](DECISIONS.md)) before building.
+- **Rationale:** Silent assumptions convert pre-execution ambiguity into architectural drift and wasted implementation cycles.
+- **Enforcement:** Mandated by Stage 2 (*Manana*) of the Session Ritual in [`AGENTS.md`](../AGENTS.md).
+
+---
+
+## INV-010: Anti-Superimposition (Adhyāsa-Nirāsa)
+- **Axiom:** Pre-trained model priors (assumed build steps, package managers, framework conventions, or implicit directory roles) may never be superimposed (*Adhyāsa*) onto the repository. Every architectural or operational convention relied upon must trace to an explicit `[CONTRACT]` or `[OBSERVED]` source in the repository.
+- **Rationale:** A fresh context window (*Śūnya*) clears chat history, not model weights; unexamined training defaults corrupt bespoke repository architectures on entry.
+- **Enforcement:** Mandated by Stage 1 (*Śravaṇa*) of the Session Ritual in [`AGENTS.md`](../AGENTS.md).

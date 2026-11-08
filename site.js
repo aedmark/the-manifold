@@ -153,7 +153,13 @@
     function wireContentsRail() {
         var links = Array.prototype.slice.call(document.querySelectorAll('.rail-nav a'));
         var sections = links.map(function (link) {
-            return document.querySelector(link.getAttribute('href'));
+            var href = link.getAttribute('href');
+            if (!href || href.charAt(0) !== '#') return null;
+            try {
+                return document.querySelector(href);
+            } catch (e) {
+                return null;
+            }
         }).filter(Boolean);
 
         if (!links.length || !sections.length) return;

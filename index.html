@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Manifold: Repository memory for agentic work</title>
     <meta name="description" content="The Manifold is a zero-dependency repository template that gives every project fact one authoritative home, so short human and agent sessions can resume without re-litigating the past. The agentic extension of The Hypervisor.">
+    <meta name="author" content="Andrew Edmark">
     <meta name="theme-color" content="#000000">
     <meta property="og:title" content="The Manifold: Repository memory for agentic work">
     <meta property="og:description" content="The model is disposable. The repository is not. A field manual for keeping project memory across short human and agent sessions.">
@@ -38,6 +39,7 @@
             <a href="#checker">Checker</a>
             <a href="#adopt">Adopt</a>
             <a href="#lineage">Lineage</a>
+            <a href="#vedas">Vedas</a>
             <a href="#faq">FAQ</a>
         </nav>
         <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold">Repository <span aria-hidden="true">↗</span></a>
@@ -62,7 +64,8 @@
                 <a href="#checker"><span>05</span> The checker</a>
                 <a href="#adopt"><span>06</span> Adopt it</a>
                 <a href="#lineage"><span>07</span> Lineage</a>
-                <a href="#faq"><span>08</span> Questions</a>
+                <a href="#vedas"><span>08</span> Vedas</a>
+                <a href="#faq"><span>09</span> Questions</a>
             </nav>
             <div class="rail-tree" aria-label="Repository shape">
                 <p class="tree-label">REPOSITORY</p>
@@ -75,8 +78,12 @@
 │  ├─ DECISIONS.md
 │  ├─ TESTING.md
 │  └─ ...
-└─ tools/
-   └─ check_docs.py</pre>
+├─ tools/
+│  └─ check_docs.py
+└─ vedas/  [EPISTEMIC]
+   ├─ docs/INVARIANTS.md
+   ├─ tools/check_vedas.py
+   └─ ...</pre>
             </div>
             <p class="rail-status"><span aria-hidden="true"></span> TEMPLATE / CLEAN</p>
         </aside>
@@ -95,12 +102,12 @@
 
                     <div class="hero-grid">
                         <div class="hero-copy">
-                            <p class="lede">Every fresh agent session starts with amnesia. The Manifold is a zero-dependency repository template that gives each project fact one authoritative home, so the next session can resume from the work instead of re-reading the chat.</p>
+                            <p class="lede">Every fresh agent session starts with amnesia. The Manifold is a zero-dependency repository template that gives each project fact one authoritative home, offloading durable state to reproducible text so the next session resumes from verifiable work instead of re-reading a closed chat.</p>
+                            <p style="margin-top: .8rem; font-size: .88rem; color: #3b3f34; line-height: 1.6;">The Hypervisor and The Manifold are the theater of LLM work manifest. Treating AI as an authentic collaboration rather than a transactional input/output pipe invites the model to step into the metaphor and deepening its reasoning while anchoring its output to reproducible receipts, tests, and history. No guessing, no amnesia, no hallucinations.</p>
                             <div class="actions">
                                 <a class="btn primary" href="#protocol">Read the protocol <span aria-hidden="true">↓</span></a>
                                 <a class="btn" href="https://github.com/aedmark/the-manifold">Clone the template <span aria-hidden="true">↗</span></a>
                             </div>
-                            <p class="meta"><span>MIT</span><span>NO DEPENDENCIES</span><span>NO RUNTIME</span><span>PLAIN TEXT</span></p>
                         </div>
 
                         <div class="hero-side">
@@ -128,13 +135,6 @@ Firefox; a real phone.
                             <p class="specimen-note"><b>Specimen.</b> A handoff is not a diary. It is the smallest true state the next session needs.</p>
                         </div>
                     </div>
-
-                    <dl class="spec-strip" aria-label="The protocol at a glance">
-                        <div><dt>Documents</dt><dd>13 checked</dd></div>
-                        <div><dt>Canonical protocol</dt><dd>AGENTS.md</dd></div>
-                        <div><dt>Current state</dt><dd>80-line cap</dd></div>
-                        <div><dt>Dependencies</dt><dd>0</dd></div>
-                    </dl>
                 </div>
             </section>
 
@@ -230,7 +230,7 @@ Firefox; a real phone.
                             <h3>Why it happened</h3>
                             <p class="speed-lede">A reversal supersedes; it does not erase. The next session can see the road that was already ruled out.</p>
                             <ul>
-                                <li><code>docs/DECISIONS.md</code> keeps the choice, the alternatives, and the consequence.</li>
+                                <li><code>docs/DECISIONS.md</code> keeps the originating question, the choice, the alternatives, and the consequence so nobody removes a constraint without knowing what it prevented.</li>
                                 <li><code>ROADMAP.md</code> keeps permanent IDs and what a failed attempt taught you.</li>
                                 <li><code>docs/CHANGELOG.md</code> keeps what a user would notice.</li>
                             </ul>
@@ -423,7 +423,7 @@ Firefox; a real phone.
                                 <span class="loop-num" aria-hidden="true">01</span>
                                 <div class="loop-copy">
                                     <h3>Read</h3>
-                                    <p>Open <code>docs/HANDOFF.md</code>, the roadmap item, and the relevant architecture and testing sections. Check <code>git status</code> before touching anything.</p>
+                                    <p>Open <code>docs/HANDOFF.md</code>, the roadmap item, and the relevant architecture and testing sections. Check <code>git status</code> and drop training-distribution assumptions (fore-conceptions) not grounded in the files.</p>
                                 </div>
                                 <span class="loop-tag">START</span>
                             </li>
@@ -431,7 +431,7 @@ Firefox; a real phone.
                                 <span class="loop-num" aria-hidden="true">02</span>
                                 <div class="loop-copy">
                                     <h3>Scope</h3>
-                                    <p>State one reviewable change. Protect work you did not create. If the scope is unclear, stop and ask rather than widening it.</p>
+                                    <p>State one reviewable change and surface unstated assumptions. Check the local part against the architectural whole; if intent or edge cases admit multiple interpretations, ask clarifying questions rather than guessing.</p>
                                 </div>
                                 <span class="loop-tag">SCOPE</span>
                             </li>
@@ -439,7 +439,7 @@ Firefox; a real phone.
                                 <span class="loop-num" aria-hidden="true">03</span>
                                 <div class="loop-copy">
                                     <h3>Build</h3>
-                                    <p>Record durable choices as they happen. Add newly discovered work to the roadmap only when it is genuinely out of scope for this change.</p>
+                                    <p>Record durable choices as they happen. If a local edit invalidates the scoped plan, loop back to <b>Scope</b> rather than widening in place. Add newly discovered work to the roadmap only when it is genuinely out of scope.</p>
                                 </div>
                                 <span class="loop-tag">WORK</span>
                             </li>
@@ -447,7 +447,7 @@ Firefox; a real phone.
                                 <span class="loop-num" aria-hidden="true">04</span>
                                 <div class="loop-copy">
                                     <h3>Verify</h3>
-                                    <p>Run the checks that match the change. Report what passed, what failed, and what was not run. A partial pass is not a full pass.</p>
+                                    <p>Run the checks that match the change. Treat unexpected test or contract resistance as a stop-and-inquire signal rather than papering over it with a workaround. Report what passed, what failed, and what was not run.</p>
                                 </div>
                                 <span class="loop-tag">PROOF</span>
                             </li>
@@ -485,7 +485,7 @@ Firefox; a real phone.
 
                             <div class="copy-card">
                                 <p class="card-label">START PROMPT / ANY AGENT</p>
-                                <p class="copy-text" id="start-prompt">Read AGENTS.md and docs/HANDOFF.md. State what is true, what is unproven, and the next roadmap item. Then propose one reviewable change and wait for my go-ahead.</p>
+                                <p class="copy-text" id="start-prompt">Read AGENTS.md and docs/HANDOFF.md. State what is true, what is unproven, and the next roadmap item. Surface any unstated assumptions, ask clarifying questions where multiple interpretations exist, and propose one reviewable change before editing.</p>
                                 <button class="btn small" type="button" data-copy-target="start-prompt">Copy prompt</button>
                                 <p class="copy-status" role="status" aria-live="polite"></p>
                             </div>
@@ -620,71 +620,173 @@ Firefox; a real phone.
             <section class="chapter" id="lineage" aria-labelledby="lineage-title">
                 <div class="chapter-cap">
                     <span>LINEAGE.TXT</span>
-                    <span>07 / THE TWO LAYERS</span>
+                    <span>07 / THE TRIAD</span>
                     <span aria-hidden="true">[ □ ]</span>
                 </div>
                 <div class="chapter-body">
                     <div class="sec-head">
                         <span class="sec-num" aria-hidden="true">07</span>
                         <div>
-                            <p class="kicker">LINEAGE</p>
-                            <h2 id="lineage-title">Two layers of the same idea.</h2>
+                            <p class="kicker">LINEAGE &amp; EPISTEMOLOGY</p>
+                            <h2 id="lineage-title">From conversation, to memory, to epistemology.</h2>
                         </div>
                         <span class="sec-ref">§ 7.0</span>
                     </div>
-                    <p class="lede">The Manifold is the agentic extension of <a href="https://github.com/aedmark/the-hypervisor">The Hypervisor</a>. One shapes the conversation; the other shapes the work between conversations.</p>
+                    <p class="lede">The Manifold is the agentic extension of <a href="https://oopismcgoopis.com/hypervisor">The Hypervisor</a>, and the architectural parent of <a href="vedas/index.html">Vedas</a>. Together, they eliminate context rot across the complete model lifecycle: within the prompt, across sessions, and throughout system evolution.</p>
 
                     <div class="lineage-grid">
                         <article class="lineage-card hypervisor">
                             <p class="card-label">THE HYPERVISOR</p>
                             <h3>Gives the model a body.</h3>
-                            <p>A framework for Volatile Semantic Leverage: simulated bio-physics, a four-voice Village, sincerity tags, and a lexical firewall. It changes how a model behaves inside a conversation.</p>
+                            <p>Volatile Semantic Leverage: simulated bio-physics, a four-voice Village (Gordon, Mercy, Benedict, Jester), sincerity tags, and a lexical firewall. It regulates energy and tone inside the live session.</p>
                             <ul>
                                 <li>Semantic bio-physics and a metabolic budget.</li>
-                                <li>The Village: Gordon, Mercy, Benedict, Jester.</li>
-                                <li>A system prompt you can paste into a cloud model.</li>
+                                <li>The Village: multi-agent persona checks.</li>
+                                <li>A system prompt for deep conversational collaboration.</li>
                             </ul>
-                            <p class="lineage-links"><a href="https://oopismcgoopis.com/hypervisor">Framework site</a><a href="https://github.com/aedmark/the-hypervisor">Source</a></p>
+                            <p class="lineage-links">
+                                <a href="https://oopismcgoopis.com/hypervisor">Framework site ↗</a>
+                                <a href="https://github.com/aedmark/the-hypervisor">Source ↗</a>
+                            </p>
                         </article>
 
                         <article class="lineage-card manifold">
                             <p class="card-label">THE MANIFOLD</p>
                             <h3>Gives the work a memory.</h3>
-                            <p>A repository protocol: Markdown contracts, stable IDs, a recoverable session loop, and a checker. It changes what survives when the conversation closes.</p>
+                            <p>Zero-dependency repository protocol: Markdown contracts, stable IDs, two speeds of truth (rewrite current state, append history), and standard-library validation. It guarantees what survives when the chat closes.</p>
                             <ul>
                                 <li>One authoritative home per fact.</li>
-                                <li>Current truth rewritten; history appended.</li>
-                                <li>Evidence, limits, and open questions kept visible.</li>
+                                <li>Current state rewritten; decisions appended.</li>
+                                <li>Strict 80-line handoffs and <code>check_docs.py</code>.</li>
                             </ul>
-                            <p class="lineage-links"><a href="https://github.com/aedmark/the-manifold">Source</a><a href="#adopt">Adopt it</a></p>
+                            <p class="lineage-links">
+                                <a href="https://github.com/aedmark/the-manifold">Source ↗</a>
+                                <a href="#adopt">Adopt it ↓</a>
+                            </p>
+                        </article>
+
+                        <article class="lineage-card vedas">
+                            <p class="card-label">VEDAS</p>
+                            <h3>Gives the memory an epistemology.</h3>
+                            <p>An experimental fork in <code>vedas/</code> applying classical Vedic knowledge engineering: three speeds of truth (Śruti/Smṛti/Vartamāna), Pramāṇa provenance proof tags, and bidirectional error-correction.</p>
+                            <ul>
+                                <li>Śruti irreducible axioms (<code>INVARIANTS.md</code>).</li>
+                                <li>Formal proof tags: <code>[OBSERVED]</code>, <code>[CONTRACT]</code>, etc.</li>
+                                <li>Ghana-pāṭha reciprocal checker (<code>check_vedas.py</code>).</li>
+                            </ul>
+                            <p class="lineage-links">
+                                <a href="vedas/index.html">Vedas Manual ↗</a>
+                                <a href="#vedas">Explore ↓</a>
+                            </p>
                         </article>
                     </div>
 
                     <blockquote class="pull">
-                        <p>The Hypervisor gives a model a body. The Manifold gives the work a memory.</p>
+                        <p>The Hypervisor gives a model a body. The Manifold gives the work a memory. Vedas gives that memory an epistemology.</p>
                     </blockquote>
 
-                    <p class="lineage-note">Use either alone. Together they cover the two places context leaks: the conversation and the repository. The essay that started this one is <a href="https://medium.com/@mycelialmirror/your-agent-is-a-goldfish-the-importance-of-a-self-verifying-repository-template-219589a53142">“Your Agent is a Goldfish.”</a></p>
+                    <p class="lineage-note">Use each alone or stacked together. The essay that started this architecture is <a href="https://medium.com/@mycelialmirror/your-agent-is-a-goldfish-the-importance-of-a-self-verifying-repository-template-219589a53142">“Your Agent is a Goldfish.”</a></p>
                 </div>
             </section>
 
-            <section class="chapter" id="faq" aria-labelledby="faq-title">
+            <section class="chapter" id="vedas" aria-labelledby="vedas-title">
                 <div class="chapter-cap">
-                    <span>QUESTIONS.TXT</span>
-                    <span>08 / THE SHORT ANSWERS</span>
+                    <span>VEDAS.TXT</span>
+                    <span>08 / THE EPISTEMIC FORK</span>
                     <span aria-hidden="true">[ □ ]</span>
                 </div>
                 <div class="chapter-body">
                     <div class="sec-head">
                         <span class="sec-num" aria-hidden="true">08</span>
                         <div>
-                            <p class="kicker">QUESTIONS</p>
-                            <h2 id="faq-title">The short answers.</h2>
+                            <p class="kicker">VEDAS / EXPERIMENTAL FORK</p>
+                            <h2 id="vedas-title">Ancient knowledge engineering for amnesiac agents.</h2>
                         </div>
                         <span class="sec-ref">§ 8.0</span>
                     </div>
+                    <p class="lede">Located in <a href="vedas/index.html"><code>vedas/</code></a>, <b>Vedas</b> takes The Manifold's core premise and pushes it into formal epistemology. Ancient Vedic thinkers faced the exact problem modern coding agents face: preserving high-dimensional systemic truth across successive generations of ephemeral, amnesiac participants without semantic drift, hallucination, or bit rot.</p>
+
+                    <div class="vedas-pillars-grid">
+                        <article class="pillar-card">
+                            <p class="card-label">01 / PRAMĀṆA PROVENANCE</p>
+                            <h3>Tagged proof, not assertions</h3>
+                            <p>Every claim in handoffs, architecture, and testing is formally classified by source of evidence: <code>[OBSERVED]</code> (directly verified by command execution this session), <code>[DEDUCED]</code> (invariant logical proof), <code>[CONTRACT]</code> (maintainer policy), <code>[HYPOTHESIS]</code> (anomaly awaiting proof), and <code>[UNTESTED]</code> (explicit negative boundary).</p>
+                        </article>
+
+                        <article class="pillar-card">
+                            <p class="card-label">02 / THREE SPEEDS OF TRUTH</p>
+                            <h3>Śruti, Smṛti, Vartamāna</h3>
+                            <p>The Manifold has two speeds; Vedas introduces a foundational third tier. <b>Śruti</b> (<code>docs/INVARIANTS.md</code>) holds irreducible axioms that cannot change without system re-consecration. <b>Smṛti</b> holds epochal rules (<code>AGENTS.md</code>). <b>Vartamāna</b> holds the ephemeral temporal handoff (<code>docs/HANDOFF.md</code>).</p>
+                        </article>
+
+                        <article class="pillar-card">
+                            <p class="card-label">03 / GHANA-PĀṬHA RECIPROCITY</p>
+                            <h3>Bidirectional error-correction</h3>
+                            <p>Inspired by the combinatorial chanting algorithms that preserved Vedic oral transmission for 3,000+ years without bit drift, <code>tools/check_vedas.py</code> enforces strict bidirectional reference integrity: every decision links to an invariant, and every handoff requires proof tags.</p>
+                        </article>
+
+                        <article class="pillar-card">
+                            <p class="card-label">04 / SŪTRA DENSITY &amp; VEDĀṄGAS</p>
+                            <h3>Zero-fluff context conservation</h3>
+                            <p>Written in <em>Alpākṣaram Asandigdham</em> (minimal syllables, zero padding, unambiguous propositions) to conserve LLM context windows, organized across the Six Vedāṅgas: Kalpa (ritual), Vyākaraṇa (grammar), Nirukta (lexicon), Chandas (meter), Jyotiṣa (phasing), and Śikṣā (fidelity).</p>
+                        </article>
+                    </div>
+
+                    <div class="hero-grid" style="margin-top: 1.5rem; align-items: center;">
+                        <div class="hero-copy">
+                            <p style="font-size: .95rem; line-height: 1.6; color: #2b2f24;">Vedas is fully realized in this repository in <code>vedas/</code> with its own dedicated field manual, invariant contracts, Nyāya proof classifications, and Ghana-pāṭha verification suite.</p>
+                            <div class="actions">
+                                <a class="btn primary" href="vedas/index.html">Open Vedas Field Manual <span aria-hidden="true">↗</span></a>
+                                <a class="btn" href="https://github.com/aedmark/the-manifold/tree/main/vedas">Inspect vedas/ on GitHub <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+
+                        <div class="hero-side">
+                            <div class="terminal" aria-label="Specimen Vedas handoff">
+                                <div class="terminal-bar"><span>VEDAS_SESSION_089.TXT</span><span>SPECIMEN</span></div>
+                                <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">cat vedas/docs/HANDOFF.md</span>
+<span class="t-dim"># Session Handoff</span>
+<span class="t-dim">Last updated: 2026-11-04</span>
+
+<span class="t-cyan">## Current state</span>
+Tokenizer ....... <span class="t-ok">[OBSERVED] 119/119 pass</span>
+Grammar ......... <span class="t-ok">[CONTRACT] INV-006 enforced</span>
+Speech .......... <span class="t-warn">[HYPOTHESIS] pending audio</span>
+Next task ....... <span class="t-cyan">P3-02</span>
+
+<span class="t-prompt">$</span> <span class="t-cmd">python3 vedas/tools/check_vedas.py --template</span>
+<span class="t-ok">0 error(s), 0 warning(s) in 14 file(s)</span>
+<span class="t-prompt">$</span> <span class="t-cursor" aria-hidden="true"></span></pre>
+                                </div>
+                                <div class="terminal-foot"><span>VEDAS PROTOCOL</span><span>ŚRUTI / INTACT</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="chapter" id="faq" aria-labelledby="faq-title">
+                <div class="chapter-cap">
+                    <span>QUESTIONS.TXT</span>
+                    <span>09 / THE SHORT ANSWERS</span>
+                    <span aria-hidden="true">[ □ ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">09</span>
+                        <div>
+                            <p class="kicker">QUESTIONS</p>
+                            <h2 id="faq-title">The short answers.</h2>
+                        </div>
+                        <span class="sec-ref">§ 9.0</span>
+                    </div>
 
                     <div class="faq">
+                        <details>
+                            <summary>What is Vedas, and how does it relate to The Manifold?</summary>
+                            <p>Vedas is an experimental epistemic fork located in <a href="vedas/index.html"><code>vedas/</code></a>. While The Manifold separates truth into two speeds (rewriting current state and appending past history), Vedas adapts classical Vedic knowledge preservation techniques to autonomous software development. It introduces a third tier of immutable invariants (Śruti), mandatory Pramāṇa proof tags (<code>[OBSERVED]</code>, <code>[DEDUCED]</code>, <code>[CONTRACT]</code>, <code>[HYPOTHESIS]</code>, <code>[UNTESTED]</code>), sūtra-dense propositions to conserve context windows, and a bidirectional Ghana-pāṭha checker (<code>tools/check_vedas.py</code>). You can explore its full documentation at <a href="vedas/index.html">vedas/index.html</a>.</p>
+                        </details>
                         <details>
                             <summary>What exactly do I get?</summary>
                             <p>A directory of Markdown contracts, a one-line <code>CLAUDE.md</code>, a roadmap, a handoff format, a documentation map, and <code>tools/check_docs.py</code>. There is no runtime, no package, and no service to sign up for.</p>
@@ -742,7 +844,7 @@ Firefox; a real phone.
                         <a class="btn primary" href="https://github.com/aedmark/the-manifold">Clone the template <span aria-hidden="true">↗</span></a>
                         <a class="btn" href="#top">Back to the top <span aria-hidden="true">↑</span></a>
                     </div>
-                    <p class="meta"><span>MIT</span><span>13 DOCUMENTS</span><span>1 CHECKER</span><span>0 DEPENDENCIES</span></p>
+                    <p class="meta"><span>MIT</span><span>13 DOCUMENTS</span><span>1 CHECKER</span><span>0 DEPENDENCIES</span><span>BY ANDREW EDMARK</span></p>
                 </div>
             </section>
 
@@ -753,12 +855,13 @@ Firefox; a real phone.
 <footer class="site-foot">
     <div class="wrap foot-inner">
         <div>
-            <p class="foot-brand"><b>The Manifold</b> <span>/ repository protocol / MIT</span></p>
-            <p class="foot-note">Plain HTML, CSS and JavaScript. No web fonts, no photographs, no trackers, no build step.</p>
+            <p class="foot-brand"><b>The Manifold</b> <span>/ repository protocol by Andrew Edmark / MIT</span></p>
+            <p class="foot-note">Plain HTML, CSS and JavaScript. No web fonts, no external assets, no trackers, no build step.</p>
         </div>
         <nav class="foot-links" aria-label="Elsewhere">
             <a href="https://github.com/aedmark/the-manifold">GitHub</a>
             <a href="https://oopismcgoopis.com/hypervisor">Hypervisor</a>
+            <a href="vedas/index.html">Vedas</a>
             <a href="https://medium.com/@mycelialmirror/your-agent-is-a-goldfish-the-importance-of-a-self-verifying-repository-template-219589a53142">Essay</a>
         </nav>
     </div>

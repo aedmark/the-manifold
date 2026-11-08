@@ -12,20 +12,20 @@ Architecture: [ARCHITECTURE.md](ARCHITECTURE.md). Decisions: [DECISIONS.md](DECI
 
 ## Current state
 
-Last updated: 2026-11-03, session 1, on `main`: Initial fork of Vedas established with core epistemic contracts.
+Last updated: 2026-11-07, session 2, on `main`: Completed Phase 4 Hermeneutic Circle & Epistemic Inquiry integration (`INV-009`, `INV-010`, `D-004`).
 
 **Where things stand:**
-Vedas is initialized as an experimental fork of The Manifold. Core Śruti invariants (INV-001 through INV-005) are codified, Pramāṇa epistemic taxonomy is defined, and initial contracts are drafted.
+Vedas is initialized as an experimental fork of The Manifold. Core Śruti invariants (`INV-001` through `INV-010`) are codified, Pramāṇa epistemic taxonomy is defined, and Phase 4 hermeneutic inquiry rules (*Adhyāsa-Nirāsa*, *Saṃśaya* / *Praśna*, *Āvartana*, *Pratibandha*, *Pūrva-Pakṣa*) are integrated across the protocol and field manual.
 
 **Verified:**
 | Suite | Result | Pramāṇa |
 | :--- | :--- | :--- |
-| `python3 tools/check_vedas.py --template` | 0 errors | `[OBSERVED]` |
+| `python3 tools/check_vedas.py --template` | 0 errors, 0 warnings | `[OBSERVED]` |
 
 **What works:**
-- **Repository Architecture** (`INV-001` - `INV-005` in [`INVARIANTS.md`](INVARIANTS.md)): `[OBSERVED]` Complete 3-tier epistemic document suite.
+- **Repository Architecture** (`INV-001` - `INV-010` in [`INVARIANTS.md`](INVARIANTS.md)): `[OBSERVED]` Complete 3-tier epistemic document suite with 10 reciprocal Śruti axioms.
 - **Ghana-pāṭha Checker** ([`tools/check_vedas.py`](../tools/check_vedas.py)): `[OBSERVED]` Verifies placeholders, IDs, reciprocal references, and Chandas limits.
-- **Pramāṇa Tagging**: `[CONTRACT]` Established in [AGENTS.md](../AGENTS.md) and enforced by convention.
+- **Pramāṇa & Hermeneutic Inquiry Protocol**: `[CONTRACT]` Established in [AGENTS.md](../AGENTS.md) and [`INVARIANTS.md`](INVARIANTS.md) (`INV-009`, `INV-010`, `D-004`).
 
 **Not verified (`[UNTESTED]` boundaries):**
 - Performance under real multi-agent concurrent writes.
@@ -47,6 +47,15 @@ Vedas is initialized as an experimental fork of The Manifold. Core Śruti invari
 ---
 
 ## Session log
+
+### Session 2: 2026-11-07: Hermeneutic Circle & Epistemic Inquiry Integration
+
+**Contributor:** Gordon & Gemini
+**Goal:** Fold the four hermeneutic circle safeguards into The Manifold and Vedas.
+**Done:** P4-01, P4-02, P4-03, P4-04
+**Changed:** Added `INV-009` and `INV-010` to `docs/INVARIANTS.md`; added *Adhyāsa*, *Saṃśaya*, *Praśna*, *Āvartana*, *Pratibandha*, and *Pūrva-Pakṣa* to `AGENTS.md`, `docs/ARCHITECTURE.md`, `docs/CONTRIBUTING.md`, `docs/DECISIONS.md`, and `index.html`.
+**Decisions:** D-004
+**Verified:** `tools/check_vedas.py --template` passed with 0 errors and 0 warnings (`[OBSERVED]`).
 
 ### Session 1: 2026-11-03: Inception of Vedas Experimental Fork
 

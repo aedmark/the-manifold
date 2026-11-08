@@ -5,14 +5,18 @@ in [AGENTS.md](../AGENTS.md).
 
 ## Before changing code
 
-1. Read the README, relevant roadmap item, architecture section, and test guidance.
+1. Read the README, relevant roadmap item, architecture section, and test guidance. Verify the repository's actual
+   conventions rather than importing training-distribution or external defaults (fore-conceptions).
 2. Follow the setup in `{{setup source or command}}`.
 3. Check `git status` and confirm that your change will not overlap unrelated work.
-4. For a large or irreversible change, agree on scope and rollback before implementation.
+4. Surface unstated assumptions. For ambiguous requirements or a large or irreversible change, ask clarifying questions
+   (or record an open question in [DECISIONS.md](DECISIONS.md)) and agree on scope and rollback before implementation.
 
 ## Make the change
 
 - Keep each change reviewable and focused on one outcome.
+- If implementation or testing invalidates the agreed scope or exposes an unexpected architectural dependency, pause and
+  re-scope before continuing.
 - Preserve compatibility unless the roadmap or an accepted decision explicitly allows a break.
 - Add or update tests for changed behaviour. Make a new test fail for the intended reason before trusting it.
 - Update documentation according to [the documentation triggers](README.md#update-triggers).

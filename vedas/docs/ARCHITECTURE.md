@@ -21,7 +21,7 @@ Vedas establishes an epistemic memory boundary around the disposable AI agent co
        │                 VEDAS MEMORY MANIFOLD                   │
        ├─────────────────────────────────────────────────────────┤
        │  ŚRUTI LAYER (docs/INVARIANTS.md)                       │
-       │  - Axioms INV-001 through INV-008                       │
+       │  - Axioms INV-001 through INV-010                       │
        │  - Immutable foundational laws                          │
        ├─────────────────────────────────────────────────────────┤
        │  SMṚTI LAYER (AGENTS.md, ARCHITECTURE.md, DECISIONS.md) │
@@ -44,7 +44,7 @@ Vedas establishes an epistemic memory boundary around the disposable AI agent co
 
 1. **Śruti (Axiomatic Foundation):**
    - File: [`docs/INVARIANTS.md`](INVARIANTS.md)
-   - Scope: System invariants (`INV-001` through `INV-008`).
+   - Scope: System invariants (`INV-001` through `INV-010`).
    - Boundary: Never rewritten by autonomous agents without human re-consecration.
 
 2. **Smṛti (Operational & Historical Governance):**
@@ -88,3 +88,8 @@ The Sūtra Consolidator pattern acts as a subconscious REM cycle:
 | **Semantic Inflation** | Documents balloon with conversational explanations and boilerplate. | **Sūtra Compression:** Minimal-syllable, high-density propositions save context tokens (`INV-008`). |
 | **Sycophantic Cliché & Opener Rut** | Model defaults to formulaic validation ("That's a heavy...") and repetitive openers. | **Lexical Firewall & Rut Breaker:** Automated orthographic linter (`INV-006`) and consecutive opener variation rules. |
 | **Dangling Intentions** | Tasks mentioned in handoffs are never tracked in roadmaps. | **Ghana-pāṭha Reciprocity:** `check_vedas.py` fails if a handoff step is not an active roadmap item (`INV-004`). |
+| **Silent Assumption** | Agent guesses intent when requirements or edge cases are ambiguous. | **Saṃśaya & Praśna:** Agent halts during *Manana* to ask clarifying questions or log `Q-NNN` before building (`INV-009`). |
+| **Prior Superimposition** | Agent projects training-distribution defaults (assumed build steps, packages, idioms) onto the repository. | **Adhyāsa-Nirāsa:** Agent audits priors during *Śravaṇa* and relies only on `[CONTRACT]` or `[OBSERVED]` conventions (`INV-010`). |
+| **Linear Tunnel Vision** | Agent discovers a broken premise mid-build and patches locally to reach handoff, widening scope silently. | **Āvartana Loopback:** Agent halts during *Nididhyāsana* or *Pramāṇa* and returns to *Manana* to re-scope or issue *Praśna* (`INV-009`). |
+| **Workaround Smoothing** | Agent papers over unexpected test, type, or contract resistance with silent fallbacks or weakened assertions. | **Pratibandha Stop-Trigger:** Agent halts on textual resistance and surfaces the contradiction via *Praśna* or `[HYPOTHESIS]` (`INV-007`, `INV-009`). |
+| **Fence Demolition** | Agent deletes or refactors an unfamiliar guard or constraint without knowing what defect it prevented. | **Pūrva-Pakṣa Reconstruction:** Agent traces the originating `D-NNN` or `INV-NNN` (or asks *Praśna*) before altering a constraint (`INV-004`, `INV-009`). |

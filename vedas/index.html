@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vedas: Epistemic Repository Memory for AI Agents</title>
     <meta name="description" content="Vedas is an epistemic repository framework for AI agents. Grounded in Vedic epistemology, it separates truth into three speeds, enforces Pramāṇa proof tags, and guarantees zero drift across sessions.">
+    <meta name="author" content="Andrew Edmark">
     <meta name="theme-color" content="#070707">
     <meta property="og:title" content="Vedas: Epistemic Repository Memory for AI Agents">
-    <meta property="og:description" content="The model is disposable. The truth is immutable. An epistemic framework for preserving repository invariants and proof across AI agent sessions.">
+    <meta property="og:description" content="The model is ephemeral (Śūnya). The truth is immutable (Akṣara). An epistemic framework for preserving repository invariants and proof across AI agent sessions.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -17,14 +18,21 @@
 
 <a class="skip" href="#main">Skip to the field manual</a>
 
+<div class="window-bar">
+    <span class="window-name">VEDAS\README.TXT</span>
+    <span class="window-meta">EPISTEMIC SUITE: ŚRUTI INTACT</span>
+    <span class="window-controls" aria-hidden="true">[ □ ]</span>
+</div>
 
 <header class="site-head">
     <div class="wrap head-inner">
         <a class="brand" href="#top" aria-label="Vedas home">
             <span class="brand-mark" aria-hidden="true">V</span>
             <span class="brand-ver">VEDAS</span>
+            <span class="brand-parent">/ THE MANIFOLD</span>
         </a>
         <nav class="head-nav" aria-label="Primary navigation">
+            <a href="../index.html">← The Manifold</a>
             <a href="#problem">Problem</a>
             <a href="#epistemics">Epistemics</a>
             <a href="#vedangas">Vedāṅgas</a>
@@ -34,7 +42,7 @@
             <a href="#checker">Checker</a>
             <a href="#lineage">Lineage</a>
         </nav>
-        <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold">Repository <span aria-hidden="true">&nearr;</span></a>
+        <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold/tree/main/vedas">Repository <span aria-hidden="true">&nearr;</span></a>
     </div>
 </header>
 
@@ -44,6 +52,8 @@
         <aside class="rail">
             <div class="rail-head">
                 <p class="rail-label">FIELD MANUAL</p>
+                <p class="rail-title">EPISTEMIC<br>MEMORY</p>
+                <p class="rail-meta">14 DOCS / ŚRUTI INTACT</p>
             </div>
             <nav class="rail-nav" aria-label="Contents">
                 <a href="#top"><span>00</span> Start</a>
@@ -56,6 +66,20 @@
                 <a href="#checker"><span>07</span> Ghana-pāṭha</a>
                 <a href="#lineage"><span>08</span> Lineage</a>
             </nav>
+            <div class="rail-tree" aria-label="Repository topology">
+                <p class="tree-label">VEDAS TOPOLOGY</p>
+                <pre>vedas/
+├─ AGENTS.md (Smṛti)
+├─ ROADMAP.md (Jyotiṣa)
+├─ docs/
+│  ├─ INVARIANTS.md (Śruti)
+│  ├─ HANDOFF.md (Vartamāna)
+│  ├─ ARCHITECTURE.md
+│  ├─ DECISIONS.md
+│  └─ GLOSSARY.md (Nirukta)
+└─ tools/
+   └─ check_vedas.py</pre>
+            </div>
             <p class="rail-status"><span aria-hidden="true"></span> ŚRUTI / INTACT</p>
         </aside>
 
@@ -66,19 +90,20 @@
                 <div class="chapter-cap">
                     <span>VEDAS.TXT</span>
                     <span>00 / THE WAGER</span>
-                    <span aria-hidden="true">[ &#9633; ]</span>
+                    <span aria-hidden="true">[ □ ]</span>
                 </div>
                 <div class="chapter-body">
                     <p class="kicker">VEDAS / EPISTEMIC EXTENSION OF THE MANIFOLD</p>
-                    <h1 id="hero-title">The model is disposable.<br><span class="hl">The truth is immutable.</span></h1>
+                    <h1 id="hero-title">The model is ephemeral (Śūnya).<br><span class="hl">The truth is immutable (Akṣara).</span></h1>
 
                     <div class="hero-grid">
                         <div class="hero-copy">
-                            <p class="lede">Large language models do not fail because they lack intelligence. They fail because context windows are ephemeral, leaving subsequent sessions to guess why past decisions were made. Vedas transforms your repository into an immutable epistemic memory system.</p>
-                            <p>By grounding project facts in three distinct speeds of truth and requiring rigorous Pramāṇa proof tags for every claim, Vedas guarantees zero drift across human and autonomous agent sessions.</p>
+                            <p class="lede">Ancient Vedic thinkers faced the exact problem modern autonomous coding agents face: preserving complex, high-dimensional systemic truth across successive generations of ephemeral, amnesiac participants without semantic drift, hallucination, or bit rot.</p>
+                            <p style="margin-top: .8rem; font-size: .88rem; color: #3b3f34; line-height: 1.6;">The Manifold offloaded project state into reproducible text so the model just has to check. Vedas gives that memory an epistemology. By separating truth into three speeds (Śruti invariants, Smṛti history, and Vartamāna temporal handoffs) and requiring rigorous Pramāṇa proof tags for every claim, Vedas guarantees zero drift across sessions. Every fact has a test, a receipt, and an immutable history.</p>
                             <div class="actions">
                                 <a class="btn primary" href="#epistemics">Explore the protocol <span aria-hidden="true">&darr;</span></a>
                                 <a class="btn" href="#cheatsheet">Open cheat sheet <span aria-hidden="true">&rarr;</span></a>
+                                <a class="btn" href="../index.html">← The Manifold</a>
                             </div>
                         </div>
 
@@ -104,7 +129,6 @@ Next task ....... <span class="t-cyan">P3-02</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -174,7 +198,7 @@ Next task ....... <span class="t-cyan">P3-02</span>
                             <h3>Śruti: System Axioms</h3>
                             <p>The bedrock laws of physics for the project. These invariants cannot be violated, relaxed, or edited without explicit maintainer consent.</p>
                             <ul>
-                                <li><code>docs/INVARIANTS.md</code> houses core rules (INV-001 to INV-008).</li>
+                                <li><code>docs/INVARIANTS.md</code> houses core rules (INV-001 to INV-010).</li>
                                 <li>Every invariant is bidirectional and citeable.</li>
                                 <li>Mechanically guarded by automated lint tools.</li>
                             </ul>
@@ -257,7 +281,7 @@ Next task ....... <span class="t-cyan">P3-02</span>
                         <article class="vedanga-card">
                             <span class="vedanga-tag">KALPA: RITUAL PROCEDURE</span>
                             <h3>The 5-Stage Session Ritual</h3>
-                            <p>The standard operating procedure executed on every session entry and exit. Governs orientation, verification, surgical changes, validation, and handoff compilation.</p>
+                            <p>The standard operating procedure executed on every session entry and exit. Governs orientation, verification, surgical changes, validation, and handoff compilation, with spiral <em>Āvartana</em> loopback when a local part reshapes the whole.</p>
                         </article>
                     </div>
                 </div>
@@ -380,7 +404,7 @@ Next task ....... <span class="t-cyan">P3-02</span>
                                     <td><span class="phonetic">SHROO-tee</span></td>
                                     <td><button class="audio-btn" data-pronounce="SHROO-tee" aria-label="Listen to Sruti">&#9658; Listen</button></td>
                                     <td>That which is heard; revealed immutable truth</td>
-                                    <td>Immutable invariants (INV-001 to INV-008)</td>
+                                    <td>Immutable invariants (INV-001 to INV-010)</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Smṛti</strong></td>
@@ -486,6 +510,48 @@ Next task ....... <span class="t-cyan">P3-02</span>
                                     <td><button class="audio-btn" data-pronounce="NYAH-yuh" aria-label="Listen to Nyaya">&#9658; Listen</button></td>
                                     <td>School of logic, epistemology, and reasoning</td>
                                     <td>Rigorous test-driven verification method</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saṃśaya</strong></td>
+                                    <td><span class="phonetic">SUHM-shuh-yuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="SUHM-shuh-yuh" aria-label="Listen to Samsaya">&#9658; Listen</button></td>
+                                    <td>Recognized epistemic doubt or competing interpretations</td>
+                                    <td>Ambiguous scope or part-whole gap blocking action</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Praśna</strong></td>
+                                    <td><span class="phonetic">PRUHSH-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="PRUHSH-nuh" aria-label="Listen to Prasna">&#9658; Listen</button></td>
+                                    <td>Targeted inquiry that resolves doubt</td>
+                                    <td>Pre-execution clarifying question (INV-009)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Adhyāsa</strong></td>
+                                    <td><span class="phonetic">uhd-YAH-suh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="uhd-YAH-suh" aria-label="Listen to Adhyasa">&#9658; Listen</button></td>
+                                    <td>Superimposition of prior expectations onto reality</td>
+                                    <td>Projecting training defaults onto the codebase (INV-010)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Āvartana</strong></td>
+                                    <td><span class="phonetic">ah-VAR-tuh-nuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="ah-VAR-tuh-nuh" aria-label="Listen to Avartana">&#9658; Listen</button></td>
+                                    <td>Spiral turning back; part-whole recurrence</td>
+                                    <td>Looping from Build/Verify back to Scope when a premise breaks (INV-009)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pratibandha</strong></td>
+                                    <td><span class="phonetic">pruh-tih-BUHN-dhuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="pruh-tih-BUHN-dhuh" aria-label="Listen to Pratibandha">&#9658; Listen</button></td>
+                                    <td>Epistemic obstruction or resistance of the text</td>
+                                    <td>Code or test friction that halts workarounds and triggers inquiry (INV-007, INV-009)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pūrva-Pakṣa</strong></td>
+                                    <td><span class="phonetic">POOR-vuh PUHK-shuh</span></td>
+                                    <td><button class="audio-btn" data-pronounce="POOR-vuh PUHK-shuh" aria-label="Listen to Purva Paksa">&#9658; Listen</button></td>
+                                    <td>Prior position; the originating question behind a rule</td>
+                                    <td>Reconstructing why a constraint exists before altering it (INV-004, INV-009)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -647,7 +713,7 @@ Next task ....... <span class="t-cyan">P3-02</span>
                     <!-- Tab 5: Invariants Matrix -->
                     <div class="tab-panel" id="tab-invariants" role="tabpanel">
                         <div class="cheat-card">
-                            <h3>Vedas Śruti Invariants Matrix (INV-001 to INV-008)</h3>
+                            <h3>Vedas Śruti Invariants Matrix (INV-001 to INV-010)</h3>
                             <div class="copy-row">
                                 <code>INV-001: Every project fact has exactly one authoritative home.</code>
                                 <button class="btn small copy-btn" data-copy="INV-001">COPY</button>
@@ -680,6 +746,14 @@ Next task ....... <span class="t-cyan">P3-02</span>
                                 <code>INV-008: Subconscious consolidation compresses learnings into Sūtras.</code>
                                 <button class="btn small copy-btn" data-copy="INV-008">COPY</button>
                             </div>
+                            <div class="copy-row">
+                                <code>INV-009: Zero silent assumptions; halt on Saṃśaya and ask Praśna before building.</code>
+                                <button class="btn small copy-btn" data-copy="INV-009">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-010: Purge Adhyāsa; never superimpose external model priors onto the repository.</code>
+                                <button class="btn small copy-btn" data-copy="INV-010">COPY</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -710,7 +784,7 @@ Next task ....... <span class="t-cyan">P3-02</span>
 <span class="t-dim">Checking file existence ............................</span> <span class="t-ok">OK (14 files)</span>
 <span class="t-dim">Checking line caps (HANDOFF &lt;= 80 lines) ..........</span> <span class="t-ok">OK</span>
 <span class="t-dim">Checking Lexical Firewall (INV-006: zero em dashes) .</span> <span class="t-ok">OK (0 violations)</span>
-<span class="t-dim">Checking Ghana-patha invariant reciprocity .........</span> <span class="t-ok">OK (8/8 reciprocal)</span>
+<span class="t-dim">Checking Ghana-patha invariant reciprocity .........</span> <span class="t-ok">OK (10/10 reciprocal)</span>
 <span class="t-dim">Checking roadmap task IDs and changelog sync .......</span> <span class="t-ok">OK</span>
 
 <span class="t-ok">0 error(s), 0 warning(s) in 14 file(s)</span>
@@ -740,19 +814,46 @@ Next task ....... <span class="t-cyan">P3-02</span>
             <section class="chapter" id="lineage" aria-labelledby="lineage-title">
                 <div class="chapter-cap">
                     <span>LINEAGE.TXT</span>
-                    <span>08 / ORIGIN & ADOPTION</span>
-                    <span aria-hidden="true">[ &#9633; ]</span>
+                    <span>08 / THE ARCHITECTURAL TRIAD</span>
+                    <span aria-hidden="true">[ □ ]</span>
                 </div>
                 <div class="chapter-body">
                     <div class="sec-head">
                         <span class="sec-num" aria-hidden="true">08</span>
                         <div>
-                            <p class="kicker">LINEAGE & ADOPTION</p>
-                            <h2 id="lineage-title">Evolving from The Manifold.</h2>
+                            <p class="kicker">LINEAGE &amp; EPISTEMOLOGY</p>
+                            <h2 id="lineage-title">The Three-Tier Architectural Stack.</h2>
                         </div>
                         <span class="sec-ref">&sect; 8.0</span>
                     </div>
-                    <p class="lede">Vedas is a direct fork of The Manifold. While The Manifold established the principle of separating repository memory into speeds of truth, Vedas enriches that foundation with classical Vedic epistemology, formal Pramāṇa badges, and the 5-step Nyāya proof sequence.</p>
+                    <p class="lede">Vedas is an epistemic extension of <a href="../index.html">The Manifold</a>, which in turn extends <a href="https://oopismcgoopis.com/hypervisor">The Hypervisor</a>. Together, they eliminate context rot and model amnesia across the complete agent lifecycle:</p>
+
+                    <div class="speed-grid" style="margin-top: 1.5rem;">
+                        <article class="speed-card" style="border-top-color: var(--ega-yellow);">
+                            <p class="card-label">STAGE 01 / CONVERSATION</p>
+                            <h3>The Hypervisor</h3>
+                            <p><b>Gives the model a body.</b> Volatile Semantic Leverage, simulated bio-physics, the four-voice Village, sincerity tags, and lexical firewalls inside live sessions.</p>
+                            <p style="margin-top: auto;"><a href="https://oopismcgoopis.com/hypervisor">Explore Hypervisor ↗</a></p>
+                        </article>
+
+                        <article class="speed-card" style="border-top-color: var(--vedic-blue);">
+                            <p class="card-label">STAGE 02 / REPOSITORY</p>
+                            <h3>The Manifold</h3>
+                            <p><b>Gives the work a memory.</b> Zero-dependency Markdown contracts, two speeds of truth (rewrite state, append history), 80-line handoffs, and <code>check_docs.py</code>.</p>
+                            <p style="margin-top: auto;"><a href="../index.html">Explore The Manifold ←</a></p>
+                        </article>
+
+                        <article class="speed-card" style="border-top-color: var(--copper); background: #fdfaf6;">
+                            <p class="card-label">STAGE 03 / EPISTEMOLOGY</p>
+                            <h3>Vedas</h3>
+                            <p><b>Gives the memory an epistemology.</b> Three speeds of truth (Śruti/Smṛti/Vartamāna), Pramāṇa proof tags, Sūtra density, and bidirectional Ghana-pāṭha checks.</p>
+                            <p style="margin-top: auto;"><a href="#top">Back to top ↑</a></p>
+                        </article>
+                    </div>
+
+                    <blockquote class="pull">
+                        <p>The Hypervisor gives a model a body. The Manifold gives the work a memory. Vedas gives that memory an epistemology.</p>
+                    </blockquote>
 
                     <div class="cheat-card">
                         <h3>Adopting Vedas in an Existing Repository</h3>
@@ -762,8 +863,8 @@ Next task ....... <span class="t-cyan">P3-02</span>
                             <button class="btn small copy-btn" data-copy="cp -r vedas/docs . &amp;&amp; cp vedas/tools/check_vedas.py tools/ &amp;&amp; cp vedas/AGENTS.md .">COPY</button>
                         </div>
                         <div class="copy-row">
-                            <code>python3 tools/check_vedas.py</code>
-                            <button class="btn small copy-btn" data-copy="python3 tools/check_vedas.py">COPY</button>
+                            <code>python3 tools/check_vedas.py --template</code>
+                            <button class="btn small copy-btn" data-copy="python3 tools/check_vedas.py --template">COPY</button>
                         </div>
                     </div>
                 </div>
@@ -772,6 +873,21 @@ Next task ....... <span class="t-cyan">P3-02</span>
         </div>
     </div>
 </main>
+
+<footer class="site-foot">
+    <div class="wrap foot-inner">
+        <div>
+            <p class="foot-brand"><b>Vedas</b> <span>/ epistemic repository protocol by Andrew Edmark / MIT</span></p>
+            <p class="foot-note">Plain HTML, CSS and JavaScript. Zero web fonts, zero trackers, zero dependencies. Fully offline.</p>
+        </div>
+        <nav class="foot-links" aria-label="Elsewhere">
+            <a href="../index.html">The Manifold</a>
+            <a href="https://oopismcgoopis.com/hypervisor">Hypervisor</a>
+            <a href="https://github.com/aedmark/the-manifold/tree/main/vedas">GitHub</a>
+            <a href="https://medium.com/@mycelialmirror/your-agent-is-a-goldfish-the-importance-of-a-self-verifying-repository-template-219589a53142">Essay</a>
+        </nav>
+    </div>
+</footer>
 
 <script src="site.js"></script>
 </body>

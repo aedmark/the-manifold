@@ -160,11 +160,17 @@
     }
 
     // Initialize all modules on DOM ready
-    document.addEventListener("DOMContentLoaded", function () {
+    function init() {
         setupPronunciation();
         setupLexiconFilter();
         setupTabs();
         setupCopy();
         setupScrollspy();
-    });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
 })();

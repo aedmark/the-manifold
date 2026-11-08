@@ -25,7 +25,7 @@ Vedas extends The Manifold with five key epistemic upgrades:
 
 2. **The Three Speeds of Truth (Śruti / Smṛti / Vartamāna):**  
    The Manifold separates truth into two speeds (rewrite the present, append the past). Vedas introduces a foundational third tier:
-   - **Śruti (Eternal Invariants, [`docs/INVARIANTS.md`](docs/INVARIANTS.md)):** Irreducible axioms that cannot be altered without full system re-consecration (`INV-001` through `INV-008`).
+   - **Śruti (Eternal Invariants, [`docs/INVARIANTS.md`](docs/INVARIANTS.md)):** Irreducible axioms that cannot be altered without full system re-consecration (`INV-001` through `INV-010`).
    - **Smṛti (Epochal Conventions, [`AGENTS.md`](AGENTS.md), [`docs/README.md`](docs/README.md)):** Architectural guidelines and workflow rules that adapt across project eras.
    - **Vartamāna (Temporal State, [`docs/HANDOFF.md`](docs/HANDOFF.md)):** The ephemeral, rewritten moment of the immediate handoff.
 

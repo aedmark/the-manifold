@@ -12,16 +12,23 @@ Every agent session must follow the five invariant stages:
 1. **Śravaṇa (Attentive Reading):**
    - Read [`docs/HANDOFF.md`](docs/HANDOFF.md), [`docs/INVARIANTS.md`](docs/INVARIANTS.md), and the active roadmap item in [`ROADMAP.md`](ROADMAP.md).
    - Inspect `git status` and recent diffs. Verify environment and working state before editing.
+   - Purge *Adhyāsa* (superimposition of pre-trained framework, library, or architectural priors, `INV-010`). Treat any convention not grounded in a `[CONTRACT]` or `[OBSERVED]` repository file as unverified.
 2. **Manana (Reflective Scoping):**
    - Propose exactly one reviewable, bounded change.
-   - Confirm that the proposed change does not contradict any Śruti invariant (`INV-NNN`).
+   - Check the local part against the architectural whole ([`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/DECISIONS.md`](docs/DECISIONS.md)) and confirm that the proposed change does not contradict any Śruti invariant (`INV-NNN`).
+   - Establish *Pūrva-Pakṣa* (Origin-Question Reconstruction): before removing or altering an existing constraint, guard, or architectural boundary, trace its originating decision (`D-NNN`), invariant (`INV-NNN`), or commit rationale (`INV-004`). If the originating question is unrecorded, halt and issue *Praśna* (`INV-009`) before removing the fence.
+   - Identify *Saṃśaya* (underspecified intent, unstated assumptions, or competing interpretations) and ask concise clarifying questions (*Praśna*) before building (`INV-009`). Never guess silently.
+   - If a question cannot be answered in the current turn, record it under Open questions in [`docs/DECISIONS.md`](docs/DECISIONS.md) instead of committing an assumption.
 3. **Nididhyāsana (Meditative Building):**
    - Implement the change with surgical precision.
    - Maintain *Sūtra* density: zero filler, minimal tokens, unequivocal statements.
    - Update documentation in lockstep with code.
+   - Execute *Āvartana* (Spiral Loopback): if implementation invalidates a premise established in *Manana*, halt immediately and return to Stage 2 (*Manana*) to re-scope or issue *Praśna* (`INV-009`). Never widen scope mid-build.
 4. **Pramāṇa-Parīkṣā (Epistemic Verification):**
    - Run tests according to [`docs/TESTING.md`](docs/TESTING.md) using the Nyāya 5-step sequence (*Pañca-Avayava*).
    - Negative Proof Grounding (`INV-007`): A new test must fail on the old code before being trusted on the new code.
+   - Honor *Pratibandha* (Textual Resistance): when a test, type check, or existing contract resists the planned change, never bypass it with a silent fallback, weakened assertion, or linter suppression (`INV-007`, `INV-009`). Halt, surface the contradiction via *Praśna*, or record the anomaly as `[HYPOTHESIS]` awaiting maintainer resolution.
+   - If verification reveals a part-whole contradiction against scoped assumptions, trigger *Āvartana* and return to *Manana* (`INV-009`).
    - Classify all verification claims using formal *Pramāṇa* tags:
      - `[OBSERVED]`: directly run and proven this session.
      - `[DEDUCED]`: mathematically or logically derived from types/invariants.
@@ -51,10 +58,16 @@ To prevent semantic drift across different model weights or contexts, adhere to 
 
 | Canonical Term | Vedic Epistemic Meaning | Distinct From / Not To Be Confused With |
 | :--- | :--- | :--- |
-| **Śruti** | Immutable, non-negotiable architectural invariant (`INV-001` - `INV-008`) | Configurable parameters, temporary preferences |
+| **Śruti** | Immutable, non-negotiable architectural invariant (`INV-001` - `INV-010`) | Configurable parameters, temporary preferences |
 | **Smṛti** | Epochal architectural guidance, conventions, and ADR history | Ephemeral current status |
 | **Vartamāna** | The rewritten, immediate present state (`HANDOFF.md`) | Historical project log, changelog |
 | **Pramāṇa** | Formally validated means of knowledge with explicit proof source | Unverified inference, hallucinated claim |
+| **Adhyāsa** | Illegitimate superimposition of pre-trained model priors onto the repository (`INV-010`) | Verified `[CONTRACT]` or `[OBSERVED]` repository truth |
+| **Saṃśaya** | Recognized ambiguity or part-whole tension blocking sound deduction | Silent assumption or blind execution |
+| **Praśna** | Targeted clarifying inquiry issued prior to implementation (`INV-009`) | Post-hoc excuse or open-ended chat |
+| **Āvartana** | Spiral part-whole loopback from *Nididhyāsana* or *Pramāṇa* back to *Manana* when a premise breaks (`INV-009`) | Linear, one-way execution that forces a broken plan through |
+| **Pratibandha** | Epistemic resistance when code, tests, or contracts contradict a planned change (`INV-007`, `INV-009`) | An obstacle to route around via workarounds or weakened checks |
+| **Pūrva-Pakṣa** | Reconstructing the originating question or failure mode behind an existing constraint before altering it (`INV-004`, `INV-009`) | Blindly refactoring or deleting unfamiliar guards (Chesterton's Fence) |
 | **Sūtra** | High-density, minimal-syllable proposition (<25 words) | Discursive, conversational explanation |
 | **Sūtra Consolidator** | Subconscious distillation of episodic memory into durable invariants (`INV-008`) | Raw conversation logging, lossy summarization |
 | **Śūnya** | The fresh, unconditioned context window primed for pure deduction | Defective amnesia or memory loss |
@@ -77,8 +90,6 @@ To prevent semantic drift across different model weights or contexts, adhere to 
 ### 6. Śikṣā: Signal Fidelity and Lexical Firewall
 - **Lexical Firewall (`INV-006`):** Zero em dashes (`—`) in prose, comments, or commits; conversational structure uses commas, semicolons, or parentheses.
 - No extraneous modifications, phantom whitespace, or unwanted formatting changes.
-- Never commit secrets, tokens, or personal identifiers.
-- Preserve user edits; never clean or reset git history without explicit maintainer decree.
 - Never commit secrets, tokens, or personal identifiers.
 - Preserve user edits; never clean or reset git history without explicit maintainer decree.
 

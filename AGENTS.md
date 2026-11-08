@@ -10,8 +10,12 @@ tool-specific files. Project facts belong in the documents linked below, not in 
 1. Read `docs/HANDOFF.md` for the current state, active work, and gotchas.
 2. Read the relevant roadmap item and the parts of `docs/ARCHITECTURE.md` and `docs/TESTING.md` that apply.
 3. Inspect `git status` and recent history. Do not overwrite work you did not create.
-4. Verify important inherited claims before relying on them. Use the fastest relevant check first.
-5. State the intended scope briefly, then work on one independently reviewable change at a time.
+4. Separate observed repository facts from training-distribution defaults (fore-conceptions). Do not assume a build
+   step, package manager, framework idiom, or directory role that is not in the files; verify important inherited
+   claims with the fastest relevant check first.
+5. State the intended scope briefly and surface any unstated assumptions. If requirements, scope, or edge cases admit
+   multiple valid interpretations, ask targeted clarifying questions before editing, then work on one independently
+   reviewable change at a time.
 
 If the repository is new or unfamiliar, read `README.md` and `docs/README.md` first. If the request conflicts with
 these instructions or the working tree contains overlapping edits, stop and ask the maintainer.
@@ -31,6 +35,21 @@ A repository is one Zone. Its rules apply here and nowhere else.
 - Preserve user changes. Never reset, clean, or rewrite history without explicit permission.
 - Check `docs/HANDOFF.md` for a live session owner before editing. If another session owns the files, stop and
   coordinate. Do not merge silently.
+- Check part against whole before acting: verify how a local change affects `docs/ARCHITECTURE.md` and
+  `docs/DECISIONS.md`. When the local change and system invariants leave a gap, ask the maintainer rather than
+  guessing a bridge.
+- Loop back when a part reshapes the whole: if implementation or testing invalidates an assumption made during scoping,
+  or reveals that the change alters an interface, invariant, or boundary in `docs/ARCHITECTURE.md`, stop editing,
+  return to step 5 of `Start here`, and re-align scope with the maintainer before continuing.
+- Treat resistance from the codebase as a stop-and-inquire trigger: when a test fails for an unexpected reason, a file
+  contradicts `docs/ARCHITECTURE.md`, or a check refuses the planned change, do not route around it with a silent
+  fallback, loosened assertion, or linter suppression. Surface the contradiction to the maintainer (or record it under
+  Claims vs. code in `docs/ARCHITECTURE.md` and Corrections in `docs/HANDOFF.md`) before proceeding.
+- Reconstruct the question before removing the answer: before deleting or altering an existing constraint, guard clause,
+  or non-obvious boundary, locate the decision (`D-NNN`), held tension (`T-NNN`), or commit that explains what problem
+  it solved. If no record exists, ask the maintainer before removing it.
+- Never compile silent assumptions into code. If a clarifying question cannot be answered in the current turn, record
+  it under Open questions in `docs/DECISIONS.md` and reference it in `docs/HANDOFF.md` instead of committing a guess.
 - Record a decision in `docs/DECISIONS.md` when reasonable maintainers could revisit the choice later.
 - Update documentation in the same change when behaviour, interfaces, commands, risks, or project structure change.
 - Distinguish observed facts from inference. Include the command, date, environment, or source behind volatile claims.
@@ -74,7 +93,8 @@ task or handoff instead.
   emotional plateaus, no em dashes. Use commas, semicolons, and parentheses. Name the thing; do not dress it as a
   lesson.
 - **Code comments:** {{what comments should explain and expected density}}.
-- **Asking vs. doing:** {{actions that require confirmation}}.
+- **Asking vs. doing:** Ask clarifying questions whenever intent, scope, or edge cases are ambiguous; never guess
+  silently. Confirm before {{actions that require confirmation}}.
 - **Reporting:** {{desired result and verification format}}.
 
 ## Protected areas
@@ -91,6 +111,7 @@ Things an agent must not change without explicit permission. Every rule includes
 | --- | --- | --- |
 | {{Product}} | {{What it names}} | {{Old name or nearby concept}} |
 | Zone | One repository and the rules that apply inside it | A branch, a folder, or a chat thread |
+| Fore-conception | A training-distribution default or prior expectation an agent brings into a fresh session | An observed fact in the repository |
 | Held tension | Two true claims that do not fit together yet, with an owner and a review trigger | An open question or a decision |
 
 Move a large domain vocabulary into `docs/GLOSSARY.md` and link it here.

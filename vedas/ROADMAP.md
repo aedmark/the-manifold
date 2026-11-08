@@ -22,3 +22,12 @@ Status boxes: `[ ]` planned, `[~]` in progress, `[x]` finished, `[-]` dropped.
 - [ ] P3-01: Benchmark context retention of standard Manifold vs Vedas Sūtra compression across 20 simulated sessions
 - [ ] P3-02: Measure hallucination rate on unverified assertions with and without mandatory Pramāṇa tagging
 - [ ] P3-03: Document comparative findings in `docs/DECISIONS.md`
+
+## Phase 4: Hermeneutic Circle & Epistemic Inquiry
+
+- [x] P4-01: Codify Anti-Superimposition (*Adhyāsa-Nirāsa*, `INV-010`) during *Śravaṇa* to separate observed repository contracts from pre-trained model priors
+- [x] P4-02: Formalize the Spiral Kalpa Loopback (*Āvartana*, `INV-009`) returning from *Nididhyāsana* or *Pramāṇa-Parīkṣā* to *Manana* when part-whole assumptions break
+- [x] P4-03: Codify Textual Resistance (*Anstoß* / *Pratibandha*, `INV-007`, `INV-009`) as a mandatory stop-and-inquire trigger prohibiting silent workarounds
+- [x] P4-04: Enforce Origin-Question Reconstruction (*Pūrva-Pakṣa* / Chesterton's Fence, `INV-004`, `INV-009`) before altering or removing existing constraints
+
+**What Phase 4 taught:** Post-hoc verification catches false claims after execution, whereas pre-execution inquiry (*Praśna*), prior-purging (*Adhyāsa-Nirāsa*), and spiral loopback (*Āvartana*) prevent silent assumptions before code is written.
