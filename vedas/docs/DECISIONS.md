@@ -5,6 +5,7 @@ Reversals supersede; they do not erase history. Each entry preserves the *Pūrva
 Formulated with **Sūtra density**: minimal syllables, maximal semantic mass, unequivocal assertions.
 
 Decisions: `D-NNN` in strict ascending order.
+Held tensions: `T-NNN` in strict ascending order.
 Open questions: `Q-NNN` in strict ascending order.
 
 ---
@@ -42,6 +43,20 @@ Open questions: `Q-NNN` in strict ascending order.
 - **Alternatives:** Rely on post-hoc handoff verification alone (`INV-003`) without governing pre-execution ambiguity or training-prior superimposition.
 - **Rationale:** Post-hoc checks catch false test claims after work is done, whereas pre-execution inquiry prevents silent assumptions, training-prior projection, workaround smoothing, and blind constraint deletion before code is written.
 - **Consequence:** Agents halt and ask clarifying questions (*Praśna*) or loop back (*Āvartana*) whenever intent, priors, tests, or historical constraints conflict.
+
+---
+
+## Held tensions
+
+Two true claims that do not fit together yet (*Ubhaya-Saṃkaṭa*). Keep both visible with an owner and a review trigger so an agent does not silently flatten one side to make a clean change. Delete the entry when a decision resolves it or the world changes.
+
+### T-001: Sūtra Compression vs. Self-Contained Onboarding
+- **Owner:** Maintainer
+- **Claim A:** Propositions must stay compressed below 25 words to preserve context-window budget (`INV-008`).
+- **Claim B:** New contributors and agents require enough operational detail in `AGENTS.md` and `ARCHITECTURE.md` to act without guessing (`INV-009`).
+- **Why both hold:** Over-compression creates ambiguity; verbose prose erodes attention and Chandas bounds (`INV-005`).
+- **Cost of holding both:** Authors must balance concise sūtra statements with structured tables and explicit lexicon mappings.
+- **Review trigger:** P2-01 (`check_vedas.py` Sūtra density linter implementation).
 
 ---
 

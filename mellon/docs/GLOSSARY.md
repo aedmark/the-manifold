@@ -30,4 +30,6 @@ Mellon translates every formal concept from [Vedas](../../vedas/README.md) into 
 | **Looping from Build/Verify back to Scope on a surprise** | **Turn Back at Caradhras** (Spiral Loopback) | *Āvartana* (Rotary Return) | `INV-009` |
 | **Code or test friction that halts workarounds** | **"You Shall Not Pass!"** (Balrog Stop-Trigger) | *Pratibandha* (Resistance) | `INV-007`, `INV-009` |
 | **Tracing why an old guard exists before removing it** | **The Doors of Durin** (Chesterton's Gate) | *Pūrva-Pakṣa* (Prior Position) | `INV-004`, `INV-009` |
+| **Two true claims that conflict, held with an owner & trigger** | **Held Tension / Two Watchtowers** (`T-NNN`) | *Ubhaya-Saṃkaṭa* (Dual Dilemma) | `DECISIONS.md` |
+| **One repository and the rules that apply inside it** | **Zone / Realm Border** | *Kṣetra* (Field / Domain) | `AGENTS.md` |
 | **Permanent, never-renumbered roadmap task IDs** | **The Shire Reckoning** (`P1-01`, `P2-03`) | *Jyotiṣa* (Chronometry) | `INV-004` |

@@ -93,3 +93,51 @@ The **Elven Sleep** pattern distills episodic history into **Mithril Prose** (*l
 | **Caradhras Tunnel Vision** | Agent hits a broken premise mid-build and hacks locally instead of re-scoping. | **Turn Back at Caradhras:** Agent halts mid-build and loops back to the Council of Elrond (`INV-009`). |
 | **Sneaking Past the Balrog** | Agent routes around a failing test or type check with a silent workaround. | **"You Shall Not Pass!":** Code or test friction triggers an immediate stop and inquiry (`INV-007`, `INV-009`). |
 | **Tearing Down the Gate** | Agent deletes an unfamiliar guard clause without knowing why it was built. | **The Doors of Durin:** Agent traces the originating `D-NNN` or `INV-NNN` before altering any constraint (`INV-004`, `INV-009`). |
+
+---
+
+## Code Map & Interfaces
+
+Where to look for each area of the realm, its entry point, and the direction data moves across stable interfaces.
+
+| Area | Where | Entry point | Talks to |
+| :--- | :--- | :--- | :--- |
+| `{{Parser}}` | `{{src/parse/}}` | `{{parse()}}` | `{{the model; nothing else}}` |
+| `{{Storage}}` | `{{src/store/}}` | `{{open()}}` | `{{IndexedDB / database}}` |
+
+```text
+{{input}} -> {{validation}} -> {{domain operation}} -> {{persistence/output}}
+```
+
+| Interface | Producer | Consumer | Contract / compatibility |
+| :--- | :--- | :--- | :--- |
+| `{{event, API, file, function}}` | `{{component}}` | `{{component}}` | `{{schema, versioning, error semantics}}` |
+
+---
+
+## Dependencies
+
+Everything the project needs that it did not forge itself. Adding a new dependency requires maintainer approval and a record in the same session.
+
+| Dependency | Version | For | Why this one (and not writing it) |
+| :--- | :--- | :--- | :--- |
+| `{{name}}` | `{{pinned version}}` | `{{what uses it}}` | `{{one line, or D-NNN}}` |
+
+---
+
+## State and Caches
+
+Everything a run leaves on disk or in external stores, and what may delete it. Reset commands must never wipe expensive caches without warning.
+
+| What | Where | Written by | Reset by | Committed? |
+| :--- | :--- | :--- | :--- | :--- |
+| `{{User data}}` | `{{path}}` | `{{the app}}` | `{{reset clears it}}` | `{{no, gitignored}}` |
+| `{{Cached model runs}}` | `{{path}}` | `{{the harness}}` | `{{by hand only; reset must not touch it}}` | `{{no}}` |
+
+---
+
+## Claims vs. Code
+
+Places where a doc, a name, or a comment promises more than the code delivers, so nobody builds on a mirage. When a session hits resistance (**"You Shall Not Pass!"**) where the code contradicts a documented claim (or vice versa), record the mismatch here (`[HYPOTHESIS]`) and ask the maintainer (**Speak, Friend**, `INV-009`) rather than papering over the discrepancy in code. Remove a row when the code catches up or the claim is corrected.
+
+- `{{e.g. "physics/ suggests a simulation; it is a set of thresholds feeding prompt text."}}`

@@ -93,3 +93,51 @@ The Sūtra Consolidator pattern acts as a subconscious REM cycle:
 | **Linear Tunnel Vision** | Agent discovers a broken premise mid-build and patches locally to reach handoff, widening scope silently. | **Āvartana Loopback:** Agent halts during *Nididhyāsana* or *Pramāṇa* and returns to *Manana* to re-scope or issue *Praśna* (`INV-009`). |
 | **Workaround Smoothing** | Agent papers over unexpected test, type, or contract resistance with silent fallbacks or weakened assertions. | **Pratibandha Stop-Trigger:** Agent halts on textual resistance and surfaces the contradiction via *Praśna* or `[HYPOTHESIS]` (`INV-007`, `INV-009`). |
 | **Fence Demolition** | Agent deletes or refactors an unfamiliar guard or constraint without knowing what defect it prevented. | **Pūrva-Pakṣa Reconstruction:** Agent traces the originating `D-NNN` or `INV-NNN` (or asks *Praśna*) before altering a constraint (`INV-004`, `INV-009`). |
+
+---
+
+## Code Map & Interfaces
+
+Where to look for each area of the project, its entry point, and the direction data moves across stable interfaces.
+
+| Area | Where | Entry point | Talks to |
+| :--- | :--- | :--- | :--- |
+| `{{Parser}}` | `{{src/parse/}}` | `{{parse()}}` | `{{the model; nothing else}}` |
+| `{{Storage}}` | `{{src/store/}}` | `{{open()}}` | `{{IndexedDB / database}}` |
+
+```text
+{{input}} -> {{validation}} -> {{domain operation}} -> {{persistence/output}}
+```
+
+| Interface | Producer | Consumer | Contract / compatibility |
+| :--- | :--- | :--- | :--- |
+| `{{event, API, file, function}}` | `{{component}}` | `{{component}}` | `{{schema, versioning, error semantics}}` |
+
+---
+
+## Dependencies
+
+Everything the project needs that it did not write. Adding a new dependency requires maintainer approval and a record in the same session.
+
+| Dependency | Version | For | Why this one (and not writing it) |
+| :--- | :--- | :--- | :--- |
+| `{{name}}` | `{{pinned version}}` | `{{what uses it}}` | `{{one line, or D-NNN}}` |
+
+---
+
+## State and Caches
+
+Everything a run leaves on disk or in external stores, and what may delete it. Reset commands must never wipe expensive caches without warning.
+
+| What | Where | Written by | Reset by | Committed? |
+| :--- | :--- | :--- | :--- | :--- |
+| `{{User data}}` | `{{path}}` | `{{the app}}` | `{{reset clears it}}` | `{{no, gitignored}}` |
+| `{{Cached model runs}}` | `{{path}}` | `{{the harness}}` | `{{by hand only; reset must not touch it}}` | `{{no}}` |
+
+---
+
+## Claims vs. Code
+
+Places where a doc, a name, or a comment says more than the code does, so nobody builds on an unverified claim. When a session encounters friction (*Pratibandha*) where the code contradicts a documented claim (or vice versa), record the mismatch here (`[HYPOTHESIS]`) and ask the maintainer (*Praśna*) rather than papering over the discrepancy in code (`INV-009`). Remove a row when the code catches up or the claim is corrected.
+
+- `{{e.g. "physics/ suggests a simulation; it is a set of thresholds feeding prompt text."}}`

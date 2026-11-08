@@ -5,6 +5,7 @@ Reversals supersede; they do not erase history. Each entry preserves the riddle 
 Formulated in **Mithril Prose**: light as a feather, hard as dragon scales, zero filler.
 
 Decisions: `D-NNN` in strict ascending order.
+Held tensions: `T-NNN` in strict ascending order.
 Open questions: `Q-NNN` in strict ascending order.
 
 ---
@@ -42,6 +43,20 @@ Open questions: `Q-NNN` in strict ascending order.
 - **Alternatives:** Rely solely on post-build handoff checks (`INV-003`).
 - **Rationale:** Post-build checks catch bad claims after tokens are spent, whereas pre-build questioning and mid-build loopbacks prevent silent assumptions and workaround hacks before they happen.
 - **Consequence:** Agents halt and ask clarifying questions whenever requirements, priors, tests, or historical constraints conflict.
+
+---
+
+## Held tensions
+
+Two true claims that do not fit together yet (**Two Watchtowers**). Keep both visible with an owner and a review trigger so an agent does not silently flatten one side to make a clean edit. Delete the entry when a decision resolves it or the world changes.
+
+### T-001: Mithril Brevity vs. Self-Contained Onboarding
+- **Owner:** Maintainer
+- **Claim A:** Propositions must stay feather-light (under 25 words) to protect the context window (`INV-008`).
+- **Claim B:** New contributors and agents need enough operational detail in `AGENTS.md` and `ARCHITECTURE.md` to work without guessing (`INV-009`).
+- **Why both hold:** Over-compression breeds Riddles in the Dark; verbose diaries overflow the 80-line Watchfire cap (`INV-005`).
+- **Cost of holding both:** Authors must pair concise Mithril propositions with structured tables and the Elvish Lexicon (`GLOSSARY.md`).
+- **Review trigger:** P2-01 (`check_mellon.py` Mithril Prose density linter implementation).
 
 ---
 

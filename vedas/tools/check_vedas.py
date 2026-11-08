@@ -9,9 +9,11 @@ Enforces:
      - No dangling {{placeholders}} (outside --template mode).
      - Roadmap items (P<phase>-<nn>) unique, valid checkboxes, filed under correct phase.
      - Decisions (D-NNN) unique, ascending, valid supersession.
+     - Held tensions (T-NNN) unique, ascending, and defined if referenced.
      - Open questions (Q-NNN) unique.
      - Valid relative file links.
      - Unique session entries.
+     - No invisible or bidirectional Unicode control characters.
   2. Vedic Epistemic Extensions (Ghana-pāṭha & Pramāṇa):
      - Invariant references (INV-NNN) defined in docs/INVARIANTS.md.
      - Next steps in docs/HANDOFF.md must refer to active, uncompleted roadmap items.
@@ -42,7 +44,9 @@ CURRENT_STATE_LINES = 80
 ITEM_RE = re.compile(r"\bP(\d+)-(\d+)\b")
 DECISION_RE = re.compile(r"\bD-(\d{3})\b")
 QUESTION_RE = re.compile(r"\bQ-(\d{3})\b")
+TENSION_RE = re.compile(r"\bT-(\d{3})\b")
 INVARIANT_RE = re.compile(r"\bINV-(\d{3})\b")
+INVISIBLE_RE = re.compile(r"[\u180e\u200b-\u200f\u202a-\u202e\u2060-\u206f\ufeff]")
 DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 LINK_RE = re.compile(r"\]\(([^)\s]+)\)|\b(?:href|src)=\"([^\"]+)\"")
 PRAMANA_RE = re.compile(r"\[(OBSERVED|DEDUCED|CONTRACT|HYPOTHESIS|UNTESTED)\]")
@@ -118,7 +122,7 @@ def main():
 
     # 4. Decisions validation (Smṛti)
     decisions_path = ROOT / "docs" / "DECISIONS.md"
-    decisions, supersessions, questions = set(), [], set()
+    decisions, supersessions, questions, tensions = set(), [], set(), set()
     if decisions_path in texts:
         text, last = texts[decisions_path], 0
         for m in re.finditer(r"^## D-(\d{3})\b([^\n]*)", text, flags=re.M):
@@ -137,14 +141,28 @@ def main():
             if f"D-{by:03d}" in decisions and by <= number:
                 errors.append(f"{where(decisions_path, text, pos)}: D-{number:03d} is superseded by an earlier "
                               f"decision, D-{by:03d}")
-        for m in re.finditer(r"^### Q-(\d{3})\b", text, flags=re.M):
-            q_id = f"Q-{m.group(1)}"
+        for m in re.finditer(r"^(?:### Q-(\d{3})\b|- \*\*Q-(\d{3})\*\*)", text, flags=re.M):
+            q_num = m.group(1) or m.group(2)
+            q_id = f"Q-{q_num}"
             if q_id in questions:
                 errors.append(f"{where(decisions_path, text, m.start())}: {q_id} is used twice")
             questions.add(q_id)
+        last_t = 0
+        for m in re.finditer(r"^### T-(\d{3})\b", text, flags=re.M):
+            number = int(m.group(1))
+            t_id = f"T-{m.group(1)}"
+            if t_id in tensions:
+                errors.append(f"{where(decisions_path, text, m.start())}: {t_id} is used twice")
+            elif number < last_t:
+                errors.append(f"{where(decisions_path, text, m.start())}: {t_id} comes after T-{last_t:03d}")
+            tensions.add(t_id)
+            last_t = max(last_t, number)
 
-    # 5. Cross-reference and link validation
+    # 5. Cross-reference, invisible character, and link validation
     for path, text in texts.items():
+        for m in INVISIBLE_RE.finditer(text):
+            errors.append(f"{where(path, text, m.start())}: invisible or bidirectional control character "
+                          f"U+{ord(m.group(0)):04X}")
         if roadmap is not None:
             for m in ITEM_RE.finditer(text):
                 if m.group(0) not in items:
@@ -156,6 +174,9 @@ def main():
             for m in QUESTION_RE.finditer(text):
                 if m.group(0) not in questions:
                     errors.append(f"{where(path, text, m.start())}: {m.group(0)} is not in DECISIONS.md's open questions")
+            for m in TENSION_RE.finditer(text):
+                if m.group(0) not in tensions:
+                    errors.append(f"{where(path, text, m.start())}: {m.group(0)} is not in DECISIONS.md's held tensions")
         if invariants_path in texts:
             for m in INVARIANT_RE.finditer(text):
                 if m.group(0) not in invariants:

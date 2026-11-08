@@ -40,6 +40,46 @@ python3 tools/check_mellon.py
 
 ---
 
+## Before Any Run
+
+What has to be true before a test or live run means anything, and what keeps a run from harming the host machine.
+
+- **Clean state:** `{{the reset command, e.g. sh reset.sh}}`. Tests and runs read saved state or logs; leftovers from an earlier run can pass or fail a test for the wrong reason. The reset command must never wipe caches that are expensive to rebuild ([`ARCHITECTURE.md`](ARCHITECTURE.md), "State and Caches").
+- **Resource caps:** `{{e.g. systemd-run --user --scope -p MemoryMax=8G}}`. A runaway test or model loop can exhaust host memory and take down the session.
+- **Required services:** `{{local model server, database, or dev server on port NNNN}}`, and how to verify they are listening before running tests.
+
+---
+
+## Runs That Vary (Nondeterministic & Model-Evaluated Suites)
+
+Some results depend on factors outside deterministic code: a language model, network latency, or timing under load.
+
+- **One run proves little:** Run nondeterministic suites several times and record the tally with the date and model (`"6/7, 7/7, 5/7 on {{model}}, 2026-11-08"`).
+- **Read the failure before blaming the code:** State in [`HANDOFF.md`](HANDOFF.md) whether a miss came from application code or the outside service.
+- **Inject rare bad inputs directly:** To test how the code handles malformed replies or timeouts, inject them deterministically rather than rerunning until they happen by chance.
+- **Test the judge before trusting its verdict:** Anything that scores output (an LLM-as-judge, a similarity metric, a rubric) gets known-answer controls first, including a deliberately bad case it must rank last (`INV-007`). A judge that fails its controls is not `[OBSERVED]` evidence; record the control results next to the verdict.
+
+---
+
+## Change-to-Check Matrix
+
+| Changed area | Minimum checks | Additional evidence |
+| :--- | :--- | :--- |
+| Documentation only | `python3 tools/check_mellon.py` | Render or link check if relevant |
+| Pure logic | `{{unit suite}}` | Property, fuzz, or Sting's Blue Glow check (`INV-007`) |
+| User workflow | `{{unit plus end-to-end}}` | Manual accessibility or browser check |
+| Schema, migration, or persistence | `{{migration and integration suites}}` | Backup and rollback rehearsal |
+| Security boundary | `{{negative and abuse-case tests}}` | Targeted security review ([`SECURITY.md`](SECURITY.md)) |
+
+---
+
+## Manual Checks & Environment Recipes
+
+- **Manual Checks (Before Release):** Record who checked what, where, and when in [`HANDOFF.md`](HANDOFF.md) (`{{e.g. open each app; type, save, reload; verify zero data loss across supported browsers}}`).
+- **Environment Recipes:** How to provision test tools in each environment listed in [`../AGENTS.md`](../AGENTS.md) (`{{e.g. local virtual environment or headless browser setup}}`).
+
+---
+
 ## Known Pitfalls
 
 - **Untagged Watchfire Claims:** Claiming a feature works in `docs/HANDOFF.md` without running its test suite this session. Mitigation: tag with `[UNTESTED]` unless directly observed (`INV-003`).

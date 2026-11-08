@@ -12,7 +12,9 @@ Architecture: [ARCHITECTURE.md](ARCHITECTURE.md). Decisions: [DECISIONS.md](DECI
 
 ## Current state
 
-Last updated: 2026-11-07, session 2, on `main`: Completed Phase 4 Hermeneutic Circle & Epistemic Inquiry integration (`INV-009`, `INV-010`, `D-004`).
+Last updated: 2026-11-08, session 2, on `main`: Completed Phase 4 Hermeneutic Circle & Manifold Superset Parity (`INV-009`, `INV-010`, `D-004`, `T-001`).
+
+**Session owner:** {{agent or tool}}, on `main`, since 2026-11-08. {{What is yours until the next handoff; delete this line when no session is live.}}
 
 **Where things stand:**
 Vedas is initialized as an experimental fork of The Manifold. Core Śruti invariants (`INV-001` through `INV-010`) are codified, Pramāṇa epistemic taxonomy is defined, and Phase 4 hermeneutic inquiry rules (*Adhyāsa-Nirāsa*, *Saṃśaya* / *Praśna*, *Āvartana*, *Pratibandha*, *Pūrva-Pakṣa*) are integrated across the protocol and field manual.

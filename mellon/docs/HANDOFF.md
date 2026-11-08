@@ -12,7 +12,9 @@ Architecture: [ARCHITECTURE.md](ARCHITECTURE.md). Decisions: [DECISIONS.md](DECI
 
 ## Current state
 
-Last updated: 2026-11-08, session 1, on `main`: Initialized Mellon as the plain-English and Middle-earth sibling of Vedas (`INV-001` through `INV-010`, `D-001` through `D-004`).
+Last updated: 2026-11-08, session 1, on `main`: Initialized Mellon as the plain-English and Middle-earth sibling of Vedas with full Manifold superset parity (`INV-001` through `INV-010`, `D-001` through `D-004`, `T-001`).
+
+**Session owner:** {{agent or tool}}, on `main`, since 2026-11-08. {{What is yours until the next handoff; delete this line when no session is live.}}
 
 **Where things stand:**
 Mellon is established in `mellon/` with all 10 Elder Runes (`INV-001` through `INV-010`), Proof Badges, the 5-stage Fellowship Quest Loop, hermeneutic inquiry safeguards (*Ban Saruman's Voice*, *Council of Elrond*, *Doors of Durin*, *Turn Back at Caradhras*, *"You Shall Not Pass!"*), the Palantír Linter (`tools/check_mellon.py`), and the interactive Field Manual (`index.html`).
