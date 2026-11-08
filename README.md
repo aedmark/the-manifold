@@ -100,7 +100,8 @@ must fill. That is not a broken repository; it is the adoption checklist.
 
 The field manual is [`index.html`](index.html). It is the current front door. For three-speed epistemic extensions with
 mandatory proof badges and reciprocal invariant checkers, see [`vedas/`](vedas/README.md) (classical Sanskrit
-epistemology) and [`mellon/`](mellon/README.md) (the plain-English and Middle-earth edition).
+epistemology), [`mellon/`](mellon/README.md) (the plain-English and Middle-earth edition), and [`totally/`](totally/README.md) (the
+approachable, zero-jargon Valley-Girl edition).
 
 ## Requirements
 

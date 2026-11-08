@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Totally: Like, Seriously Epistemic">
+    <rect width="32" height="32" rx="6" fill="#12041d"/>
+    <!-- Retro 90s / Y2K Diamond Sparkle in Hot Pink & Neon Cyan -->
+    <path d="M16,4 L19,13 L28,16 L19,19 L16,28 L13,19 L4,16 L13,13 Z" fill="#ff2a85"/>
+    <polygon points="16,8 18,14 24,16 18,18 16,24 14,18 8,16 14,14" fill="#00f0ff"/>
+    <circle cx="16" cy="16" r="3" fill="#ffffff"/>
+</svg>

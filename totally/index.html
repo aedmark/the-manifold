@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totally: Like, Seriously Epistemic Memory for AI Agents</title>
+    <meta name="description" content="Totally is the plain-English and Valley-Girl edition of Vedas. It separates repository truth into Non-Negotiables, The Receipts, and The Group Chat, enforces Receipt Tags, and guarantees zero drift across sessions.">
+    <meta name="author" content="Andrew Edmark">
+    <meta name="theme-color" content="#0c0216">
+    <meta property="og:title" content="Totally: Like, Seriously Epistemic Memory for AI Agents">
+    <meta property="og:description" content="Like, seriously, don't guess. Show me the receipts. The agents change every session; The Receipts endure. Full epistemic rigor for AI coding agents in approachable pop-culture English.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the field manual</a>
+
+<div class="window-bar">
+    <span class="window-name">TOTALLY\README.TXT</span>
+    <span class="window-meta">LIKE, SERIOUSLY: SHOW ME THE RECEIPTS</span>
+    <span class="window-controls" aria-hidden="true">[ &#9633; ]</span>
+</div>
+
+<header class="site-head">
+    <div class="wrap head-inner">
+        <a class="brand" href="#top" aria-label="Totally home">
+            <span class="brand-mark" aria-hidden="true">T</span>
+            <span class="brand-ver">TOTALLY</span>
+            <span class="brand-parent">/ THE MANIFOLD</span>
+        </a>
+        <nav class="head-nav" aria-label="Primary navigation">
+            <a href="../index.html">&larr; The Manifold</a>
+            <a href="../vedas/index.html">Vedas</a>
+            <a href="../mellon/index.html">Mellon</a>
+            <a href="#problem">Problem</a>
+            <a href="#tiers">3 Speeds</a>
+            <a href="#crafts">5 Stages</a>
+            <a href="#badges">Receipts</a>
+            <a href="#lexicon">Glossary</a>
+            <a href="#cheatsheet">Cheat Sheet</a>
+            <a href="#linter">Linter</a>
+            <a href="#lineage">Lineage</a>
+        </nav>
+        <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold/tree/main/totally">Repository <span aria-hidden="true">&nearr;</span></a>
+    </div>
+</header>
+
+<main id="main" class="desk">
+    <div class="sheet">
+
+        <aside class="rail">
+            <div class="rail-head">
+                <p class="rail-label">FIELD MANUAL</p>
+                <p class="rail-title">THE<br>RECEIPTS</p>
+                <p class="rail-meta">15 DOCS / ZERO DRIFT</p>
+            </div>
+            <nav class="rail-nav" aria-label="Contents">
+                <a href="#top"><span>00</span> Start</a>
+                <a href="#problem"><span>01</span> The failure</a>
+                <a href="#tiers"><span>02</span> Three speeds</a>
+                <a href="#crafts"><span>03</span> Five stages</a>
+                <a href="#badges"><span>04</span> Receipts &amp; proof</a>
+                <a href="#lexicon"><span>05</span> Translation table</a>
+                <a href="#cheatsheet"><span>06</span> Cheat sheet</a>
+                <a href="#linter"><span>07</span> Vibe linter</a>
+                <a href="#lineage"><span>08</span> Lineage</a>
+            </nav>
+            <div class="rail-tree" aria-label="Repository topology">
+                <p class="tree-label">TOTALLY TOPOLOGY</p>
+                <pre>totally/
+&#9500;&#9472; AGENTS.md (Protocol)
+&#9500;&#9472; ROADMAP.md (The Plan)
+&#9500;&#9472; docs/
+&#9474;  &#9500;&#9472; INVARIANTS.md (Rules)
+&#9474;  &#9500;&#9472; HANDOFF.md (Group Chat)
+&#9474;  &#9500;&#9472; ARCHITECTURE.md
+&#9474;  &#9500;&#9472; DECISIONS.md
+&#9474;  &#9492;&#9472; GLOSSARY.md (Lexicon)
+&#9492;&#9472; tools/
+   &#9492;&#9472; check_totally.py</pre>
+            </div>
+            <p class="rail-status"><span aria-hidden="true">&#9679;</span> VIBE CHECK / CLEAN</p>
+        </aside>
+
+        <div class="paper">
+
+            <!-- Section 00: Hero -->
+            <section class="chapter hero" id="top" aria-labelledby="hero-title">
+                <div class="chapter-cap">
+                    <span>TOTALLY.TXT</span>
+                    <span>00 / LIKE, SERIOUSLY EPITEMIC</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <p class="kicker">TOTALLY / PLAIN-ENGLISH &amp; VALLEY-GIRL EDITION OF VEDAS</p>
+                    <h1 id="hero-title">The agents change every session.<br><span class="hl">The Receipts endure.</span></h1>
+
+                    <div class="hero-grid">
+                        <div class="hero-card">
+                            <h3>Show Me the Receipts</h3>
+                            <p>No unproven speculation in handoffs. Every claim must carry a formal Receipt Tag: <code>[SAW_IT_MYSELF]</code>, <code>[OBVIOUSLY]</code>, <code>[GOSPEL]</code>, <code>[VIBE_CHECK]</code>, or <code>[NO_RECEIPTS]</code>.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Three Speeds of Memory</h3>
+                            <p>Non-Negotiables carved in stone, append-only Receipts for architecture and ADRs, and an 80-line Group Chat handoff that stays strictly on one screen.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Ask First, Don't Guess</h3>
+                            <p>Hermeneutic circle safeguards: drop external assumptions on entry, clarify mixed signals upfront, and hit pause when a premise breaks mid-build.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 01: The Problem -->
+            <section class="chapter" id="problem" aria-labelledby="problem-title">
+                <div class="chapter-cap">
+                    <span>FAILURE_MODES.TXT</span>
+                    <span>01 / WHY AGENTS SPIRAL</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">01</span>
+                        <div>
+                            <p class="kicker">THE EPITEMIC CRISIS</p>
+                            <h2 id="problem-title">Why coding agents keep breaking your code.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 1.0</span>
+                    </div>
+                    <p class="lede">AI coding agents enter every turn with a fresh brain: zero working memory of yesterday's decisions, blind trust in their own plausible output, and a persistent habit of silently guessing when instructions are vague.</p>
+
+                    <div class="table-scroll">
+                        <table class="lex-table">
+                            <thead>
+                                <tr>
+                                    <th>The Drama (Failure Mode)</th>
+                                    <th>What Actually Happens</th>
+                                    <th>How Totally Shuts It Down</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Faking It (No Proof)</strong></td>
+                                    <td>Agent assumes untested code works because the syntax looks pretty.</td>
+                                    <td><strong>Receipt Tags:</strong> Mandatory <code>[SAW_IT_MYSELF]</code> or <code>[NO_RECEIPTS]</code> tags on every handoff claim (INV-003).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Silent Guessing</strong></td>
+                                    <td>Agent encounters vague requirements and secretly compiles a wild guess into code.</td>
+                                    <td><strong>Ask First, Don't Guess:</strong> Agent halts during scoping and asks clarifying questions before building (INV-009).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Projecting Assumptions</strong></td>
+                                    <td>Agent projects standard package managers or framework idioms not present in the files.</td>
+                                    <td><strong>Drop the Assumptions:</strong> Agent audits priors on entry and relies only on verified repository files (INV-010).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cheesy Workarounds</strong></td>
+                                    <td>Agent hits unexpected test friction and sneaks around it with a cheesy fallback hack.</td>
+                                    <td><strong>Huge Red Flag:</strong> Friction triggers an immediate stop-and-inquire routine; no silent hack routing (INV-007, INV-009).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Deleting Old Guards</strong></td>
+                                    <td>Agent deletes an unfamiliar constraint or boundary without knowing what it protected.</td>
+                                    <td><strong>Why Is This Even Here?:</strong> Must trace the originating decision (D-NNN) before altering any guard (INV-004, INV-009).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 02: Three Speeds -->
+            <section class="chapter" id="tiers" aria-labelledby="tiers-title">
+                <div class="chapter-cap">
+                    <span>MEMORY_HIERARCHY.TXT</span>
+                    <span>02 / THREE SPEEDS OF MEMORY</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">02</span>
+                        <div>
+                            <p class="kicker">MEMORY REVOLUTION</p>
+                            <h2 id="tiers-title">Three speeds: Non-Negotiables, Receipts &amp; Group Chat.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 2.0</span>
+                    </div>
+                    <p class="lede">Standard projects mix axioms, architectural conventions, and daily task notes into a giant, messy README. Totally separates truth into three temporal speeds.</p>
+
+                    <div class="tiers-grid">
+                        <div class="tier-card tier-1">
+                            <span class="tier-badge">Tier 1: Permanent</span>
+                            <h3 class="tier-title">The Non-Negotiables</h3>
+                            <span class="tier-meta">docs/INVARIANTS.md [INV-NNN]</span>
+                            <p class="tier-desc">Ten bedrock laws set in stone (INV-001 through INV-010). Autonomous agents cannot alter or relax these without explicit human maintainer sign-off.</p>
+                            <code>IMMUTABLE / ZERO DRIFT</code>
+                        </div>
+                        <div class="tier-card tier-2">
+                            <span class="tier-badge">Tier 2: Epochal</span>
+                            <h3 class="tier-title">The Receipts</h3>
+                            <span class="tier-meta">AGENTS.md, ARCHITECTURE.md, DECISIONS.md</span>
+                            <p class="tier-desc">Append-only architecture and decision history. When a technical choice changes, a new entry supersedes the old; past history is never erased.</p>
+                            <code>APPEND-ONLY / ADRS</code>
+                        </div>
+                        <div class="tier-card tier-3">
+                            <span class="tier-badge">Tier 3: Ephemeral</span>
+                            <h3 class="tier-title">The Group Chat</h3>
+                            <span class="tier-meta">docs/HANDOFF.md [RECEIPT TAGS]</span>
+                            <p class="tier-desc">The immediate status update. Rewritten every session, capped at 80 lines, qualified with explicit Receipt Tags so nobody has to read a novel to get up to speed.</p>
+                            <code>REWRITTEN / &le; 80 LINES</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 03: Five Stages -->
+            <section class="chapter" id="crafts" aria-labelledby="crafts-title">
+                <div class="chapter-cap">
+                    <span>AGENT_ROUTINE.TXT</span>
+                    <span>03 / THE 5-STAGE WORKFLOW</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">03</span>
+                        <div>
+                            <p class="kicker">SESSION PROTOCOL</p>
+                            <h2 id="crafts-title">The 5-Stage Agent Routine.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 3.0</span>
+                    </div>
+                    <p class="lede">Every coding agent follows five invariant stages from entering the room to logging off cleanly.</p>
+
+                    <div class="quest-steps">
+                        <div class="quest-step">
+                            <span class="step-num">01</span>
+                            <div>
+                                <span class="step-title">Catching Up on the Tea</span>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.84rem; color: var(--muted);">Read docs/HANDOFF.md, check the session lock, drop external training priors (INV-010), and confirm a clean git status.</p>
+                            </div>
+                            <span class="badge-pill obs">Read &amp; Audit</span>
+                        </div>
+                        <div class="quest-step">
+                            <span class="step-num">02</span>
+                            <div>
+                                <span class="step-title">The Vibe Check</span>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.84rem; color: var(--muted);">Scope one bounded change, check why old guards exist (INV-004), and ask clarifying questions upfront instead of guessing (INV-009).</p>
+                            </div>
+                            <span class="badge-pill con">Ask First</span>
+                        </div>
+                        <div class="quest-step">
+                            <span class="step-num">03</span>
+                            <div>
+                                <span class="step-title">Making the Edits</span>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.84rem; color: var(--muted);">Surgical implementation with zero conversational filler. If a premise breaks mid-build, hit pause and regroup (INV-009).</p>
+                            </div>
+                            <span class="badge-pill ded">Surgical Code</span>
+                        </div>
+                        <div class="quest-step">
+                            <span class="step-num">04</span>
+                            <div>
+                                <span class="step-title">Showing the Proof</span>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.84rem; color: var(--muted);">Run tests with negative proof grounding (INV-007). Stop on friction instead of hacking workarounds, and assign Receipt Tags.</p>
+                            </div>
+                            <span class="badge-pill obs">Receipt Tags</span>
+                        </div>
+                        <div class="quest-step">
+                            <span class="step-num">05</span>
+                            <div>
+                                <span class="step-title">Updating the Group Chat</span>
+                                <p style="margin: 0.2rem 0 0; font-size: 0.84rem; color: var(--muted);">Rewrite current state under the 80-line limit (INV-005), run check_totally.py, and log off cleanly.</p>
+                            </div>
+                            <span class="badge-pill obs">Handoff &amp; Exit</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 04: Receipts & Proof -->
+            <section class="chapter" id="badges" aria-labelledby="badges-title">
+                <div class="chapter-cap">
+                    <span>PROOF_TAGS.TXT</span>
+                    <span>04 / SHOW ME THE RECEIPTS</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">04</span>
+                        <div>
+                            <p class="kicker">EPISTEMIC TAGGING</p>
+                            <h2 id="badges-title">Receipt Tags &amp; Negative Proof Grounding.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 4.0</span>
+                    </div>
+                    <p class="lede">Never trust an assertion without a receipt. Totally enforces formal epistemic classification on every claim.</p>
+
+                    <div class="table-scroll">
+                        <table class="lex-table">
+                            <thead>
+                                <tr>
+                                    <th>Receipt Tag</th>
+                                    <th>Plain English Meaning</th>
+                                    <th>Vedic Equivalent</th>
+                                    <th>When to Use It</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="badge-pill obs">[SAW_IT_MYSELF]</span></td>
+                                    <td>Directly run and observed in this session</td>
+                                    <td><em>Pratyakṣa</em></td>
+                                    <td>When a test command ran cleanly and you saw the terminal output with your own eyes.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-pill ded">[OBVIOUSLY]</span></td>
+                                    <td>Logically derived from types, schemas, or proofs</td>
+                                    <td><em>Anumāna</em></td>
+                                    <td>Static type checks, AST linting, and mathematical invariants that must hold true.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-pill con">[GOSPEL]</span></td>
+                                    <td>Decreed by maintainer contract or specification</td>
+                                    <td><em>Śabda</em></td>
+                                    <td>Documented requirements, schema contracts, and maintainer specifications.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-pill hyp">[VIBE_CHECK]</span></td>
+                                    <td>Working hypothesis explaining an anomaly</td>
+                                    <td><em>Arthāpatti</em></td>
+                                    <td>An unexplained failure or suspected cause awaiting empirical reproduction.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge-pill unt">[NO_RECEIPTS]</span></td>
+                                    <td>Explicit boundary of non-observation</td>
+                                    <td><em>Anupalabdhi</em></td>
+                                    <td>Things that have not been run or tested this session. The honest admission of limits.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 05: Rosetta Stone -->
+            <section class="chapter" id="lexicon" aria-labelledby="lexicon-title">
+                <div class="chapter-cap">
+                    <span>GLOSSARY.TXT</span>
+                    <span>05 / THE ROSETTA STONE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">05</span>
+                        <div>
+                            <p class="kicker">FOUR-WAY TRANSLATION</p>
+                            <h2 id="lexicon-title">Valley-Girl, Middle-earth, Vedic &amp; Plain English.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 5.0</span>
+                    </div>
+                    <p class="lede">Every term in Totally maps 1-to-1 to plain English, to <a href="../mellon/index.html">Mellon</a>, and to <a href="../vedas/index.html">Vedas</a>. Use this table as a live dictionary to translate across editions.</p>
+
+                    <div class="lexicon-controls">
+                        <div class="search-box">
+                            <input type="text" id="lexicon-search" placeholder="Search Valley slang, LOTR, Vedic, or plain English..." aria-label="Search terms">
+                        </div>
+                        <span class="window-meta">FILTER LIVE / 20 CANONICAL CONCEPTS</span>
+                    </div>
+
+                    <div class="table-scroll">
+                        <table class="lex-table" id="lexicon-table">
+                            <thead>
+                                <tr>
+                                    <th>Totally Term (Valley-Girl)</th>
+                                    <th>Plain English Meaning</th>
+                                    <th>Mellon (Middle-earth)</th>
+                                    <th>Vedas (Sanskrit)</th>
+                                    <th>File / Rule</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>The Non-Negotiables</strong></td>
+                                    <td>Immutable bedrock invariants of the project</td>
+                                    <td>The Elder Runes</td>
+                                    <td><span class="phonetic">Śruti</span></td>
+                                    <td><code>docs/INVARIANTS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Receipts</strong></td>
+                                    <td>Append-only architecture and decision history</td>
+                                    <td>The Red Book of Westmarch</td>
+                                    <td><span class="phonetic">Smṛti</span></td>
+                                    <td><code>docs/DECISIONS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Group Chat</strong></td>
+                                    <td>Rewritten 80-line current session handoff</td>
+                                    <td>The Watchfire Log</td>
+                                    <td><span class="phonetic">Vartamāna</span></td>
+                                    <td><code>docs/HANDOFF.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fresh Brain</strong></td>
+                                    <td>Fresh context window with zero memory of past chats</td>
+                                    <td>New Traveler</td>
+                                    <td><span class="phonetic">Śūnya</span></td>
+                                    <td>Architecture</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Receipt Tag</strong></td>
+                                    <td>Mandatory tag showing how a claim was proven</td>
+                                    <td>Proof Badge / Ranger Mark</td>
+                                    <td><span class="phonetic">Pramāṇa</span></td>
+                                    <td><code>INV-003</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Punchy Proposition</strong></td>
+                                    <td>High-density proposition under 25 words with zero fluff</td>
+                                    <td>Mithril Prose</td>
+                                    <td><span class="phonetic">Sūtra</span></td>
+                                    <td><code>INV-008</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Receipt Consolidation</strong></td>
+                                    <td>Subconscious distillation of episodic logs into short rules</td>
+                                    <td>Elven Sleep</td>
+                                    <td><span class="phonetic">Sūtra Consolidator</span></td>
+                                    <td><code>INV-008</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>No Em Dashes, Seriously</strong></td>
+                                    <td>Ban on em dashes and robotic AI conversational filler</td>
+                                    <td>No Black Speech</td>
+                                    <td><span class="phonetic">Śikṣā</span></td>
+                                    <td><code>INV-006</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Catch the Red Flag</strong></td>
+                                    <td>A new test must fail on the old bug before you trust it</td>
+                                    <td>Sting's Blue Glow</td>
+                                    <td><span class="phonetic">Vyatireka</span></td>
+                                    <td><code>INV-007</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Vibe Linter</strong></td>
+                                    <td>Bidirectional Python script enforcing document integrity</td>
+                                    <td>The Palantír Linter</td>
+                                    <td><span class="phonetic">Ghana-pāṭha Checker</span></td>
+                                    <td><code>INV-004</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Agent Routine</strong></td>
+                                    <td>The 5-stage start-to-finish session workflow</td>
+                                    <td>Fellowship Quest Loop</td>
+                                    <td><span class="phonetic">Kalpa</span></td>
+                                    <td><code>AGENTS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Drop the Assumptions</strong></td>
+                                    <td>Discarding pre-trained model priors upon repo entry</td>
+                                    <td>Ban Saruman's Voice</td>
+                                    <td><span class="phonetic">Adhyāsa-Nirāsa</span></td>
+                                    <td><code>INV-010</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mixed Signals</strong></td>
+                                    <td>Ambiguity or part-whole gap blocking sound execution</td>
+                                    <td>Riddles in the Dark</td>
+                                    <td><span class="phonetic">Saṃśaya</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ask First, Don't Guess</strong></td>
+                                    <td>Asking clarifying questions before writing code; never guessing</td>
+                                    <td>Speak, Friend</td>
+                                    <td><span class="phonetic">Praśna</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hit Pause &amp; Regroup</strong></td>
+                                    <td>Looping from Build/Verify back to Scope when a premise breaks</td>
+                                    <td>Turn Back at Caradhras</td>
+                                    <td><span class="phonetic">Āvartana</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Huge Red Flag</strong></td>
+                                    <td>Code or test friction that halts workarounds and triggers inquiry</td>
+                                    <td>"You Shall Not Pass!"</td>
+                                    <td><span class="phonetic">Pratibandha</span></td>
+                                    <td><code>INV-007</code>, <code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Why Is This Even Here?</strong></td>
+                                    <td>Tracing why an old constraint exists before removing it (Chesterton's Gate)</td>
+                                    <td>The Doors of Durin</td>
+                                    <td><span class="phonetic">Pūrva-Pakṣa</span></td>
+                                    <td><code>INV-004</code>, <code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Both Things Are True</strong></td>
+                                    <td>Two true claims that conflict, tracked with an owner and review trigger</td>
+                                    <td>Two Watchtowers</td>
+                                    <td><span class="phonetic">Ubhaya-Saṃkaṭa</span></td>
+                                    <td><code>docs/DECISIONS.md</code> (<code>T-NNN</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Our Circle (Zone)</strong></td>
+                                    <td>One repository and the rules that apply inside it; outside docs are gossip</td>
+                                    <td>Realm Border (Zone)</td>
+                                    <td><span class="phonetic">Kṣetra</span></td>
+                                    <td><code>AGENTS.md</code>, <code>docs/SECURITY.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Plan</strong></td>
+                                    <td>Permanent, never-renumbered roadmap task IDs</td>
+                                    <td>The Shire Reckoning</td>
+                                    <td><span class="phonetic">Jyotiṣa</span></td>
+                                    <td><code>INV-004</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 06: Cheat Sheet -->
+            <section class="chapter" id="cheatsheet" aria-labelledby="cheatsheet-title">
+                <div class="chapter-cap">
+                    <span>CHEAT_SHEET.TXT</span>
+                    <span>06 / QUICK REFERENCE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">06</span>
+                        <div>
+                            <p class="kicker">QUICK REFERENCE</p>
+                            <h2 id="cheatsheet-title">The Totally Cheat Sheet.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 6.0</span>
+                    </div>
+                    <p class="lede">Copy-paste commands, prompts, and Non-Negotiables for daily agent sessions.</p>
+
+                    <div class="tabs-nav" role="tablist">
+                        <button class="tab-btn active" data-tab="tab-routine" role="tab">Agent Routine</button>
+                        <button class="tab-btn" data-tab="tab-prompt" role="tab">Starter Prompt</button>
+                        <button class="tab-btn" data-tab="tab-rules" role="tab">Ten Non-Negotiables</button>
+                    </div>
+
+                    <!-- Tab 1: Routine -->
+                    <div class="tab-panel active" id="tab-routine" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>Session Entry Routine</h3>
+                            <div class="copy-row">
+                                <code>1. Read docs/HANDOFF.md</code>
+                                <button class="btn small copy-btn" data-copy="Read docs/HANDOFF.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>2. Read docs/INVARIANTS.md</code>
+                                <button class="btn small copy-btn" data-copy="Read docs/INVARIANTS.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>3. Run python3 tools/check_totally.py --template</code>
+                                <button class="btn small copy-btn" data-copy="python3 tools/check_totally.py --template">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>4. Inspect git status</code>
+                                <button class="btn small copy-btn" data-copy="git status">COPY</button>
+                            </div>
+                        </div>
+
+                        <div class="cheat-card">
+                            <h3>Session Exit Routine</h3>
+                            <div class="copy-row">
+                                <code>1. Run offline verification tests</code>
+                                <button class="btn small copy-btn" data-copy="Run offline tests">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>2. Rewrite docs/HANDOFF.md (under 80 lines, with Receipt Tags)</code>
+                                <button class="btn small copy-btn" data-copy="Rewrite docs/HANDOFF.md under 80 lines with Receipt Tags">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>3. Run python3 tools/check_totally.py</code>
+                                <button class="btn small copy-btn" data-copy="python3 tools/check_totally.py">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Prompt -->
+                    <div class="tab-panel" id="tab-prompt" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>AI Coding Assistant Starter Prompt</h3>
+                            <div class="copy-row">
+                                <code>You are an agent operating under Totally in totally/. Read docs/HANDOFF.md and docs/INVARIANTS.md first. Never guess silently; if anything is ambiguous, ask clarifying questions before editing code. Show me the receipts. Run python3 tools/check_totally.py to verify your work.</code>
+                                <button class="btn small copy-btn" data-copy="You are an agent operating under Totally in totally/. Read docs/HANDOFF.md and docs/INVARIANTS.md first. Never guess silently; if anything is ambiguous, ask clarifying questions before editing code. Show me the receipts. Run python3 tools/check_totally.py to verify your work.">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Rules -->
+                    <div class="tab-panel" id="tab-rules" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>The Ten Non-Negotiables</h3>
+                            <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6;">
+                                <li><strong>INV-001:</strong> Zero External Baggage (standard library only)</li>
+                                <li><strong>INV-002:</strong> One Source of Truth (no duplicate descriptions)</li>
+                                <li><strong>INV-003:</strong> Show Me the Receipts (mandatory Receipt Tags)</li>
+                                <li><strong>INV-004:</strong> Two-Way Sync (reciprocal reference checks)</li>
+                                <li><strong>INV-005:</strong> Keep It Short (80-line Group Chat cap)</li>
+                                <li><strong>INV-006:</strong> No Em Dashes, Seriously (zero em dashes)</li>
+                                <li><strong>INV-007:</strong> Catch the Red Flag (negative proof grounding)</li>
+                                <li><strong>INV-008:</strong> Keep It Tight (under 25 words per rule)</li>
+                                <li><strong>INV-009:</strong> Ask First, Don't Guess (clarify upfront)</li>
+                                <li><strong>INV-010:</strong> Drop the Assumptions (no prior projection)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 07: Linter -->
+            <section class="chapter" id="linter" aria-labelledby="linter-title">
+                <div class="chapter-cap">
+                    <span>VIBE_LINTER.TXT</span>
+                    <span>07 / AUTOMATED ENFORCEMENT</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">07</span>
+                        <div>
+                            <p class="kicker">AUTOMATION</p>
+                            <h2 id="linter-title">The Vibe Linter: Zero-Dependency Guard.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 7.0</span>
+                    </div>
+                    <p class="lede">Prose guidelines without code enforcement are just wishes. The Vibe Linter turns the Non-Negotiables into a binary build gate.</p>
+
+                    <div class="terminal">
+                        <pre>$ python3 tools/check_totally.py --template
+0 error(s), 0 warning(s) in 15 file(s)</pre>
+                    </div>
+
+                    <div class="hero-grid">
+                        <div class="hero-card">
+                            <h3>Bidirectional Check</h3>
+                            <p>Ensures that every Non-Negotiable cited anywhere exists in <code>docs/INVARIANTS.md</code>, and every rule defined there is cited in the living documents.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Receipt Tag Scanner</h3>
+                            <p>Scans every capability assertion in <code>docs/HANDOFF.md</code> to guarantee that an explicit Receipt Tag is present.</p>
+                        </div>
+                        <div class="hero-card">
+                            <h3>Em Dash Firewall</h3>
+                            <p>Scans all Markdown prose and rejects any em dashes (INV-006), keeping prose spoken, direct, and free of model ruts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 08: Lineage -->
+            <section class="chapter" id="lineage" aria-labelledby="lineage-title">
+                <div class="chapter-cap">
+                    <span>LINEAGE.TXT</span>
+                    <span>08 / ARCHITECTURAL EVOLUTION</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">08</span>
+                        <div>
+                            <p class="kicker">GENEALOGY</p>
+                            <h2 id="lineage-title">Four editions, one unbroken chain of rigor.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 8.0</span>
+                    </div>
+                    <p class="lede">From biological physics to Sanskrit epistemology, Middle-earth lore, and pop-culture clarity: the evolution of AI agent memory.</p>
+
+                    <div class="lineage-grid">
+                        <div class="lineage-card">
+                            <h4>The Hypervisor</h4>
+                            <p><strong>"Gives the model a body."</strong> Semantic leverage, bio-physics, and living memory.</p>
+                        </div>
+                        <div class="lineage-card">
+                            <h4>The Manifold</h4>
+                            <p><strong>"Gives the work a memory."</strong> Zero-dependency Markdown contracts and two speeds.</p>
+                        </div>
+                        <div class="lineage-card">
+                            <h4>Vedas</h4>
+                            <p><strong>"Classical Epistemology."</strong> Śruti, Smṛti, Vartamāna, Pramāṇa, and Sūtras for epistemology nerds.</p>
+                        </div>
+                        <div class="lineage-card">
+                            <h4>Mellon</h4>
+                            <p><strong>"Plain English &amp; Lore."</strong> Elder Runes, Red Book, Watchfire, and Lord of the Rings tropes.</p>
+                        </div>
+                        <div class="lineage-card active">
+                            <h4>Totally</h4>
+                            <p><strong>"Like, Seriously Epistemic."</strong> Non-Negotiables, The Receipts, The Group Chat, and Valley-Girl clarity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer style="padding: 2rem var(--gutter); background: #0c0216; border-top: 2px solid var(--rule); color: var(--ega-lgray); text-align: center; font-size: 0.75rem;">
+    <div style="max-width: var(--sheet); margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <span>TOTALLY: LIKE, SERIOUSLY EPISTEMIC &bull; PART OF <a href="../index.html" style="color: var(--pink); text-decoration: none;">THE MANIFOLD</a></span>
+        <span>SIBLINGS: <a href="../vedas/index.html" style="color: var(--pink); text-decoration: none;">VEDAS (SANSKRIT)</a> &bull; <a href="../mellon/index.html" style="color: var(--pink); text-decoration: none;">MELLON (MIDDLE-EARTH)</a></span>
+    </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
