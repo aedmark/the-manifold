@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Mellon: Doors of Durin">
+    <rect width="32" height="32" fill="#060d09"/>
+    <!-- Arch of the Doors of Durin in Mithril & Elvish Emerald -->
+    <path d="M6,28 L6,15 A10,10 0 0,1 26,15 L26,28" fill="none" stroke="#48d18a" stroke-width="2"/>
+    <path d="M9,28 L9,15 A7,7 0 0,1 23,15 L23,28" fill="none" stroke="#c8d6e5" stroke-width="1" stroke-dasharray="2,2"/>
+    <!-- Star of Earendil / Feanor -->
+    <polygon points="16,8 17.5,13.5 23,15 17.5,16.5 16,22 14.5,16.5 9,15 14.5,13.5" fill="#ffd166"/>
+    <circle cx="16" cy="15" r="2" fill="#ffffff"/>
+</svg>

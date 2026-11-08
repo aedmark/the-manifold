@@ -39,7 +39,7 @@
             <a href="#checker">Checker</a>
             <a href="#adopt">Adopt</a>
             <a href="#lineage">Lineage</a>
-            <a href="#vedas">Vedas</a>
+            <a href="#vedas">Vedas &amp; Mellon</a>
             <a href="#faq">FAQ</a>
         </nav>
         <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold">Repository <span aria-hidden="true">↗</span></a>
@@ -80,10 +80,12 @@
 │  └─ ...
 ├─ tools/
 │  └─ check_docs.py
-└─ vedas/  [EPISTEMIC]
+├─ vedas/   [SANSKRIT]
+│  ├─ docs/INVARIANTS.md
+│  └─ tools/check_vedas.py
+└─ mellon/  [PLAIN / LOTR]
    ├─ docs/INVARIANTS.md
-   ├─ tools/check_vedas.py
-   └─ ...</pre>
+   └─ tools/check_mellon.py</pre>
             </div>
             <p class="rail-status"><span aria-hidden="true"></span> TEMPLATE / CLEAN</p>
         </aside>
@@ -734,10 +736,10 @@ Firefox; a real phone.
 
                     <div class="hero-grid" style="margin-top: 1.5rem; align-items: center;">
                         <div class="hero-copy">
-                            <p style="font-size: .95rem; line-height: 1.6; color: #2b2f24;">Vedas is fully realized in this repository in <code>vedas/</code> with its own dedicated field manual, invariant contracts, Nyāya proof classifications, and Ghana-pāṭha verification suite.</p>
+                            <p style="font-size: .95rem; line-height: 1.6; color: #2b2f24;">Vedas is realized in <code>vedas/</code> with classical Sanskrit terminology, while <b>Mellon</b> in <a href="mellon/index.html"><code>mellon/</code></a> provides the exact same 10 invariants, proof badges, and reciprocal linter in plain English and Middle-earth (Lord of the Rings) lore.</p>
                             <div class="actions">
-                                <a class="btn primary" href="vedas/index.html">Open Vedas Field Manual <span aria-hidden="true">↗</span></a>
-                                <a class="btn" href="https://github.com/aedmark/the-manifold/tree/main/vedas">Inspect vedas/ on GitHub <span aria-hidden="true">↗</span></a>
+                                <a class="btn primary" href="mellon/index.html">Open Mellon (Plain English / LOTR) <span aria-hidden="true">↗</span></a>
+                                <a class="btn" href="vedas/index.html">Open Vedas (Sanskrit) <span aria-hidden="true">↗</span></a>
                             </div>
                         </div>
 
@@ -784,8 +786,8 @@ Next task ....... <span class="t-cyan">P3-02</span>
 
                     <div class="faq">
                         <details>
-                            <summary>What is Vedas, and how does it relate to The Manifold?</summary>
-                            <p>Vedas is an experimental epistemic fork located in <a href="vedas/index.html"><code>vedas/</code></a>. While The Manifold separates truth into two speeds (rewriting current state and appending past history), Vedas adapts classical Vedic knowledge preservation techniques to autonomous software development. It introduces a third tier of immutable invariants (Śruti), mandatory Pramāṇa proof tags (<code>[OBSERVED]</code>, <code>[DEDUCED]</code>, <code>[CONTRACT]</code>, <code>[HYPOTHESIS]</code>, <code>[UNTESTED]</code>), sūtra-dense propositions to conserve context windows, and a bidirectional Ghana-pāṭha checker (<code>tools/check_vedas.py</code>). You can explore its full documentation at <a href="vedas/index.html">vedas/index.html</a>.</p>
+                            <summary>What are Vedas and Mellon, and how do they relate to The Manifold?</summary>
+                            <p><b>Vedas</b> (<a href="vedas/index.html"><code>vedas/</code></a>) and <b>Mellon</b> (<a href="mellon/index.html"><code>mellon/</code></a>) are sibling epistemic forks of The Manifold. Vedas uses classical Sanskrit epistemology (Śruti, Smṛti, Vartamāna, Pramāṇa badges, Nyāya proofs, Ghana-pāṭha checker), while Mellon translates 100% of those mechanics into plain English and Lord of the Rings lore (Elder Runes, The Red Book, The Watchfire Log, Ranger Proof Badges, Sting's Blue Glow, and The Palantír Linter).</p>
                         </details>
                         <details>
                             <summary>What exactly do I get?</summary>

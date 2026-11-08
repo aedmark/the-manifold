@@ -98,7 +98,9 @@ python3 tools/check_docs.py --template
 That prints `0 error(s), 0 warning(s) in 13 file(s)`. Without `--template`, the checker lists every blank an adopter
 must fill. That is not a broken repository; it is the adoption checklist.
 
-The field manual is [`index.html`](index.html). It is the current front door.
+The field manual is [`index.html`](index.html). It is the current front door. For three-speed epistemic extensions with
+mandatory proof badges and reciprocal invariant checkers, see [`vedas/`](vedas/README.md) (classical Sanskrit
+epistemology) and [`mellon/`](mellon/README.md) (the plain-English and Middle-earth edition).
 
 ## Requirements
 

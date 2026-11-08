@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellon: Plain-English & Middle-earth Epistemic Memory for AI Agents</title>
+    <meta name="description" content="Mellon is the plain-English and Middle-earth edition of Vedas. It separates repository truth into Elder Runes, The Red Book, and The Watchfire Log, enforces Proof Badges, and guarantees zero drift across sessions.">
+    <meta name="author" content="Andrew Edmark">
+    <meta name="theme-color" content="#060c09">
+    <meta property="og:title" content="Mellon: Plain-English & Middle-earth Epistemic Memory for AI Agents">
+    <meta property="og:description" content="Speak, friend, and enter. The Fellowship changes every session; the Red Book endures. Full epistemic rigor for AI coding agents in plain English and Lord of the Rings lore.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the field manual</a>
+
+<div class="window-bar">
+    <span class="window-name">MELLON\README.TXT</span>
+    <span class="window-meta">DOORS OF DURIN: SPEAK, FRIEND, AND ENTER</span>
+    <span class="window-controls" aria-hidden="true">[ &#9633; ]</span>
+</div>
+
+<header class="site-head">
+    <div class="wrap head-inner">
+        <a class="brand" href="#top" aria-label="Mellon home">
+            <span class="brand-mark" aria-hidden="true">M</span>
+            <span class="brand-ver">MELLON</span>
+            <span class="brand-parent">/ THE MANIFOLD</span>
+        </a>
+        <nav class="head-nav" aria-label="Primary navigation">
+            <a href="../index.html">&larr; The Manifold</a>
+            <a href="../vedas/index.html">Vedas (Sanskrit)</a>
+            <a href="#problem">Problem</a>
+            <a href="#tiers">3 Tiers</a>
+            <a href="#crafts">6 Crafts</a>
+            <a href="#badges">Proof Badges</a>
+            <a href="#lexicon">Glossary</a>
+            <a href="#cheatsheet">Cheat Sheet</a>
+            <a href="#palantir">Linter</a>
+            <a href="#lineage">Lineage</a>
+        </nav>
+        <a class="btn primary head-cta" href="https://github.com/aedmark/the-manifold/tree/main/mellon">Repository <span aria-hidden="true">&nearr;</span></a>
+    </div>
+</header>
+
+<main id="main" class="desk">
+    <div class="sheet">
+
+        <aside class="rail">
+            <div class="rail-head">
+                <p class="rail-label">FIELD MANUAL</p>
+                <p class="rail-title">THE RED<br>BOOK</p>
+                <p class="rail-meta">15 DOCS / RUNES INTACT</p>
+            </div>
+            <nav class="rail-nav" aria-label="Contents">
+                <a href="#top"><span>00</span> Start</a>
+                <a href="#problem"><span>01</span> The failure</a>
+                <a href="#tiers"><span>02</span> Three tiers</a>
+                <a href="#crafts"><span>03</span> The six crafts</a>
+                <a href="#badges"><span>04</span> Proof &amp; Sting</a>
+                <a href="#lexicon"><span>05</span> Translation table</a>
+                <a href="#cheatsheet"><span>06</span> Cheat sheet</a>
+                <a href="#palantir"><span>07</span> Palant&iacute;r linter</a>
+                <a href="#lineage"><span>08</span> Lineage</a>
+            </nav>
+            <div class="rail-tree" aria-label="Repository topology">
+                <p class="tree-label">MELLON TOPOLOGY</p>
+                <pre>mellon/
+&#9500;&#9472; AGENTS.md (Red Book)
+&#9500;&#9472; ROADMAP.md (Shire)
+&#9500;&#9472; docs/
+&#9474;  &#9500;&#9472; INVARIANTS.md (Runes)
+&#9474;  &#9500;&#9472; HANDOFF.md (Watchfire)
+&#9474;  &#9500;&#9472; ARCHITECTURE.md
+&#9474;  &#9500;&#9472; DECISIONS.md
+&#9474;  &#9492;&#9472; GLOSSARY.md (Lexicon)
+&#9492;&#9472; tools/
+   &#9492;&#9472; check_mellon.py</pre>
+            </div>
+            <p class="rail-status"><span aria-hidden="true"></span> WATCHFIRE / LIT</p>
+        </aside>
+
+        <div class="paper">
+
+            <!-- Section 00: Hero -->
+            <section class="chapter hero" id="top" aria-labelledby="hero-title">
+                <div class="chapter-cap">
+                    <span>MELLON.TXT</span>
+                    <span>00 / SPEAK, FRIEND, AND ENTER</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <p class="kicker">MELLON / PLAIN-ENGLISH &amp; MIDDLE-EARTH EDITION OF VEDAS</p>
+                    <h1 id="hero-title">The Fellowship changes every session.<br><span class="hl">The Red Book endures.</span></h1>
+
+                    <div class="hero-grid">
+                        <div class="hero-copy">
+                            <p class="lede">Every new AI coding session arrives at the Prancing Pony with zero memory of the last quest. <a href="../vedas/index.html">Vedas</a> solved this with classical Indian epistemology, but Sanskrit terminology can be a steep mountain pass. <b>Mellon</b> gives you the exact same formal invariants, proof badges, and reciprocal linting in plain English and familiar Middle-earth lore.</p>
+                            <p style="margin-top: .8rem; font-size: .88rem; color: #2b332d; line-height: 1.6;">At the West-gate of Moria, the Doors of Durin open only when you speak the word <em>Mellon</em> (friend). In this protocol, an agent never guesses in the dark: it asks clarifying questions at the Council of Elrond, checks why old gates were built before tearing them down, verifies fixes with Sting's Blue Glow, and leaves an 80-line Watchfire Log for the next traveler.</p>
+                            <div class="actions">
+                                <a class="btn primary" href="#tiers">Explore the protocol <span aria-hidden="true">&darr;</span></a>
+                                <a class="btn" href="#lexicon">Plain-English / Vedic Table <span aria-hidden="true">&rarr;</span></a>
+                                <a class="btn" href="../index.html">&larr; The Manifold</a>
+                            </div>
+                        </div>
+
+                        <div class="hero-side">
+                            <div class="terminal" aria-label="Specimen Watchfire handoff and Palantir linter output">
+                                <div class="terminal-bar"><span>WATCHFIRE_SESSION_01.TXT</span><span>SPECIMEN</span></div>
+                                <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">cat docs/HANDOFF.md</span>
+<span class="t-dim"># The Watchfire Log: Session Handoff</span>
+<span class="t-dim">Last updated: 2026-11-08</span>
+
+<span class="t-cyan">## Current state</span>
+Mellon Suite .... <span class="t-ok">[OBSERVED] 15/15 docs clean</span>
+No Black Speech . <span class="t-ok">[CONTRACT] INV-006 enforced</span>
+Benchmarks ...... <span class="t-warn">[UNTESTED] pending P3-01</span>
+Next quest ...... <span class="t-cyan">P2-01</span>
+
+<span class="t-prompt">$</span> <span class="t-cmd">python3 tools/check_mellon.py --template</span>
+<span class="t-ok">0 error(s), 0 warning(s) in 15 file(s)</span></pre>
+                                </div>
+                                <div class="terminal-foot"><span>PALANT&Iacute;R LINTER</span><span>15 DOCS / CLEAN</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 01: The Problem -->
+            <section class="chapter" id="problem" aria-labelledby="problem-title">
+                <div class="chapter-cap">
+                    <span>SHADOWS.TXT</span>
+                    <span>01 / THE THREE TRAPS</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">01</span>
+                        <div>
+                            <p class="kicker">THE FAILURE</p>
+                            <h2 id="problem-title">How short sessions lose the quest.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 1.0</span>
+                    </div>
+                    <p class="lede">A fresh context window keeps an agent fast and sharp. It is also where hard-won project lore vanishes unless the repository enforces strict persistence and pre-build questioning.</p>
+
+                    <div class="failure-grid">
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">01</span>
+                            <h3>Guessing in the dark</h3>
+                            <p>When requirements admit two valid interpretations, standard agents silently guess one, write 400 lines on the wrong road, and force you to unwind it.</p>
+                        </article>
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">02</span>
+                            <h3>Saruman's voice (prior illusions)</h3>
+                            <p>Even in a clean window, the model's weights whisper that every project uses the same default frameworks or build steps, blinding it to your actual files.</p>
+                        </article>
+                        <article class="failure">
+                            <span class="failure-num" aria-hidden="true">03</span>
+                            <h3>Unverified boasts</h3>
+                            <p>A handoff claims a feature works because the code looked plausible. Nobody ran the test suite. The next session builds on a hollow bridge.</p>
+                        </article>
+                    </div>
+
+                    <blockquote class="pull">
+                        <p>The problem is not that the model is a new traveler. It is that nobody left it the Red Book or told it to ask before guessing.</p>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Section 02: Three Tiers of Lore -->
+            <section class="chapter" id="tiers" aria-labelledby="tiers-title">
+                <div class="chapter-cap">
+                    <span>THREE_TIERS.TXT</span>
+                    <span>02 / THREE SPEEDS OF TRUTH</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">02</span>
+                        <div>
+                            <p class="kicker">THE FOUNDATION</p>
+                            <h2 id="tiers-title">The Elder Runes, The Red Book, and The Watchfire.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 2.0</span>
+                    </div>
+                    <p class="lede">Mellon separates project documentation into three distinct tiers based on how fast truth is allowed to change.</p>
+
+                    <div class="speed-grid">
+                        <article class="speed-card sruti">
+                            <p class="card-label">CARVED IN STONE / IMMUTABLE</p>
+                            <h3>The Elder Runes</h3>
+                            <p>Bedrock laws of the repository (formerly <em>Śruti</em>). Agents may never break, relax, or edit these invariants without explicit maintainer decree.</p>
+                            <ul>
+                                <li><code>docs/INVARIANTS.md</code> holds <code>INV-001</code> to <code>INV-010</code>.</li>
+                                <li>Every rule is reciprocally linked across the docs.</li>
+                                <li>Enforced automatically by <code>check_mellon.py</code>.</li>
+                            </ul>
+                        </article>
+
+                        <article class="speed-card smrti">
+                            <p class="card-label">APPEND-ONLY / ENDURING LORE</p>
+                            <h3>The Red Book of Westmarch</h3>
+                            <p>Institutional memory and architecture history (formerly <em>Smṛti</em>). When a decision changes, a new entry supersedes the old so nobody repeats a dead end.</p>
+                            <ul>
+                                <li><code>docs/DECISIONS.md</code> records why each gate was built.</li>
+                                <li><code>ROADMAP.md</code> tracks quests with permanent IDs.</li>
+                                <li><code>docs/GLOSSARY.md</code> locks down project terms.</li>
+                            </ul>
+                        </article>
+
+                        <article class="speed-card vartamana">
+                            <p class="card-label">REWRITTEN / RIGHT NOW</p>
+                            <h3>The Watchfire Log</h3>
+                            <p>The Beacon of Minas Tirith (formerly <em>Vartamāna</em>). Overwritten every session and strictly capped at 80 lines so the next traveler sees the truth in one glance.</p>
+                            <ul>
+                                <li><code>docs/HANDOFF.md</code> holds verified current status.</li>
+                                <li>Every claim requires an explicit Proof Badge.</li>
+                                <li>Old logs move to <code>docs/archive/</code>.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 03: The Six Crafts -->
+            <section class="chapter" id="crafts" aria-labelledby="crafts-title">
+                <div class="chapter-cap">
+                    <span>SIX_CRAFTS.TXT</span>
+                    <span>03 / REPOSITORY ANATOMY</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">03</span>
+                        <div>
+                            <p class="kicker">REPOSITORY TOPOLOGY</p>
+                            <h2 id="crafts-title">The Six Crafts of the Lore-Masters.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 3.0</span>
+                    </div>
+                    <p class="lede">Where Vedas organizes the repository around the six classical Sanskrit <em>Vedāṅgas</em>, Mellon maps the exact same six structural disciplines into plain English and Middle-earth lore.</p>
+
+                    <div class="vedanga-grid">
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">01 / THE FELLOWSHIP QUEST LOOP (FORMERLY KALPA)</span>
+                            <h3>The 5-Stage Session Ritual</h3>
+                            <p>Every session walks the same five steps: <b>Scouting</b> (read &amp; drop priors), <b>Council of Elrond</b> (scope &amp; ask clarifying questions), <b>The Forge</b> (build), <b>Trial at Khazad-d&ucirc;m</b> (verify), and <b>Watchfire</b> (handoff), with a <em>Turn Back at Caradhras</em> loopback whenever a premise breaks.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">02 / THE PALANT&Iacute;R LINTER (FORMERLY VY&#256;KARA&#7750;A)</span>
+                            <h3>Bidirectional Seeing-Stone</h3>
+                            <p><code>tools/check_mellon.py</code> validates every cross-reference in milliseconds. It blocks dangling IDs, completed tasks left in Next steps, missing Proof Badges, and broken relative links.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">03 / MITHRIL ECONOMY (FORMERLY CHANDAS)</span>
+                            <h3>Light as a Feather, Hard as Dragon Scales</h3>
+                            <p>Enforces strict token and line bounds (<code>INV-005</code>, <code>INV-008</code>). The Watchfire handoff is capped at 80 lines, and architectural rules are forged in <b>Mithril Prose</b> (under 25 words, zero fluff).</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">04 / NO BLACK SPEECH (FORMERLY &#346;IK&#7778;&#256;)</span>
+                            <h3>The Lexical Firewall (INV-006)</h3>
+                            <p>Bans em dashes, sycophantic chat openers, and robotic filler across all documentation, code comments, and commits. Plain declarative English keeps the signal clean.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">05 / THE ELVISH LEXICON (FORMERLY NIRUKTA)</span>
+                            <h3>Canonical Glossary</h3>
+                            <p>Maintains unambiguous project vocabulary in <code>docs/GLOSSARY.md</code> and <code>AGENTS.md</code> so terms never drift across different models or sessions.</p>
+                        </article>
+
+                        <article class="vedanga-card">
+                            <span class="vedanga-tag">06 / THE SHIRE RECKONING (FORMERLY JYOTI&#7778;A)</span>
+                            <h3>Permanent Quest IDs</h3>
+                            <p>Tracks work in <code>ROADMAP.md</code> with permanent identifiers (<code>P1-01</code>, <code>P2-03</code>). Quests are never renumbered; dropped quests record why the path was abandoned.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 04: Proof Badges, Sting's Blue Glow & Hermeneutic Gates -->
+            <section class="chapter" id="badges" aria-labelledby="badges-title">
+                <div class="chapter-cap">
+                    <span>PROOF_AND_GATES.TXT</span>
+                    <span>04 / VERIFICATION &amp; INQUIRY</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">04</span>
+                        <div>
+                            <p class="kicker">PROOF &amp; HERMENEUTIC SAFEGUARDS</p>
+                            <h2 id="badges-title">Ranger Proof Badges, Sting's Blue Glow &amp; The Doors of Durin.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 4.0</span>
+                    </div>
+                    <p class="lede">In Mellon, vague claims like "the parser works" are forbidden. Every assertion carries a Proof Badge (<code>INV-003</code>), every bugfix requires Sting's Blue Glow (<code>INV-007</code>), and every ambiguity triggers a clarifying question at the Council of Elrond (<code>INV-009</code>).</p>
+
+                    <div class="cheat-card">
+                        <h3>The Five Ranger Proof Badges (Plain English)</h3>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag observed">[OBSERVED]</span> <b>Eyes of the Ranger:</b> Directly verified by running a test or command in this session.</span>
+                            <button class="btn small copy-btn" data-copy="[OBSERVED]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag deduced">[DEDUCED]</span> <b>Lore-master's Deduction:</b> Invariantly proved from static types, schemas, or axioms.</span>
+                            <button class="btn small copy-btn" data-copy="[DEDUCED]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag contract">[CONTRACT]</span> <b>Word of the Council:</b> Formal rule defined in Elder Runes or maintainer policy.</span>
+                            <button class="btn small copy-btn" data-copy="[CONTRACT]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag hypothesis">[HYPOTHESIS]</span> <b>Rumor in the Shire:</b> Working theory for an anomaly; requires empirical proof.</span>
+                            <button class="btn small copy-btn" data-copy="[HYPOTHESIS]">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <span><span class="pramana-tag untested">[UNTESTED]</span> <b>Uncharted Wilds ("Here Be Dragons"):</b> Explicit boundary of what was not run this session.</span>
+                            <button class="btn small copy-btn" data-copy="[UNTESTED]">COPY</button>
+                        </div>
+                    </div>
+
+                    <h3>The 5-Step Ranger's Trial (With Sting's Blue Glow)</h3>
+                    <p>When fixing bugs or adding behavior, agents follow this five-step proof (replacing the Sanskrit <em>Nyāya Pañca-Avayava</em>):</p>
+
+                    <div class="nyaya-steps">
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">01</span>
+                            <span class="nyaya-term">The Claim</span>
+                            <span>State the required behavior or Elder Rune clearly.</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">02</span>
+                            <span class="nyaya-term">Track the Orc</span>
+                            <span>Identify the exact root cause or missing check in the existing code.</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">03</span>
+                            <span class="nyaya-term">Sting's Blue Glow</span>
+                            <span>Write a test for the bug and watch it fail on the old code first (glow blue like Bilbo's blade when Orcs are near, <code>INV-007</code>). A test that passes on broken code is a dull blade.</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">04</span>
+                            <span class="nyaya-term">The Forge</span>
+                            <span>Apply the minimal, surgical code change required to fix the defect.</span>
+                        </div>
+                        <div class="nyaya-step">
+                            <span class="nyaya-num">05</span>
+                            <span class="nyaya-term">The Clear Blade</span>
+                            <span>Re-run the test suite, observe clean passage, and badge the result with <code>[OBSERVED]</code>.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 05: Plain-English / Middle-earth / Vedic Translation Table -->
+            <section class="chapter" id="lexicon" aria-labelledby="lexicon-title">
+                <div class="chapter-cap">
+                    <span>GLOSSARY.TXT</span>
+                    <span>05 / ROSETTA STONE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">05</span>
+                        <div>
+                            <p class="kicker">THE ELVISH LEXICON</p>
+                            <h2 id="lexicon-title">Plain English, Middle-earth &amp; Vedic Rosetta Stone.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 5.0</span>
+                    </div>
+                    <p class="lede">Every term in Mellon maps 1-to-1 to plain English and to its original Sanskrit counterpart in <a href="../vedas/index.html">Vedas</a>. Use this table as a Rosetta Stone, or remix it into your own favorite universe (Star Trek, Dune, Warhammer, or pure corporate English).</p>
+
+                    <div class="lexicon-controls">
+                        <div class="search-box">
+                            <input type="text" id="lexicon-search" placeholder="Search plain English, LOTR, or Sanskrit..." aria-label="Search terms">
+                        </div>
+                        <span class="window-meta">FILTER LIVE / 17 CANONICAL CONCEPTS</span>
+                    </div>
+
+                    <div class="lex-table-wrap">
+                        <table class="lex-table" id="lexicon-table">
+                            <thead>
+                                <tr>
+                                    <th>Mellon Term (Middle-earth)</th>
+                                    <th>Plain English Meaning</th>
+                                    <th>Vedas Term (Sanskrit)</th>
+                                    <th>Rule / File</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>The Elder Runes</strong></td>
+                                    <td>Immutable bedrock invariants of the project</td>
+                                    <td><span class="phonetic">Śruti</span></td>
+                                    <td><code>docs/INVARIANTS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Red Book of Westmarch</strong></td>
+                                    <td>Append-only architecture and decision history</td>
+                                    <td><span class="phonetic">Smṛti</span></td>
+                                    <td><code>docs/DECISIONS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Watchfire Log</strong></td>
+                                    <td>Rewritten 80-line current session handoff</td>
+                                    <td><span class="phonetic">Vartamāna</span></td>
+                                    <td><code>docs/HANDOFF.md</code> (<code>INV-005</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>New Traveler</strong></td>
+                                    <td>Fresh context window with zero memory of past chats</td>
+                                    <td><span class="phonetic">Śūnya</span></td>
+                                    <td>Architecture</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Proof Badge / Ranger Mark</strong></td>
+                                    <td>Mandatory tag showing how a claim was proven</td>
+                                    <td><span class="phonetic">Pramāṇa</span></td>
+                                    <td><code>INV-003</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mithril Prose</strong></td>
+                                    <td>High-density rule under 25 words with zero fluff</td>
+                                    <td><span class="phonetic">Sūtra</span></td>
+                                    <td><code>INV-008</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Elven Sleep</strong></td>
+                                    <td>Distilling verbose session logs into short durable rules</td>
+                                    <td><span class="phonetic">Sūtra Consolidator</span></td>
+                                    <td><code>INV-008</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>No Black Speech</strong></td>
+                                    <td>Lexical firewall banning em dashes and robotic AI filler</td>
+                                    <td><span class="phonetic">Śikṣā</span></td>
+                                    <td><code>INV-006</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sting's Blue Glow</strong></td>
+                                    <td>A new test must fail on the old bug before you trust the fix</td>
+                                    <td><span class="phonetic">Vyatireka / Udāharaṇa</span></td>
+                                    <td><code>INV-007</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Palant&iacute;r Linter</strong></td>
+                                    <td>Bidirectional Python script that catches broken links and doc lies</td>
+                                    <td><span class="phonetic">Ghana-pāṭha</span></td>
+                                    <td><code>tools/check_mellon.py</code> (<code>INV-004</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Fellowship Quest Loop</strong></td>
+                                    <td>The 5-stage start-to-finish session workflow</td>
+                                    <td><span class="phonetic">Kalpa</span></td>
+                                    <td><code>AGENTS.md</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saruman's Voice</strong></td>
+                                    <td>Projecting pre-trained model defaults onto the repository</td>
+                                    <td><span class="phonetic">Adhyāsa</span></td>
+                                    <td><code>INV-010</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Riddles in the Dark</strong></td>
+                                    <td>Ambiguity or part-whole gap that blocks safe coding</td>
+                                    <td><span class="phonetic">Saṃśaya</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Speak, Friend (Council of Elrond)</strong></td>
+                                    <td>Asking clarifying questions before writing code; never guessing</td>
+                                    <td><span class="phonetic">Praśna</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Turn Back at Caradhras</strong></td>
+                                    <td>Looping from Build/Verify back to Scope when a premise breaks</td>
+                                    <td><span class="phonetic">Āvartana</span></td>
+                                    <td><code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>"You Shall Not Pass!"</strong></td>
+                                    <td>Code or test friction that halts workarounds and triggers inquiry</td>
+                                    <td><span class="phonetic">Pratibandha</span></td>
+                                    <td><code>INV-007</code>, <code>INV-009</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>The Doors of Durin</strong></td>
+                                    <td>Tracing why an old constraint exists before removing it (Chesterton's Gate)</td>
+                                    <td><span class="phonetic">Pūrva-Pakṣa</span></td>
+                                    <td><code>INV-004</code>, <code>INV-009</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 06: Cheat Sheet -->
+            <section class="chapter" id="cheatsheet" aria-labelledby="cheatsheet-title">
+                <div class="chapter-cap">
+                    <span>CHEAT_SHEET.TXT</span>
+                    <span>06 / QUICK REFERENCE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">06</span>
+                        <div>
+                            <p class="kicker">QUICK REFERENCE</p>
+                            <h2 id="cheatsheet-title">The Fellowship Cheat Sheet.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 6.0</span>
+                    </div>
+                    <p class="lede">Copy-paste prompts, commands, and Elder Runes for daily agent sessions.</p>
+
+                    <div class="tabs-nav" role="tablist">
+                        <button class="tab-btn active" data-tab="tab-quest" role="tab">Quest Loop</button>
+                        <button class="tab-btn" data-tab="tab-prompt" role="tab">Starter Prompt</button>
+                        <button class="tab-btn" data-tab="tab-runes" role="tab">Ten Elder Runes</button>
+                    </div>
+
+                    <div class="tab-panel active" id="tab-quest" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>The 5-Stage Quest Loop</h3>
+                            <div class="copy-row">
+                                <code>1. Scouting: Read docs/HANDOFF.md &amp; docs/INVARIANTS.md; drop Saruman's Voice (INV-010)</code>
+                                <button class="btn small copy-btn" data-copy="Read docs/HANDOFF.md and docs/INVARIANTS.md">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>2. Council of Elrond: Scope 1 change, check Doors of Durin, ask questions (INV-009)</code>
+                                <button class="btn small copy-btn" data-copy="Surface any Riddles in the Dark and ask clarifying questions before editing.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>3. The Forge: Build in Mithril Prose; Turn Back at Caradhras if premises break</code>
+                                <button class="btn small copy-btn" data-copy="Loop back to scoping if any premise breaks mid-build.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>4. Khazad-dûm: Verify with Sting's Blue Glow (INV-007); honor "You Shall Not Pass!"</code>
+                                <button class="btn small copy-btn" data-copy="Prove the new test fails on the bug first, then passes on the fix.">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>5. Watchfire: Update docs/HANDOFF.md (&lt;=80 lines) &amp; run python3 tools/check_mellon.py</code>
+                                <button class="btn small copy-btn" data-copy="python3 tools/check_mellon.py --template">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-prompt" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>Copy-Paste Session Opener for Any AI Agent</h3>
+                            <div class="copy-row">
+                                <code>Read mellon/AGENTS.md, mellon/docs/INVARIANTS.md, and mellon/docs/HANDOFF.md. State what is proven, what is untested, and the next quest item. Ban Saruman's Voice (do not assume conventions not in the files), ask clarifying questions on any Riddles in the Dark, and propose one small change before writing code.</code>
+                                <button class="btn small copy-btn" data-copy="Read mellon/AGENTS.md, mellon/docs/INVARIANTS.md, and mellon/docs/HANDOFF.md. State what is proven, what is untested, and the next quest item. Ban Saruman's Voice (do not assume conventions not in the files), ask clarifying questions on any Riddles in the Dark, and propose one small change before writing code.">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-runes" role="tabpanel">
+                        <div class="cheat-card">
+                            <h3>The Ten Elder Runes (INV-001 to INV-010)</h3>
+                            <div class="copy-row">
+                                <code>INV-001 (Travelling Light): Zero external dependencies; Python stdlib only.</code>
+                                <button class="btn small copy-btn" data-copy="INV-001">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-002 (One Ring Rule): Every project fact has exactly one authoritative home file.</code>
+                                <button class="btn small copy-btn" data-copy="INV-002">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-003 (Ranger Marks): Every handoff claim requires an explicit Proof Badge.</code>
+                                <button class="btn small copy-btn" data-copy="INV-003">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-004 (Palantír Reciprocity): Bidirectional link and ID integrity across all docs.</code>
+                                <button class="btn small copy-btn" data-copy="INV-004">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-005 (80-Line Watchfire): Current state in HANDOFF.md never exceeds 80 lines.</code>
+                                <button class="btn small copy-btn" data-copy="INV-005">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-006 (No Black Speech): Zero em dashes or robotic AI filler in prose or comments.</code>
+                                <button class="btn small copy-btn" data-copy="INV-006">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-007 (Sting's Blue Glow): A new test must fail on the old bug before trusting the fix.</code>
+                                <button class="btn small copy-btn" data-copy="INV-007">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-008 (Mithril Prose): Distill learnings into dense rules under 25 words.</code>
+                                <button class="btn small copy-btn" data-copy="INV-008">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-009 (Council of Elrond): Zero silent assumptions; ask clarifying questions before building.</code>
+                                <button class="btn small copy-btn" data-copy="INV-009">COPY</button>
+                            </div>
+                            <div class="copy-row">
+                                <code>INV-010 (Ban Saruman's Voice): Never project pre-trained defaults onto the repository.</code>
+                                <button class="btn small copy-btn" data-copy="INV-010">COPY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 07: The Palantir Linter -->
+            <section class="chapter" id="palantir" aria-labelledby="palantir-title">
+                <div class="chapter-cap">
+                    <span>CHECK_MELLON.PY</span>
+                    <span>07 / THE SEEING-STONE</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">07</span>
+                        <div>
+                            <p class="kicker">MECHANICAL ENFORCEMENT</p>
+                            <h2 id="palantir-title">The Palant&iacute;r verification engine.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 7.0</span>
+                    </div>
+                    <p class="lede"><code>tools/check_mellon.py</code> uses only the Python standard library (<code>re</code>, <code>sys</code>, <code>pathlib</code>) and verifies all 15 contracts in milliseconds.</p>
+
+                    <div class="terminal" aria-label="Palantir linter command and output">
+                        <div class="terminal-bar"><span>PALANTIR_LINTER.SH</span><span>ACTUAL OUTPUT</span></div>
+                        <div class="terminal-body">
+<pre><span class="t-prompt">$</span> <span class="t-cmd">python3 mellon/tools/check_mellon.py --template</span>
+<span class="t-ok">0 error(s), 0 warning(s) in 15 file(s)</span></pre>
+                        </div>
+                        <div class="terminal-foot"><span>VERIFICATION TIME</span><span>&lt; 0.05s / ZERO DEPENDENCIES</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 08: Lineage & Adoption -->
+            <section class="chapter" id="lineage" aria-labelledby="lineage-title">
+                <div class="chapter-cap">
+                    <span>LINEAGE.TXT</span>
+                    <span>08 / CHOOSE YOUR EDITION</span>
+                    <span aria-hidden="true">[ &#9633; ]</span>
+                </div>
+                <div class="chapter-body">
+                    <div class="sec-head">
+                        <span class="sec-num" aria-hidden="true">08</span>
+                        <div>
+                            <p class="kicker">LINEAGE &amp; EDITIONS</p>
+                            <h2 id="lineage-title">One architecture, three ways in.</h2>
+                        </div>
+                        <span class="sec-ref">&sect; 8.0</span>
+                    </div>
+                    <p class="lede">Pick the edition that fits your team's taste, or use <code>mellon/docs/GLOSSARY.md</code> to reskin the protocol in your own favorite universe.</p>
+
+                    <div class="speed-grid" style="margin-top: 1.5rem;">
+                        <article class="speed-card" style="border-top-color: var(--vedic-blue);">
+                            <p class="card-label">EDITION 01 / MINIMALIST</p>
+                            <h3>The Manifold</h3>
+                            <p><b>Two speeds of truth.</b> Zero-dependency Markdown contracts (rewrite the present, append the past), 80-line handoffs, and <code>check_docs.py</code>.</p>
+                            <p style="margin-top: auto;"><a href="../index.html">Open The Manifold &larr;</a></p>
+                        </article>
+
+                        <article class="speed-card" style="border-top-color: var(--copper);">
+                            <p class="card-label">EDITION 02 / SANSKRIT &amp; LOGIC</p>
+                            <h3>Vedas</h3>
+                            <p><b>Classical Indian epistemology.</b> Śruti, Smṛti, Vartamāna, Pramāṇa badges, Sūtra density, Nyāya 5-step proofs, and Ghana-pāṭha reciprocity.</p>
+                            <p style="margin-top: auto;"><a href="../vedas/index.html">Open Vedas &nearr;</a></p>
+                        </article>
+
+                        <article class="speed-card" style="border-top-color: var(--saffron); background: #f2f8f4;">
+                            <p class="card-label">EDITION 03 / PLAIN ENGLISH &amp; LORE</p>
+                            <h3>Mellon</h3>
+                            <p><b>Speak, friend, and enter.</b> The full epistemic engine of Vedas translated into plain English and Lord of the Rings lore.</p>
+                            <p style="margin-top: auto;"><a href="#top">Back to top &uarr;</a></p>
+                        </article>
+                    </div>
+
+                    <div class="cheat-card">
+                        <h3>Adopting Mellon in an Existing Repository</h3>
+                        <p>Copy the Mellon files into your repository root and run the Palant&iacute;r linter:</p>
+                        <div class="copy-row">
+                            <code>cp -r mellon/docs . &amp;&amp; cp -r mellon/tools . &amp;&amp; cp mellon/AGENTS.md mellon/CLAUDE.md mellon/ROADMAP.md .</code>
+                            <button class="btn small copy-btn" data-copy="cp -r mellon/docs . &amp;&amp; cp -r mellon/tools . &amp;&amp; cp mellon/AGENTS.md mellon/CLAUDE.md mellon/ROADMAP.md .">COPY</button>
+                        </div>
+                        <div class="copy-row">
+                            <code>python3 tools/check_mellon.py --template</code>
+                            <button class="btn small copy-btn" data-copy="python3 tools/check_mellon.py --template">COPY</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-foot">
+    <div class="wrap foot-inner">
+        <div>
+            <p class="foot-brand"><b>Mellon</b> <span>/ plain-English &amp; Middle-earth epistemic protocol by Andrew Edmark / MIT</span></p>
+            <p class="foot-note">Plain HTML, CSS and JavaScript. Zero web fonts, zero trackers, zero dependencies. Fully offline.</p>
+        </div>
+        <nav class="foot-links" aria-label="Elsewhere">
+            <a href="../index.html">The Manifold</a>
+            <a href="../vedas/index.html">Vedas</a>
+            <a href="https://oopismcgoopis.com/hypervisor">Hypervisor</a>
+            <a href="https://github.com/aedmark/the-manifold/tree/main/mellon">GitHub</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
